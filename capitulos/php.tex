@@ -1,0 +1,128 @@
+% ---
+% PHP 
+% ---
+\chapter{\php}
+% ---
+
+Ao final deste capítulo, o aluno terá as seguintes competências:
+\begin{enumerate}
+	\item Entender a arquitetura cliente-servidor;
+	\item Instalar o servidor web (nginx) e a linguagem \php; e
+	\item Testar o ambiente de desenvolvimento. 
+\end{enumerate}
+
+\section{\phpcompleto}
+
+O \phpcompleto, foi criado por \phpcriador~ em 1995 e originalmente chamado de 
+“\textit{Personal Home Page Tools}” (Ferramentas para Página Pessoal). Com a 
+aceitação do projeto, muitos programadores passaram a utilizar e propor mudanças,
+surgindo assim, o \php~ que iremos conhecer hoje. O \php~ está atualmente na
+versão 7.0, chamado de \php7 ou, simplesmente de \php. A nível de estudo, 
+utilizaremos o \php~ \phpversao, pois é uma versão mais estável e muito 
+utilizada no mercado.
+
+O \php~ é uma linguagem de programação que funciona no lado do servidor, 
+ele permite criarmos \sites dinâmicos, ou seja, o \site se comporta de acordo 
+com a entrada de dados do usuário. Outros exemplos de linguagem semelhantes são 
+ASP, JSP (Java) e Python.
+
+A linguagem \php~ trabalha lado a lado com o \htmlcompleto, por conta disso vamos
+precisar saber o básico de \html, principalmente as \tags~ de formulário. Devemos
+lembrar que o \php~ tem pouca relação com o \layout~ ou eventos que compõem a 
+aparência de uma página \web. Portanto, podemos dizer que a maior parte do que o
+\php realiza é invisível para o usuário final. O internauta, ao visualizar a 
+página desenvolvida em \php não será capaz de identificar que a página foi 
+escrita utilizando a tecnologia disponibilizada pelo \php. 
+
+Você arriscaria dizer que o Facebook foi desenvolvido com a linguagem \php?
+
+\section{Arquitetura cliente-servidor}
+\label{arquitetura-cliente-servidor}
+
+Como visto na seção anterior, o \php~ funciona do lado do servidor. Para entendermos
+melhor isso, é necessário entender a estrutura cliente/servidor. Muito utilizada
+na \internet. A figura abaixo exemplifica de maneira simples a comunicação entre
+cliente e servidor.
+
+FIGURA
+
+....
+
+\section{Instalação do \php}
+\label{instalacao-do-php}
+
+Para que possamos utilizar o \php, devemos instalar a linguagem no nosso computador
+de trabalho. Vamos instalar esses pacotes através do \terminal. Podemos abrir o
+\terminal de várias maneiras. Veja duas delas listadas abaixo:
+
+\begin{enumerate}
+	\item clique com o botão direito na área de trabalho e escolha a a opção
+	"Abra o Emulador de Terminal aqui"; e
+	\item acione a combinação de teclas ALT + F2 e digite \xfceterminal.
+\end{enumerate}
+
+Em seguida escreva o comando abaixo no \terminal~ que acabamos de abrir. Por segurança
+a senha de usuário será requisitada, e \textbf{ela não aparece ao ser digitada}.
+Não se preocupe, digite a senha e ao final aperte enter. 
+
+\begin{lstlisting}[language=bash, style=Comandos]
+  $ sudo apt-get install php5 libapache2-mod-php5 php5-gd curl 
+  	php5-curl php5-xmlrpc php5-cli
+\end{lstlisting}
+
+Se você estiver usando o Linux do Projeto e-Jovem, então esses pacotes já devem
+ter sido instalados e você visualizou a seguinte tela.
+
+\figurasimples{php-instalacao-ok}{Instalação do \php~ bem sucedida.}
+
+\section{Instalação do \apache}
+\label{instalacao-do-apache}
+
+O servidor \apache~ é um dos principais aplicativos que fazem a \web~ funcionar.
+Ele é responsável por interpretar os arquivos \phpextensao~ e retornar para o
+cliente, apenas o que ele requisitou. A versão que vamos trabalhar é a \apacheversao.
+O processo de instalação é parecido com o que foi utilizado no \php. Abra o
+\terminal~ utilizando um dos passos da seção \ref{instalacao-do-php}.
+
+\begin{lstlisting}[language=bash, style=Comandos]
+  $ sudo apt-get install apache2
+\end{lstlisting}
+
+Se o sistema utilizado for o Linux do Projeto e-Jovem, então já temos o \apache
+\apacheversao~ instalado (figura \ref{apache-instalacao-ok}). Digite no navegador 
+Firefox o endereço de internet \url{http://localhost}. A tela será parecida com 
+a mostrada na figura \ref{apache-verificacao-ok}.
+
+\figuradupla{apache-instalacao-ok}{Instalação do \apache \apacheversao~ bem sucedida}
+			{apache-verificacao-ok}{Verificação do \apache~ em execução. Digite \url{http://localhost} no navegador Firefox}
+
+A figura \ref{apache-verificacao-ok} indica que o \apache~ está funcionando corretamente.
+O arquivo apresentado acima pode ser encontrado no diretório \dirpadrao. Será 
+essa a localização dos arquivos que vamos desenvolver. Ou seja, sempre que criarmos
+um arquivo \phpextensao~ ele deverá ser salvo no \dirpadrao. 
+
+Para que seja possível o usuário do sistema (no caso você) salve no \dirpadrao,
+precisamos mudar a permissão de escrita do diretório. Vamos abrir o \terminal~
+de acordo com o que foi mostrado na seção \ref{instalacao-do-php}. Com o \terminal~
+aberto, digite o seguinte comando.
+
+\begin{lstlisting}[language=bash]
+  $ sudo chmod -R 777 /var/www 
+\end{lstlisting}
+
+O comando acima permite que o usuário comum do sistema grave arquivos no \dirpadrao.
+
+O aplicativo \apache~ pode ser configurado para funcionar de diversas maneiras. 
+Essa disciplina necessita apenas da configuração básica. Caso queira modificá-la, 
+o aluno poderá ler mais sobre o \apache~ através do site: \url{http://httpd.apache.org/docs/2.2}.
+
+Caso você use o sistema operacional Windows na sua casa, veja no apêndice 
+TAL, lá é explicado como instalar o \php~ e o \apache~ no Windows.
+
+
+\section{Testando o ambiente}
+\label{testando-ambiente}
+
+Após a instalação, devemos testar o nosso ambiente de desenvolvimento (composto
+inicialmente por \php~ e \apache). Abra novamente o \terminal~, navegue até o
+diretório \dirpadrao.

@@ -1,0 +1,79 @@
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{lmodern}		% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}	% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}	% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}		% Usado pela Ficha catalográfica
+\usepackage{indentfirst}	% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}			% Controle das cores
+\usepackage{xcolor}			% Controle das cores
+\usepackage{graphicx}		% Inclusão de gráficos
+\usepackage{microtype} 		% para melhorias de justificação
+% ---
+% Adicionado por Madson Dias
+% ---
+
+\graphicspath{ {figuras/graficos/} {figuras/imagens/}}  % Inclusão dos paths para imagens
+\usepackage{xstring} 	% Criar comandos com IF
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{mdframed}
+\usepackage{microtype}
+\usepackage{pdfpages}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{float}
+\usepackage{chngcntr}		% Criar numeração de imagens por capítulo
+\counterwithin{figure}{section}
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% ---
+% Alterando o aspecto da cor azul
+% ---
+\definecolor{blue}{RGB}{41,5,195}
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+\usepackage{utils/ejovem-modelo} 	% Pacote com informações da customização
+\usepackage{utils/ejovem-programacao-web} 	% Pacote com informações da customização
