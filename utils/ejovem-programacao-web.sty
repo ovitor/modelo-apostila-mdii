@@ -21,6 +21,8 @@
 % ---
 % Novos comandos 
 % ---
+\newcommand{\altfdois}{\keys{\Alt + F2}~}
+
 \newcommand{\web}{\textit{web}}
 \newcommand{\internet}{\textit{internet}}
 \newcommand{\software}{\textit{software}}
@@ -28,12 +30,18 @@
 \newcommand{\sites}{\textit{sites}}
 \newcommand{\terminal}{\texttt{terminal}}
 \newcommand{\xfceterminal}{\texttt{xfce4-terminal}}
+\newcommand{\gedit}{\texttt{gedit}}
 
-\newcommand{\php}{\uppercase{php}}
+\newcommand{\php}{PHP}
 \newcommand{\phpextensao}{\texttt{.php}}
 \newcommand{\phpcriador}{\textit{Rasmus Lerdof}}
 \newcommand{\phpcompleto}{\uppercase{php} (Pré-Processador de Hipertexto)}
 \newcommand{\phpversao}{5.3.2}
+\newcommand{\phpinicio}{\texttt{<?php}}
+\newcommand{\phpfim}{\texttt{?>}}
+
+\newcommand{\funcaophpinfo}{\texttt{phpinfo()}}
+\newcommand{\funcaoecho}{\texttt{echo}}
 
 \newcommand{\html}{\uppercase{html}}
 \newcommand{\htmlcompleto}{\uppercase{html} (Linguagem de Marcação de Hipertexto)}
@@ -42,7 +50,12 @@
 
 \newcommand{\apache}{Apache}
 \newcommand{\apacheversao}{2}
-\newcommand{\dirpadrao}{\texttt{/var/www/}}
+
+\newcommand{\arquivo}[1]{\texttt{#1}}
+\newcommand{\diretorio}[1]{\directory{#1}}
+\newcommand{\dirpadrao}{\directory{/var/www/}}
+\newcommand{\diraula}[1]{\directory{aula#1}}
+\newcommand{\opcao}[1]{\menu[,]{#1}}
 
 % ---
 % INICIO DAS CUSTOMIZACOES

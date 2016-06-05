@@ -7,7 +7,7 @@
 Ao final deste capítulo, o aluno terá as seguintes competências:
 \begin{enumerate}
 	\item Entender a arquitetura cliente-servidor;
-	\item Instalar o servidor web (nginx) e a linguagem \php; e
+	\item Instalar o servidor web (\apache) e a linguagem \php; e
 	\item Testar o ambiente de desenvolvimento. 
 \end{enumerate}
 
@@ -30,8 +30,8 @@ A linguagem \php~ trabalha lado a lado com o \htmlcompleto, por conta disso vamo
 precisar saber o básico de \html, principalmente as \tags~ de formulário. Devemos
 lembrar que o \php~ tem pouca relação com o \layout~ ou eventos que compõem a 
 aparência de uma página \web. Portanto, podemos dizer que a maior parte do que o
-\php realiza é invisível para o usuário final. O internauta, ao visualizar a 
-página desenvolvida em \php não será capaz de identificar que a página foi 
+\php~ realiza é invisível para o usuário final. O internauta, ao visualizar a 
+página desenvolvida em \php~ não será capaz de identificar que a página foi 
 escrita utilizando a tecnologia disponibilizada pelo \php. 
 
 Você arriscaria dizer que o Facebook foi desenvolvido com a linguagem \php?
@@ -56,9 +56,9 @@ de trabalho. Vamos instalar esses pacotes através do \terminal. Podemos abrir o
 \terminal de várias maneiras. Veja duas delas listadas abaixo:
 
 \begin{enumerate}
-	\item clique com o botão direito na área de trabalho e escolha a a opção
-	"Abra o Emulador de Terminal aqui"; e
-	\item acione a combinação de teclas ALT + F2 e digite \xfceterminal.
+	\item clique com o botão direito na área de trabalho, escolha a opção
+	\opcao{Abra o Emulador de Terminal aqui}; e
+	\item acione a combinação de teclas \altfdois e digite \xfceterminal.
 \end{enumerate}
 
 Em seguida escreva o comando abaixo no \terminal~ que acabamos de abrir. Por segurança
@@ -82,21 +82,22 @@ O servidor \apache~ é um dos principais aplicativos que fazem a \web~ funcionar
 Ele é responsável por interpretar os arquivos \phpextensao~ e retornar para o
 cliente, apenas o que ele requisitou. A versão que vamos trabalhar é a \apacheversao.
 O processo de instalação é parecido com o que foi utilizado no \php. Abra o
-\terminal~ utilizando um dos passos da seção \ref{instalacao-do-php}.
+\terminal~ utilizando um dos passos da seção \ref{instalacao-do-php} e digite a 
+seguinte instrução.
 
 \begin{lstlisting}[language=bash, style=Comandos]
   $ sudo apt-get install apache2
 \end{lstlisting}
 
 Se o sistema utilizado for o Linux do Projeto e-Jovem, então já temos o \apache
-\apacheversao~ instalado (figura \ref{apache-instalacao-ok}). Digite no navegador 
-Firefox o endereço de internet \url{http://localhost}. A tela será parecida com 
-a mostrada na figura \ref{apache-verificacao-ok}.
+\apacheversao~ instalado (figura \ref{fig:apache-instalacao-ok}). Digite no navegador 
+Firefox o endereço de internet \url{http://localhost} (sem os sinais de maior e menor que). 
+A tela será parecida com a mostrada na figura \ref{fig:apache-verificacao-ok}.
 
 \figuradupla{apache-instalacao-ok}{Instalação do \apache \apacheversao~ bem sucedida}
 			{apache-verificacao-ok}{Verificação do \apache~ em execução. Digite \url{http://localhost} no navegador Firefox}
 
-A figura \ref{apache-verificacao-ok} indica que o \apache~ está funcionando corretamente.
+A figura \ref{fig:apache-verificacao-ok} indica que o \apache~ está funcionando corretamente.
 O arquivo apresentado acima pode ser encontrado no diretório \dirpadrao. Será 
 essa a localização dos arquivos que vamos desenvolver. Ou seja, sempre que criarmos
 um arquivo \phpextensao~ ele deverá ser salvo no \dirpadrao. 
@@ -117,7 +118,7 @@ Essa disciplina necessita apenas da configuração básica. Caso queira modific�
 o aluno poderá ler mais sobre o \apache~ através do site: \url{http://httpd.apache.org/docs/2.2}.
 
 Caso você use o sistema operacional Windows na sua casa, veja no apêndice 
-TAL, lá é explicado como instalar o \php~ e o \apache~ no Windows.
+\ref{ap:instalacao-env-windows}, lá é explicado como instalar o \php~ e o \apache~ no Windows.
 
 
 \section{Testando o ambiente}
@@ -126,3 +127,36 @@ TAL, lá é explicado como instalar o \php~ e o \apache~ no Windows.
 Após a instalação, devemos testar o nosso ambiente de desenvolvimento (composto
 inicialmente por \php~ e \apache). Abra novamente o \terminal~, navegue até o
 diretório \dirpadrao.
+
+Neste diretório, iremos criar \textbf{uma pasta para cada aula} do curso, portanto, hoje
+criaremos o diretório \diraula{01}~ no caminho \dirpadrao. Abra novamente o \terminal~
+e digite os seguintes comandos:
+
+\begin{lstlisting}[language=bash]
+  $ cd /var/www 
+  $ mkdir aula01
+\end{lstlisting}
+
+Lembre-se! É importante que o aluno crie em cada aula um diretório 
+específico para aquela aula.
+
+Testar o ambiente significa verificar se está tudo funcionando como deve ser. Vamos criar um 
+arquivo \phpextensao. Usaremos o programa editor de textos \gedit, acione as teclas \altfdois 
+e digite na janela o nome do programa: \gedit. 
+
+A figura \ref{fig:gedit-ok} representa um código simples escrito no editor de textos \gedit. 
+Perceba que o arquivo \phpextensao~ começa com os caracteres \phpinicio~ e \phpfim. 
+Todo arquivo \phpextensao~ tem essa estrutura no início e no fim. O conteúdo desse arquivo é 
+a função \funcaophpinfo. Ela apresenta para nós, todas as opções que estão configuradas no 
+nosso \php. A figura \ref{fig:gedit-ok} mostra o resultado ao acessarmos a URL \url{http://localhost} 
+no nosso navegador Firefox.
+
+Salve o arquivo no diretório \diretorio{/var/www/aula01}. Esse arquivo deve ter o nome \arquivo{index.php}.
+
+\figurasimples{gedit-ok}{Código PHP escrito no programa \gedit.}
+
+Outro teste que vamos fazer é a utilização da instrução \funcaoecho.
+
+% \begin{lstlisting}[language=php]
+  % <?php echo "Novo texto" ?>
+% \end{lstlisting}
