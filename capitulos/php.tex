@@ -46,7 +46,17 @@ cliente e servidor.
 
 FIGURA
 
-....
+Dessa figura, podemos tirar algumas palavras chaves. Que são:
+\begin{description}
+  \item [Recurso] Item disponível na Internet (uma figura, uma página, um arquivo .css);
+  \item [Cliente] Aquele que \textbf{requisita} algum recurso (navegador Firefox); e
+  \item [Servidor] Aquele que \textbf{provê} algum recurso (servidor \apache).
+\end{description}
+
+Portanto, quando o \textbf{cliente}, ou seja, o internauta, faz uma \textbf{requisição} 
+- digitando na barra de endereços do navegador o \site~ 
+\url{http://http://projetoejovem.seduc.ce.gov.br} e pressionando \keys{ENTER} - o navegador 
+se encarrega de fazer um pedido ao \textbf{servidor} que guarda o \site~ do projeto e-Jovem.
 
 \section{Instalação do \php}
 \label{instalacao-do-php}
@@ -65,7 +75,7 @@ Em seguida escreva o comando abaixo no \terminal~ que acabamos de abrir. Por seg
 a senha de usuário será requisitada, e \textbf{ela não aparece ao ser digitada}.
 Não se preocupe, digite a senha e ao final aperte enter. 
 
-\begin{lstlisting}[language=bash, style=Comandos]
+\begin{lstlisting}[language=bash,style=codigos]
   $ sudo apt-get install php5 libapache2-mod-php5 php5-gd curl 
   	php5-curl php5-xmlrpc php5-cli
 \end{lstlisting}
@@ -85,9 +95,10 @@ O processo de instalação é parecido com o que foi utilizado no \php. Abra o
 \terminal~ utilizando um dos passos da seção \ref{instalacao-do-php} e digite a 
 seguinte instrução.
 
-\begin{lstlisting}[language=bash, style=Comandos]
-  $ sudo apt-get install apache2
-\end{lstlisting}
+\lstinputlisting[language=bash,style=codigos]{codigos/instalacao-apache.sh}
+% \begin{lstlisting}[language=bash,style=codigos]
+  % $ sudo apt-get install apache2
+% \end{lstlisting}
 
 Se o sistema utilizado for o Linux do Projeto e-Jovem, então já temos o \apache
 \apacheversao~ instalado (figura \ref{fig:apache-instalacao-ok}). Digite no navegador 
@@ -107,7 +118,7 @@ precisamos mudar a permissão de escrita do diretório. Vamos abrir o \terminal~
 de acordo com o que foi mostrado na seção \ref{instalacao-do-php}. Com o \terminal~
 aberto, digite o seguinte comando.
 
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}[language=bash,style=codigos]
   $ sudo chmod -R 777 /var/www 
 \end{lstlisting}
 
@@ -124,6 +135,9 @@ Caso você use o sistema operacional Windows na sua casa, veja no apêndice
 \section{Testando o ambiente}
 \label{testando-ambiente}
 
+\subsection{Função phpinfo}
+\label{subsection:funcao-phpinfo}
+
 Após a instalação, devemos testar o nosso ambiente de desenvolvimento (composto
 inicialmente por \php~ e \apache). Abra novamente o \terminal~, navegue até o
 diretório \dirpadrao.
@@ -132,7 +146,7 @@ Neste diretório, iremos criar \textbf{uma pasta para cada aula} do curso, porta
 criaremos o diretório \diraula{01}~ no caminho \dirpadrao. Abra novamente o \terminal~
 e digite os seguintes comandos:
 
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}[language=bash,style=codigos]
   $ cd /var/www 
   $ mkdir aula01
 \end{lstlisting}
@@ -155,8 +169,36 @@ Salve o arquivo no diretório \diretorio{/var/www/aula01}. Esse arquivo deve ter
 
 \figurasimples{gedit-ok}{Código PHP escrito no programa \gedit.}
 
-Outro teste que vamos fazer é a utilização da instrução \funcaoecho.
+\subsection{Instrução echo}
+\label{subsection:funcao-echo}
+Outro teste que vamos fazer é a utilização da instrução \funcaoecho. Edite o arquivo 
+\arquivo{index.php} com o programa \gedit e adicione na primeira linha o código
+\texttt{<?php echo "Aula 01"; ?>}
 
-% \begin{lstlisting}[language=php]
-  % <?php echo "Novo texto" ?>
-% \end{lstlisting}
+\lstinputlisting[language=php,style=codigos]{codigos/echo.php}
+
+O resultado pode ser visto na figura abaixo.
+
+\subsection{Comentários no \php}
+\label{subsection:comentarios-no-php}
+
+O último tópico deste capítulo trata dos comentários que podemos escrever nos nossos
+arquivos \phpextensao. Comentários são partes importantes do código desenvolvido.
+Eles servem para ajudar a enteder melhor determinadas partes do código ou ainda
+para descrever o que o código desenvolvido realiza. Outra funcionalidade
+importante dos comentários são os de orientar outros programadores, permitindo assim
+que os desenvolvedores trabalhem em conjunto de maneira mais fácil.
+
+No \php, os comentários uma linha são indicados pelos caracteres \verb$//$ ou \verb$#$
+e os comentários de múltiplas linhas são representados pelos caracteres 
+\verb$/*$ (início) e \verb$*/$ (fim).
+
+Veja o nosso arquivo \arquivo{index.php} após a adição dos comentários explicativos.
+
+\lstinputlisting[language=php,style=codigos]{codigos/echo-com-comentarios.php}
+
+\section{Desafio!}
+\label{desafio}
+O desafio deste capítulo é você encontrar na tela do navegador a versão do \php~
+que vamos trabalhar, a versão do \apache~ além de nos mostrar qual o diretório
+padrão em que os arquivos \phpextensao~ devem ser salvos.
