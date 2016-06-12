@@ -1,0 +1,95 @@
+% ---
+% Ambiente de desenvolvimento com Sublime Text
+% ---
+\chapter{Ambiente de desenvolvimento com Sublime Text}
+% ---
+
+Ao final deste capítulo, o aluno terá as seguintes competências:
+\begin{enumerate}
+	\item Instalar o \sublime \sublimeversao~ no sistema operacional;
+	\item Instalar \plugins~ do \sublime; e
+	\item Criar uma estrutura de aplicação \web com \php. 
+\end{enumerate}
+
+\section{O \sublime}
+\label{o-sublime}
+
+O \sublime~ é um editor de textos melhorado. Com esse tipo de \software~
+é possível desenvolver os mais diversos programas, incluíndo os \sites. 
+O \sublime~ hoje dispõe de duas versões que são amplamente utilizadas. 
+A versão 2 - estável porém mais antiga e a versão 3 - caracterizada com 
+versão \textit{beta} porém mais nova. Apesar de no curso sempre trabalharmos com 
+as versões estáveis dos programas, com esse editor usaremos a versão \sublimeversao.
+
+O editor de textos não vem por padrão nas distribuições Linux. Por isso, é necessário instalá-lo. 
+Vamos abrir o navegador Firefox e digitar a URL \url{https://www.sublimetext.com/3}.
+Em seguida, clique no \textit{link} ``Download''. Se você estiver usando o Linux do Projeto e-Jovem
+escolha a opção ``Ubuntu 32 bit''. Essa ação vai baixar o arquivo \sublimefilename.
+o \texttt{3XXX} indica a versão (3 no caso) e pequenas mudanças na versão principal respectivamente.
+
+Lembre-se! Saíba onde você salvou o arquivo baixado! Será importante saber a localização dele
+no momento da instalação!
+
+\section{Instalando o \sublime}
+\label{instalando-o-sublime}
+
+Agora que baixamos o arquivo \texttt{.deb}, vamos instalá-lo. Abra o \terminal~ de acordo
+com o apresentado na seção \ref{instalacao-do-php}. Utilize os comandos \comandocdcompleto, 
+\comandolscompleto~ e \comandopwdcompleto~ para ir ao diretório que o arquivo \sublimefilename~ está salvo.
+No caso da apostila, o arquivo foi salvo dentro do diretório \directory{/home/ejovem/Downloads}.
+
+Caso você não saíba onde o arquivo se encontra, peça ajuda ao seu instrutor.
+
+\begin{multicols}{2}
+
+  Comandos executados no terminal 
+  \begin{lstlisting}[language=bash,style=codigos]
+    $ cd ~/Downloads
+    $ ls
+  \end{lstlisting}
+
+  \columnbreak
+
+  Resposta do comando \comandolscompleto
+  \begin{lstlisting}[language=bash, style=codigos]
+    ...  
+    sublime-text_build-3114_i368.deb
+    ...  
+  \end{lstlisting}
+
+\end{multicols}
+
+Agora que a gente sabe onde o arquivo se encontra, podemos instalar com o comando
+\dpkg. Execute o seguinte código no diretório em que o \sublimefilename~ se encontra
+
+  \begin{lstlisting}[language=bash,style=codigos]
+    $ sudo dpkg -i sublime-text_build-3114_i368.deb
+  \end{lstlisting}
+
+Se a instalação do \sublime~ ocorreu com sucesso. Obtemos a seguinte tela na imagem \ref{fig:sublime-instalacao-ok}.
+Para abrir o programa, digite a combinação de teclas \altfdois e digite o comando \sublimebin.
+A tela inicial do programa é a exibida na figura \ref{fig:sublime-ok}.
+
+\figuradupla{sublime-instalacao-ok}{Instalação do aplicativo \sublime~ realizada com sucesso}
+{sublime-ok}{Tela inicial do \sublime}
+
+\section{Primeiros passos}
+\label{primeiros-passos}
+
+Vamos começar nossos testes com o \sublime. Nosso primeiro teste é abrir o arquivo 
+editado anteriormente pelo programa \gedit. Na tela inicial do \sublime, execute a seguinte
+sequência de menus: \menu[,]{File, Open File...}. O arquivo deverá estar no diretório
+\directory{/var/www/aula01}. E tem o nome de \arquivo{index.php}.
+
+Vamos editar o arquivo. Troque a primeira linha do arquivo para que fique parecido com o
+apresentado abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/echo-sublime.php}
+
+Lembre-se! Você pode colocar \tags~ \html~ dentro das instruções \php!
+
+\section{Desafio!}
+\label{desafio}
+O desafio deste capítulo é você encontrar na tela do navegador a versão do \php~
+que vamos trabalhar, a versão do \apache~ além de nos mostrar qual o diretório
+padrão em que os arquivos \phpextensao~ devem ser salvos.
