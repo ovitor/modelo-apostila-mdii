@@ -17,7 +17,7 @@ Ao final deste capítulo, o aluno terá as seguintes competências:
 O \sublime~ é um editor de textos melhorado. Com esse tipo de \software~
 é possível desenvolver os mais diversos programas, incluíndo os \sites. 
 O \sublime~ hoje dispõe de duas versões que são amplamente utilizadas. 
-A versão 2 - estável porém mais antiga e a versão 3 - caracterizada com 
+A versão 2 - estável porém mais antiga e a versão \sublimeversao - caracterizada como 
 versão \textit{beta} porém mais nova. Apesar de no curso sempre trabalharmos com 
 as versões estáveis dos programas, com esse editor usaremos a versão \sublimeversao.
 
@@ -25,18 +25,20 @@ O editor de textos não vem por padrão nas distribuições Linux. Por isso, é 
 Vamos abrir o navegador Firefox e digitar a URL \url{https://www.sublimetext.com/3}.
 Em seguida, clique no \textit{link} ``Download''. Se você estiver usando o Linux do Projeto e-Jovem
 escolha a opção ``Ubuntu 32 bit''. Essa ação vai baixar o arquivo \sublimefilename.
-o \texttt{3XXX} indica a versão (3 no caso) e pequenas mudanças na versão principal respectivamente.
+o \texttt{3XXX} indica a versão (\sublimeversao~ no caso) e pequenas mudanças na 
+versão principal respectivamente.
 
-Lembre-se! Saíba onde você salvou o arquivo baixado! Será importante saber a localização dele
-no momento da instalação!
+Lembre-se! Saíba onde você salvou o arquivo baixado! Será importante saber a 
+localização dele no momento da instalação!
 
 \section{Instalando o \sublime}
 \label{instalando-o-sublime}
 
 Agora que baixamos o arquivo \texttt{.deb}, vamos instalá-lo. Abra o \terminal~ de acordo
 com o apresentado na seção \ref{instalacao-do-php}. Utilize os comandos \comandocdcompleto, 
-\comandolscompleto~ e \comandopwdcompleto~ para ir ao diretório que o arquivo \sublimefilename~ está salvo.
-No caso da apostila, o arquivo foi salvo dentro do diretório \directory{/home/ejovem/Downloads}.
+\comandolscompleto~ e \comandopwdcompleto~ para ir ao diretório que o arquivo 
+\sublimefilename~ está salvo. No caso da apostila, o arquivo foi salvo dentro do 
+diretório \directory{/home/ejovem/Downloads}.
 
 Caso você não saíba onde o arquivo se encontra, peça ajuda ao seu instrutor.
 
@@ -66,9 +68,10 @@ Agora que a gente sabe onde o arquivo se encontra, podemos instalar com o comand
     $ sudo dpkg -i sublime-text_build-3114_i368.deb
   \end{lstlisting}
 
-Se a instalação do \sublime~ ocorreu com sucesso. Obtemos a seguinte tela na imagem \ref{fig:sublime-instalacao-ok}.
-Para abrir o programa, digite a combinação de teclas \altfdois e digite o comando \sublimebin.
-A tela inicial do programa é a exibida na figura \ref{fig:sublime-ok}.
+Se a instalação do \sublime~ ocorreu com sucesso. Obtemos a seguinte tela na 
+imagem \ref{fig:sublime-instalacao-ok}. Para abrir o programa, digite a combinação 
+de teclas \altfdois e digite o comando \sublimebin. A tela inicial do programa é 
+a exibida na figura \ref{fig:sublime-ok}.
 
 \figuradupla{sublime-instalacao-ok}{Instalação do aplicativo \sublime~ realizada com sucesso}
 {sublime-ok}{Tela inicial do \sublime}
@@ -87,6 +90,31 @@ apresentado abaixo.
 \lstinputlisting[language=php,style=codigos]{codigos/echo-sublime.php}
 
 Lembre-se! Você pode colocar \tags~ \html~ dentro das instruções \php!
+
+O resultado pode ser conferido abaixo.
+
+\figurasimples{sublime-echo-ok}{Utilizando \funcaoecho.}
+
+\section{Comandos do \sublime}
+\label{comandos-do-sublime}
+
+O nosso editor de textos tem um painel de comandos. Nele é possível aplicar comandos
+relacionados ao \sublime. Os comandos que iremos utilizar são em inglês, portanto,
+a tabela TAL trás a tradução de alguns termos utilizados.
+
+Para acessar o painel digite a combinação de teclas \ctrlshiftp enquanto estiver
+no \sublime. O painel deve aparecer na parte superior da janela. Digite o termo
+\textit{sidebar}. Esse termo ativará o comando de nome \textit{View: Toggle Side Bar}
+Esse comando ativa ou desativa a barra lateral no \sublime (pode ser utilizado
+a combinação de teclas \sublimesidebar). Outro comando que podemos utilizar é o de
+ativar ou desativar o \textit{minimap}. Pressione então as teclas \ctrlshiftp
+e digite o termo \textit{minimap}. O comando completo é \textit{View: Toggle Minimap}.
+
+\section{Adicionando diretórios}
+\label{adicionando-diretorios}
+
+Uma das grandes facilidades do editor de textos \sublime e outros editores mais
+avançados é a apresentação do projeto através da barra lateral (\textit{sidebar})
 
 \section{Desafio!}
 \label{desafio}
