@@ -133,8 +133,8 @@ Dica! Outro método que podemos utilizar para realizar a mesma tarefa é utiliza
 os menus do \sublime. O caminho a ser percorrido é: \menu[,]{File, Open Folder...}
 e escolher o diretório \directory{/var/www/aula01}.
 
-\section{Plugins}
-\label{plugins}
+\section{Configurações e Plugins}
+\label{configuracoes-e-plugins}
 
 O \sublime~ se tornou famoso por conta da possibilidade de adicionarmos à ele,
 diversas outras funcionalidades por meio de \plugins. Existem \plugins~ que auxiliam
@@ -160,6 +160,30 @@ Após a finalização da instalação, percorra o menu \menu[,]{View, Hide conso
 esconder o \terminal. Como teste, instalaremos o pacote \texttt{php-snippets}. Esse
 pacote nada mais é do que um conjunto de códigos pré-prontos. Inicialmente não
 nos terá muita serventia, mas com o passar das aulas será bem útil.
+
+\subsection{Configurações do Usuário}
+\label{configuracoes-do-usuario}
+
+O \sublime permite diversas modificações no seu funcionamento a partir das configurações
+que o usuário (no caso você) pode realizar. Você deve editar o arquivo 
+que se encontra no menu \menu[,]{Preferences, Settings - User}.
+
+Edite o arquivo para que fique parecido com o código abaixo. Você pode procurar
+na internet por mais comandos que modifiquem o comportamento do \sublime.
+
+\lstinputlisting[style=codigos]{codigos/settings-user.json}
+
+\subsection{Plugin \texttt{php-snippets}}
+\label{plugin-php-snippets}
+
+Para instalar um \plugin precisamos executar alguns comandos no painel de comandos.
+Com o \sublime aberto, digite a combinação de teclas \ctrlshiftp e digite
+\textit{package install}. Esse termo ativará o comando \textit{Package Control: Install Package}.
+Ao pressionar \avancar o painel de comandos listará todos os pacotes disponíveis
+para instalação. Digite o termo \textit{php-snippets}, ativando assim, o pacote
+de nome \textit{php-snippets}. Veja a figura
+
+\figurasimples{sublime-plugin-installation}{Instalação do \plugin~ \texttt{php-snippets}.} 
 
 \section{Desafio!}
 \label{desafio}
