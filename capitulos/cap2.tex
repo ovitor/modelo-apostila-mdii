@@ -133,6 +133,19 @@ Dica! Outro método que podemos utilizar para realizar a mesma tarefa é utiliza
 os menus do \sublime. O caminho a ser percorrido é: \menu[,]{File, Open Folder...}
 e escolher o diretório \directory{/var/www/aula01}.
 
+
+\section{Configurações do Usuário}
+\label{configuracoes-do-usuario}
+
+O \sublime~ permite diversas modificações no seu funcionamento a partir das configurações
+que o usuário (no caso você) pode realizar. Você deve editar o arquivo 
+que se encontra no menu \menu[,]{Preferences, Settings - User}.
+
+Edite o arquivo para que fique parecido com o código abaixo. Você pode procurar
+na internet por mais comandos que modifiquem o comportamento do \sublime.
+
+\lstinputlisting[style=codigos]{codigos/settings-user.json}
+
 \section{Configurações e Plugins}
 \label{configuracoes-e-plugins}
 
@@ -150,43 +163,35 @@ Agora devemos ir até o \sublime e seguir o caminho \menu[,]{View, Show console.
 Uma pequena seção irá aparecer na parte debaixo da tela principal do programa.
 Usando o botão direito do \mouse, clique no campo como mostrado na figura 
 \ref{fig:sublime-packagecontrol-paste-code} escolha a opção \textit{paste} (colar em inglês)
-e pressione \avancar.
+e pressione \avancar. Após a finalização da instalação, percorra o menu \menu[,]{View, Hide console...} 
+para esconder o \terminal.
 
 \figuradupla{sublime-packagecontrol-installation}{Código que deve ser copiado, 
 em seguida, colado no \sublime.}{sublime-packagecontrol-paste-code}{Opção a ser
 escolhida para colar código copiado anteriormente.}
 
-Após a finalização da instalação, percorra o menu \menu[,]{View, Hide console...} para
-esconder o \terminal. Como teste, instalaremos o pacote \texttt{php-snippets}. Esse
-pacote nada mais é do que um conjunto de códigos pré-prontos. Inicialmente não
-nos terá muita serventia, mas com o passar das aulas será bem útil.
-
-\subsection{Configurações do Usuário}
-\label{configuracoes-do-usuario}
-
-O \sublime permite diversas modificações no seu funcionamento a partir das configurações
-que o usuário (no caso você) pode realizar. Você deve editar o arquivo 
-que se encontra no menu \menu[,]{Preferences, Settings - User}.
-
-Edite o arquivo para que fique parecido com o código abaixo. Você pode procurar
-na internet por mais comandos que modifiquem o comportamento do \sublime.
-
-\lstinputlisting[style=codigos]{codigos/settings-user.json}
-
 \subsection{Plugin \texttt{php-snippets}}
 \label{plugin-php-snippets}
 
-Para instalar um \plugin precisamos executar alguns comandos no painel de comandos.
-Com o \sublime aberto, digite a combinação de teclas \ctrlshiftp e digite
+Como teste, instalaremos o pacote \texttt{php-snippets}. Esse
+pacote nada mais é do que um conjunto de códigos pré-prontos. Inicialmente não
+nos terá muita serventia, mas com o passar das aulas será bem útil.
+
+Para instalar um \plugin~ precisamos executar alguns comandos no painel de comandos.
+Com o \sublime~ aberto, digite a combinação de teclas \ctrlshiftp e digite
 \textit{package install}. Esse termo ativará o comando \textit{Package Control: Install Package}.
-Ao pressionar \avancar o painel de comandos listará todos os pacotes disponíveis
+Ao pressionar \avancar~ o painel de comandos listará todos os pacotes disponíveis
 para instalação. Digite o termo \textit{php-snippets}, ativando assim, o pacote
 de nome \textit{php-snippets}. Veja a figura
 
 \figurasimples{sublime-plugin-installation}{Instalação do \plugin~ \texttt{php-snippets}.} 
 
 \section{Desafio!}
-\label{desafio}
-O desafio deste capítulo é você encontrar na tela do navegador a versão do \php~
-que vamos trabalhar, a versão do \apache~ além de nos mostrar qual o diretório
-padrão em que os arquivos \phpextensao~ devem ser salvos.
+\label{cap2-desafio}
+O desafio deste capítulo é você configurar o \sublime~ de acordo com o seu gosto.
+Modifique os seguintes itens:
+\begin{enumerate}
+  \item Tamanho e tipo da fonte.
+  \item Cor do editor (\menu[,]{Preferences, Color Scheme, <opção>})
+  \item Instalar o \plugin~ \texttt{phpdoc}~ (\url{https://packagecontrol.io/packages/PhpDoc}).
+\end{enumerate}
