@@ -1,0 +1,79 @@
+% ---
+% Variáveis em PHP 
+% ---
+\chapter{Variáveis em PHP}
+% ---
+
+Ao final deste capítulo, o aluno terá as seguintes competências:
+\begin{enumerate}
+    \item Entender o que são variáveis e como o \php trabalha com elas; e
+    \item Trabalhar com os diversos tipos de variáveis.
+\end{enumerate}
+
+\section{Variáveis}
+\label{variaveis}
+
+Variáveis são identificadores criados para guardar valores por determinado tempo. 
+No \php elas são declaradas, inicializadas e armazenadas na memória RAM do servidor \web. 
+Esse é um dos motivos pelo qual os servidores precisam de grandes quantidades de memória.
+
+Quando desenvolvemos um \site e o disponibilizamos na \internet. É nosso desejo que ele seja
+acessado pela maior quantidade de pessoas possível. Portanto, imagine um servidor com mais 
+de 20 mil acessos simultâneos (mais de 20 mil pessoas visualizando o \site no mesmo momento).
+Nesse processo são criadas variáveis diferentes para cada usuário, logo, isso faz com que o 
+processamento que o servidor faz se intensifique. Por conta disso, o servidor deve ser um 
+computador com bastante memória RAM.
+
+Uma variável é inicializada no momento em que é feita a primeira atribuição. O tipo da
+variável será definido de acordo com o valor atribuído. Esse é um fator importante \php, 
+pois uma mesma variável pode ser de um tipo e pode assumir no decorrer do código outro 
+valor de tipo diferente.
+
+Para criar uma variável em PHP, precisamos atribuir-lhe um nome de identificação, 
+sempre precedido pelo caractere cifrão (\textit{\$}). Observe um exemplo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/variaveis-1.php}
+
+Modifique o código acima para imprimir na tela o valor da variável de 
+nome \texttt{\$sobrenome}.
+
+Observação! Podem acontecer erros na exibição das mensagens por conta 
+das codificações de acentuação. Caso isso aconteça, mude a codificação 
+do seu navegador ou utilize as metas de codificação. Para mudar a codificação
+do Firefox aperte a tecla \keys{\Alt} para exibir a barra de menus e em seguida
+percorra o caminho \menu[,]{Exibir, Codificação, Unicode}.
+
+Nomes de variáveis devem ser significativas e transmitir a ideia de seu conteúdo 
+dentro do contexto no qual está inserido.
+Utilize preferencialmente palavras em minúsculo (separadas pelo caracter \texttt{\_}) ou 
+somente as primeiras letras em maiúsculo quando você tiver duas ou mais palavras. 
+Veja o exemplo abaixo. 
+
+\lstinputlisting[language=php,style=codigos]{codigos/variaveis-2.php}
+
+Dicas! \newline
+\begin{itemize}
+    \item Nunca inicie a nomenclatura de variáveis com números. Ex: \texttt{\$1nota;}
+    \item Nunca utilize espaço em branco no meio do identificados da variável. Ex: \texttt{\$nome um;}
+    \item Nunca utilize caracteres especiais (\texttt{! @ \# \& * | [ ] \{ \} $\backslash$ \^ } 
+    entre outros) na nomenclatura das variáveis.
+    \item Evite criar variáveis com nomes grandes demais em virtude da clareza do código-fonte.
+    \item Com exceção de nomes de classes e funções, o \php~ é \textit{case sensitive}, ou seja, 
+    é sensível a letras maiúsculas e minúsculas. Tome cuidado ao declarar variáveis. Por exemplo: 
+    a variável \texttt{\$codigo} é diferente da variável \texttt{\$Codigo}.
+\end{itemize}
+
+
+\section{Tipos de Variáveis}
+\label{tipos-de-variaveis}
+
+
+\section{Desafio!}
+\label{cap3-desafio}
+O desafio deste capítulo é você configurar o \sublime~ de acordo com o seu gosto.
+Modifique os seguintes itens:
+\begin{enumerate}
+  \item Tamanho e tipo da fonte.
+  \item Cor do editor (\menu[,]{Preferences, Color Scheme, <opção>})
+  \item Instalar o \plugin~ \texttt{phpdoc}~ (\url{https://packagecontrol.io/packages/PhpDoc}).
+\end{enumerate}
