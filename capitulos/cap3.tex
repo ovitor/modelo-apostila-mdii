@@ -67,13 +67,151 @@ Dicas! \newline
 \section{Tipos de Variáveis}
 \label{tipos-de-variaveis}
 
+O \php~ tem uma grande flexibilidade na hroa de operar com viaráveis. Quando definimos
+uma variável juntamente com seu valor, o \php~ atribui um \textbf{tipo} à essa variável.
+Isso permite que o programador não se preocupe muito na definição de tipos de 
+variáveis (pois é feito de forma automática). Porém, devemos ter cuidado com atribuições
+de valores, evitando erros nos cálculos.
+
+\subsection{Tipo Inteiro}
+\label{tipo-inteiro}
+São os números que pertencem ao conjunto dos números inteiros, abragendo valores negativos
+e positivos. No \php~ os valores máximos e mínimos do tipo inteiro depende da plataforma,
+ou seja, do sistema operacional que o \php~ está sendo executado. No geral, esse número
+pode ter um valor mínimo e máximo por volta de 2 bilhões (positivo e negativo).
+
+Veja exemplos de códigos de atribuição de variáveis do tipo inteiro.
+
+\lstinputlisting[language=php,style=codigos]{codigos/variaveis-inteiro.php}
+
+\subsection{Tipo Ponto flutuante}
+\label{tipo-ponto-flutuante}
+Os números de ponto flutuante (\textit{float} e \textit{doubles}) são números com
+casas decimais. No Brasil, usamos a vírgula (,) para escrever números decimais.
+Nas linguagens de programação em geral, utilizamos o ponto (.). Veja exemplos de códigos
+abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/variaveis-ponto-flutuante.php}
+
+\subsection{Tipo \textit{Booleano}}
+\label{tipo-booleano}
+
+Um \booleano~ expressa um valor lógico que pode ser \textbf{verdadeiro} ou 
+\textbf{falso}. Para especificar um valor \booleano~ utilize a palavra chave
+\texttt{\textbf{true}} para verdadeiro e \texttt{\textbf{false}} para falso. No exemplo 
+a seguir, declaramos uma variável do tipo \booleano~ \texttt{\$exibir\_nome}, cujo conteúdo
+é \textbf{\true}.
+
+Esse tipo de variável é bastante útil quando estamos trabalhando com estruturas de decisão
+ou estruturas de repetição com condição de parada. Esse assunto será abordado posteriormente.
+
+\lstinputlisting[language=php,style=codigos]{codigos/variaveis-booleano-1.php}
+
+Também podemos atribuir outros valores \textit{booleanos}~ para representação de valores 
+\textbf{falso}, veja o exemplo abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/variaveis-booleano-2.php}
+
+\subsection{Tipo \textit{String}}
+\label{tipo-string}
+
+Uma \tipostring~ é uma cadeira de caracteres alfanuméricos, ou seja, podemos tanto usar números
+quanto letras. Porém, é necessário declará-las utilizando aspas simples 
+(\texttt{\textquotesingle \textquotesingle}) ou aspas duplas (\texttt{``''}). Veja o exemplo abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/variaveis-string.php}
+
+Caso seja necessário escrever na \tipostring~ os caracteres \texttt{\$}, 
+\texttt{$\backslash$}, \texttt{\textquotesingle} ou \texttt{{``''}}, devemos utilizar a tabela abaixo. 
+
+% \input{tabelas/tabela-cap3-tipo-string.tex}
+
+\subsection{Tipo \textit{Array}}
+\label{tipo-array}
+
+\textit{Array} é uma lista de valores armazenados na memória. Os elementos de um \tipoarray~
+podem ser de tipos diferentes (inteiro, decimal, \tipostring etc). Um \tipoarray~ pode crescer
+dinamicamente com a adição de novos itens. O capítulo \ref{cap2} explica como
+manipular esse tipo de estrutura.
+
+\subsection{Tipo \textit{NULL}}
+\label{tipo-null}
+
+Ao atribuímos valor do tipo \texttt{NULL} (nulo) a uma variável, estamos determinando
+que a variável não possui valor número ou alfanumérico e que seu valor é nulo. Veja o exemplo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/variaveis-null.php}
+
+\section{Constantes}
+\label{constantes}
+
+\subsection{Constantes pré-definidas}
+\label{constantes-pre-definidas}
+
+O \php~ possui algumas constantes pré-definidas, como por exemplo, constantes que indicam a versão
+do \php, o sistema operacional em que o \php~ está sendo executado, o arquivo em execução
+e diversas outras informações. Para ter conhecimento de todas as constantes pré-definidas,
+podemos utilizar a função \funcaophpinfo. Ela exibe uma tabela contendo todas as constantes
+pré-definidas.
+
+\subsection{Definindo constantes}
+\label{definindo-constantes}
+
+O programador também pode definir constantes para serem utilizadas no projeto. Para isso,
+utilizamos a função \funcaodefine. Uma vez que o valor tenha sido definido, não poderá
+ser alterado. A constante só pode conter valores inteiro, ponto flutuantes ou \tipostring.
+Não podemos iniciar uma constante com uma variável do tipo \tipoarray~ por exemplo.
+
+Um exemplo de utilização da função \funcaodefine~ pode ser visto a seguir.
+
+\lstinputlisting[language=php,style=codigos]{codigos/constantes-define-1.php}
+\lstinputlisting[language=php,style=codigos]{codigos/constantes-define-2.php}
+
+O nome de uma constante tem as mesmas regras de nomenclatura de qualquer variável.
+Ele é válido quando começa com uma letra ou \textit{underline} (\texttt{\_}) seguido
+por qualquer número de ltras, números ou sublinhados.
+
+A seguir listamos algumas diferenças entre constantes e variáveis.
+
+\begin{enumerate}
+  \item Constantes podem ser definidas e acessadas em qualquer lugar do código são
+  indiferentes ao escopo;
+  \item Constantes só podem conter valores numéricos ou alfanuméricos;
+  \item Constantes não podem ter um sinal de cifrão (\texttt{\$}) no início;
+  \item Constantes só podem ser definidas utilizando a função \funcaodefine~ e não por atribuição; e
+  \item Constantes não podem ser redefinidas ou eliminadas após sua criação.
+\end{enumerate}
+
+\section{Conversão de variáveis}
+\label{conversao-de-variaveis}
+
+O \php~ permite que o programador converta um tipo de variável em outro tipo de varíavel.
+As conversões mais comuns são as do tipo inteiro para decimal e do tipo decimal para inteiro.
+Outra conversão bastante utilizada é de \tipostring para decimal ou inteiro.
+
+A instrução utilizada para as conversões é denominada de \funcaotypeset. A ação é denominada
+de \textit{typecasting}, ou seja, o ato de transformar uma variável de um tipo em outro tipo. A
+tabela a seguir mostra os \textit{typeset} que iremos utilizar.
+
+\input{tabelas/tabela-cap3-conversao.tex}
+
+Veja alguns exemplos de códigos de conversões de tipos de variáveis.
+
+\lstinputlisting[language=php,style=codigos]{codigos/conversao-1.php}
+
+No primeiro e último exemplo de código não notamos diferença ao imprimirmos no navegador 
+o valor das variáveis \texttt{\$temperatura} e \texttt{\$preco\_total} respectivamente. 
+Mas se utilizarmos a função \funcaogettype~ teremos o tipo de variável correspodente. Veja
+o código abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/conversao-2.php}
+
+\section{Exercícios}
+\label{cap3-exercicios}
+
 
 \section{Desafio!}
 \label{cap3-desafio}
-O desafio deste capítulo é você configurar o \sublime~ de acordo com o seu gosto.
-Modifique os seguintes itens:
-\begin{enumerate}
-  \item Tamanho e tipo da fonte.
-  \item Cor do editor (\menu[,]{Preferences, Color Scheme, <opção>})
-  \item Instalar o \plugin~ \texttt{phpdoc}~ (\url{https://packagecontrol.io/packages/PhpDoc}).
-\end{enumerate}
+O desafio deste capítulo é criar um arquivo \phpextensao~ declarando variáveis de todos os tipos
+estudados (inteiro, ponto flutuante e \tipostring). Imprimí-los no navegador e por fim, converter
+os valores das variáveis do tipo inteiro e ponto flutuante para \tipostring.
