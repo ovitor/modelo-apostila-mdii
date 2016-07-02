@@ -22,6 +22,16 @@ e por fim, operadores de \tipostring.
 No \php, os operadores são utilizados constatemente e nesse capítulo iremos
 aprender a trabalhar com a maioria deles.
 
+\section{Operador de atribuição}
+\label{operador-atribuicao}
+
+O operador básico de atribuição é o caractere ``='' (igual). Com ele podemos atribuir 
+valores as variáveis como foi visto em exemplos anteriores. Isto quer dizer que o 
+operando da esquerda recebe o valor da expressão da direita, ou seja, a variável da 
+esquerda contém o valor da direita do símbolo igual ``=''. Observe o exemplo abaixo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/operadores-atribuicao.php}
+
 \section{Operadores de \textit{strings}}
 \label{operadores-de-strings}
 Os operadores de \tipostrings são utilizados para manipular o conteúdo de uma \tipostring.
@@ -41,12 +51,103 @@ torna menos legível (mais difícil de ser entendido).
 {\Large Pequeno desafio!}
 
 Utilize o conhecimento adquirido nas aulas passadas para exibir, no navegador, as informações
-separadas em células de uma tabela. A imagem 
+separadas em células de uma tabela. A imagem a seguir deve ser o resultado apresentado. 
 
 \figurasimples{cap4-pequeno-desafio-1}{Resultado do primeiro pequeno desafio.}
 
 \section{Operadores Aritméticos}
-\label{operadores-artimeticos}
+\label{operadores-aritmeticos}
+
+Os operadores aritméticos são utilizados para realizar cálculos matemáticos básicos, tais
+como: soma, subtração, divisão e multiplicação. Os símbulos mais utilizados são descritos
+na tabela abaixo.
+
+\input{tabelas/tabela-cap4-operadores-aritmeticos.tex}
+
+Na tabela acima fizemos operações básicas sem utilizar parênteses. O uso de parênteses
+segue o mesmo princípio da matemática. Ele serve para dar prioridade a determinado
+cálculo.
+
+\section{Operadores Combinados}
+\label{operadores-combinados}
+
+No \php~ é possível combinar os dois operadores visto acima (de atribuição e artiméticos).
+A partir deles é possível programar de forma mais ágil. Observe o código a seguir.
+
+\begin{multicols}{2}
+
+  \lstinputlisting[language=php,style=codigos]{codigos/operadores-atribuicao-combinada-1.php}
+  \columnbreak
+
+  \lstinputlisting[language=php,style=codigos]{codigos/operadores-atribuicao-combinada-2.php}
+
+\end{multicols}
+
+No código acima do lado esquerdo, declaramos a variável \texttt{\$peso} com um valor inicial,
+em seguida utilizamos o operador combinado \texttt{+=} para incrementar o valor da
+varíavel \texttt{\$peso}. Podemos obter o mesmo resultado com o código acima do lado direito.
+Escrevemos menos no código do lado esquerdo, por isso, os programadores o utilizam bastante.
+
+Já no código abaixo, utilizamos o operador combinado \texttt{.=}. Ele concatena as \tipostrings.
+
+\lstinputlisting[language=php,style=codigos]{codigos/operadores-atribuicao-combinada-3.php}
+
+Nesse exemplo utilizamos o operador de atribuição básico.
+
+\lstinputlisting[language=php,style=codigos]{codigos/operadores-atribuicao-combinada-4.php}
+
+A tabela abaixo lista os principais operadores de atribuição. 
+
+\input{tabelas/tabela-cap4-operadores-combinados.tex}
+
+\section{Operadores de decremento e incremento}
+\label{operadores-de-decremento-e-incremento}
+
+Os operadores exemplicificados nessa seção são usados para \textbf{somar} ou \textbf{subtrair}
+o valor 1 (um) a variável. Esse cálculo pode ser feito antes ou depois da execução de 
+determinada variável. A tabela abaixo mostra tais operadores.
+
+\input{tabelas/tabela-cap4-operadores-incremento-e-decremento.tex}
+
+O exemplo abaixo mostra a comparação na forma da escrita. Os resultados alcançados serão
+os mesmos.
+
+\lstinputlisting[language=php,style=codigos]{codigos/operadores-incremento-1.php}
+
+\section{Operadores relacionais}
+\label{operadores-relacionais}
+
+Os operadores relacionais são utilizados para realizar comparações entre valores (variáveis)
+ou expressões. Essa comparação sempre resulta em um valor do tipo \booleano, ou seja,
+verdadeiro (\true) ou falso (\false). Na tabela a seguir, listamos os operadores
+que iremos trabalhar.
+
+\input{tabelas/tabela-cap4-operadores-relacionais.tex}
+
+O exemplo de código abaixo descreve o uso de alguns operadores relacionais.
+
+\lstinputlisting[language=php,style=codigos]{codigos/operadores-relacionais-1.php}
+
+\subsection{Operador condicional ternário}
+\label{operador-condicional-ternario}
+
+É importante explicar o operador condicional ternário (símbolo ``?'') para termos um exemplo 
+prático dos operadores relacionais. A sintaxe do operador condicional é exemplificada abaixo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/operadores-condicional-ternario.php}
+
+A expressão 1 é sempre um teste a ser realizado com os operadores relacionais. A expressão
+2 e expressão 3 são valores que serão atribuídos a variável \texttt{\$var}. Vamos ver um exemplo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/operadores-condicional-ternario-exemplo.php}
+
+Qual será o resultado se mudarmos a expressão 1 (teste) para \texttt{\$num1 === \$num2}?
+
+{\Large Tarefa rápida!}
+
+Faça um pequeno programa que utilize todos os operadores relacionais descritos acima.
+É necessário criar exemplos que os resultados sejam \true~ e \false~ para cada
+um dos casos. Utilize também o operador condicional ternário.
 
 
 \section{Exercícios}

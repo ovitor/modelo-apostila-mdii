@@ -36,6 +36,15 @@
 \newcommand{\includetable}[1]{\input{tabelas/#1}}
 
 % ---
+% criando celula especial (com quebra de linha)
+% uso: \specialcell{linha1 \\ linha2} (alinhado verticalmente)
+% uso: \specialcell[t]{linha1 \\ linha2} (alinhado no topo)
+% uso: \specialcell[b]{linha1 \\ linha2} (alinhado embaixo)
+% ---
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+% ---
 % add figura simples
 % ---
 \newcommand{\figurasimples}[2]{
