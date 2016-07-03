@@ -143,12 +143,69 @@ A expressão 1 é sempre um teste a ser realizado com os operadores relacionais.
 
 Qual será o resultado se mudarmos a expressão 1 (teste) para \texttt{\$num1 === \$num2}?
 
-{\Large Tarefa rápida!}
+{\Large Desafio rápido!}
 
 Faça um pequeno programa que utilize todos os operadores relacionais descritos acima.
 É necessário criar exemplos que os resultados sejam \true~ e \false~ para cada
-um dos casos. Utilize também o operador condicional ternário.
+um dos casos. Utilize também o operador condicional ternário. A saída no navegador
+deve ser parecida com a imagem abaixo.
 
+\figurasimples{cap4-desafio-rapido-1}{Resultado do primeiro desafio rápido.}
+
+\section{Operadores Lógicos}
+\label{operadores-logicos}
+
+Operadores lógicos, também conhecidos como operadores \booleanos, são utilizados para
+avaliar expressões lógicas, ou seja, expressões que resultem em valores \booleanos~
+(verdadeiro ou falso). A tabela a seguir lista cada um desses operadores e sua respectiva
+função.
+
+\input{tabelas/tabela-cap4-operadores-logicos-1.tex}
+
+Com esses operadores, podemos construir a tabela verdade de determinada variável \booleana.
+As próximas seções explicam os operadores lógicos \texttt{NOT}, \texttt{AND} e \texttt{OR}.
+
+\subsection{Operador \texttt{NOT}}
+\label{operador-not}
+
+Para isso, vamos utilizar os dois valores que a variável pode assumir (Verdadeiro ou Falso)
+e o operador lógico \texttt{NOT} listado na tabela \ref{tab:cap4-operadores-logicos}.
+Veja a tabela abaixo, a variável \texttt{\$esta\_chovendo} pode assumir dois valores,
+verdadeiro ou falso.
+
+\input{tabelas/tabela-cap4-operadores-logicos-2.tex}
+
+Ou seja, considerando que a variável \texttt{\$esta\_chovendo} pode ser traduzida para
+a frase: ``Hoje está chovendo!'', sua negação seria: ``Hoje \textbf{não} está chovendo''.
+
+\subsection{Operador \texttt{AND}}
+\label{operador-and}
+
+O operador \texttt{AND} funciona com base em uma conjunção. Algo só será verdadeiro
+se os termos envolvidos na expressão sejam verdadeiros. Nosso próximo exemplo leva em 
+consideração a situação de um casamento. Então criamos duas variáveis: \texttt{\$noiva\_presente} 
+e \texttt{\$noivo\_presente}. Se apenas o noivo estiver presente, ou seja,
+\texttt{\$noivo\_presente = True} e \texttt{\$noiva\_presente = False} o casamento não acontece. 
+Observe na tabela verdade abaixo.
+
+\input{tabelas/tabela-cap4-operadores-logicos-3.tex}
+
+\subsection{Operador \texttt{OR}}
+\label{operador-or}
+
+O operador \texttt{OR} funciona com base em uma disjunção. Algo será verdadeiro
+assim que algum termo envolvido na expressão seja verdadeiro. Por exemplo, Joaquim,
+aluno do programa e-Jovem, vai fazer uma prova de concurso. Para realizá-la, é 
+obrigatório apresentar documento de identidade (variável \texttt{\$tem\_identidade})
+\textbf{ou} o título de eleitor (variável \texttt{\$tem\_tituloeleitor}).
+Joaquim só vai conseguir fazer a prova caso apresente um documento \textbf{ou} outro.
+Dessa maneira, observe a tabela verdade do operador \texttt{OR}.
+
+\input{tabelas/tabela-cap4-operadores-logicos-4.tex}
+
+Verifique no código abaixo o uso dos operadores lógicos no \php.
+
+\lstinputlisting[language=php,style=codigos]{codigos/operadores-logicos-1.php}
 
 \section{Exercícios}
 \label{cap4-exercicios}
