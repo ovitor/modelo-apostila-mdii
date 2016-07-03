@@ -207,12 +207,42 @@ Verifique no código abaixo o uso dos operadores lógicos no \php.
 
 \lstinputlisting[language=php,style=codigos]{codigos/operadores-logicos-1.php}
 
+\section{Precedência de operadores}
+\label{precedencia-de-operadores}
+
+Conhecer a precedência dos operadores é importante para obtermos o correto
+valor da expressão que queremos calcular. A precedência dos operadores indicam quais
+termos serão calculados primeiro. Imagine que queremos queremos calcular a
+expressão \texttt{5 + 2 + 6 / 3}. 
+
+O operador \texttt{/} tem maior precedência em relação ao operador \texttt{+}.
+Por conta disso, devemos primeiro calcular os termos que estão sendo divididos, 
+no nosso exemplo, o termo \texttt{6 / 3}, em seguida podemos fazer o somatório. 
+O resultado final será \texttt{9}.
+
+Caso a intenção seja primeiro realizar a operação com o operador \texttt{+}, para
+só então calcular a expressão com o operador \texttt{/}, temos que utilizar
+parenteses. Veja no exemplo abaixo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/operadores-precedencia.php}
+
+É importante lembrar: o \php~ executará todas as operações que estiverem
+entre parênteses. Se dentro dos parênteses houver diversas operações, a precedência
+dos operadores será utilizada para definir a ordem de cálculo. Após calcular
+os termos dentro dos parênteses o \php~ volta a calcular os termos que estão
+fora dos parênteses.
+
 \section{Exercícios}
 \label{cap4-exercicios}
 
-
 \section{Desafio!}
 \label{cap4-desafio}
-O desafio deste capítulo é criar um arquivo \phpextensao~ declarando variáveis de todos os tipos
-estudados (inteiro, ponto flutuante e \tipostring). Imprimí-los no navegador e por fim, converter
-os valores das variáveis do tipo inteiro e ponto flutuante para \tipostring.
+O seguinte código é uma página inicial de um sistema de notas simplificado.
+O programador deve inserir no próprio código as 3 notas do aluno. Se a média aritmética 
+das notas for maior que 6, o aluno está aprovado, caso contrário o aluno se encontra de 
+recuperação.
+
+Esse código tem vários problemas e não está executando corretamente, identifique os erros, 
+corrija e apresente ao professor.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap4-desafio.php}
