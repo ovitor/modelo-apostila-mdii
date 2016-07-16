@@ -92,6 +92,117 @@ utilizar a estrutura de condição ternária e em um outro exemplo, utilizar o c
 
 \figurasimples{cap4-desafio-rapido-1}{Resultado do primeiro desafio rápido.}
 
+\section{Estrutura \comandoswitch}
+\label{estrutura-switch}
+
+Observe que quando temos muitos \comandoifelse~ encadeados estamos criando uma estrutura 
+que não é de fácil entendimento, portanto, \textbf{não} é considerada uma boa prática de 
+programação. Para resolver esse problema temos uma estrutura semelhante ao \comandoifelse. 
+O comando \comandoswitch é uma estrutura que simula uma bateria de teste sobre uma variável. 
+Portanto, essa estrutura é utilizada quando é  necessário comparar a mesma variável 
+com valores diferentes e executar uma ação específica em cada um desses valores. Veja
+a sintaxe e um exemplo real.
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-switch-1.php}
+
+Nesse exemplo, o resultado que aparecerá no navegador é: \texttt{opcao 3} em uma linha e \texttt{opcao 4}
+em outra linha. A variável \texttt{\$numero} tem o valor 3.  O comando \comandoswitch~ 
+compara com cada \comandocase~ o valor recebido. O bloco executado é o do terceiro \comandocase, 
+porém, os demais também são executados. Para que tenhamos um resultado satisfatório e não seja
+apresentado no navegador o restante das opções, é interessante o uso do comando \comandobreak~ em 
+cada \comandocase. O comando \comandobreak tem a função de parar o bloco de execução e ``sair''
+do \comandoswitch.
+
+\subsection{Comando \comandoswitch~ com \comandobreak}
+\label{comando-switch-com-break}
+
+O comando \comandobreak~ é uma instrução (comando) utilizada quando queremos parar o fluxo da 
+execução de um programa dentro do \comandoswitch~ (e outras estruturas).
+Observe o mesmo exemplo com o uso do \comandobreak. Temos agora como resultado “opcao 3”. 
+O comando \comandobreak~ fez com que os demais \comandocase~ abaixo do \texttt{case 3} 
+não sejam executados.
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-switch-2.php}
+
+\subsection{Comando \comandoswitch~ completo}
+\label{comando-switch-completo}
+
+Mas o que acontece se não tivermos um valor que seja satisfatório aos casos 
+existentes no \comandoswitch? A resposta é bem simples, nenhum dos blocos seriam executados.
+Porém é possível utilizarmos um comando que determina uma opção padrão caso nenhuma das outras 
+venha ter resultado que satisfaça a expressão passada para o comando \comandoswitch 
+chamada \texttt{default} (padrão).
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-switch-3.php}
+
+A instrução passada não condiz com nenhum dos casos existentes. Por esse motivo o bloco 
+pertencente ao comando \texttt{default} será executado. O comando \texttt{default} pode ser 
+inserido em qualquer lugar dentro do \comandoswitch, porém caso isso aconteça, 
+o uso do comando \comandobreak~ deve ser adicionado para evitar que os \comandocase~ abaixo 
+sejam executados.
+
+{\Large Desafio rápido!}
+
+Faça um pequeno programa que recebe um símbolo matemático (como \tipostring) e a partir dele
+faça as operações matemáticas. Utilize o comando \comandoswitch. Veja como a tela do seu 
+navegador deve ficar.
+
+\figurasimples{cap4-desafio-rapido-1}{Resultado do primeiro desafio rápido.}
+
+A partir de agora vamos aprender a trabalhar com estruturas de repetição. 
+Elas são muito utilizadas nas linguagens de programação.
+
+\section{Estrutura \comandowhile}
+\label{estrutura-while}
+
+O comando \comandowhile~ é uma estrutura de controle similar ao comando \comandoif. Ele possui 
+uma condição para executar um bloco de comandos. A diferença primordial é que o comando 
+\comandowhile~ estabelece um laço de repetição, ou seja, o bloco de comandos será executado 
+repetidamente enquanto a condição passada for verdadeira. Veja a sintaxe.
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-while-1.php}
+
+Quando estamos usando um laço de repetição, podemos determinar quantas vezes ele deve 
+ou não se repetir. Isso pode ser feito de forma manual - o programador determina, 
+ou automaticamente - quem vai determinar é o fluxo de execução do código. Veja o exemplo
+a seguir.
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-while-2.php}
+
+Nesse exemplo criamos um laço de repetição que tem como \textbf{condição de parada} o 
+teste \texttt{\$num < 10}, além disso, em cada laço executado um incremento 
+na variável \texttt{\$num} é realizado, fazendo com que o seu valor aumente 
+(se ficou com dúvidas veja seção \ref{operadores-aritmeticos}). O laço 
+\comandowhile~ continuará até que a condição não seja mais satisfatória, 
+em outras palavras, até que a variável \texttt{\$num} não seja menor que 10.
+
+
+\begin{framed}
+\textbf{{\Large Importante!}}
+Tenha cuidado quando estiver trabalhando com estruturas de repetição, pois caso a expressão 
+passada esteja errada, pode ocasionar um \lacoloop~ infinito fazendo com que o bloco de 
+código se repita infinitamente. Isso pode ocasionar um travamento do navegador ou 
+até mesmo do próprio servidor WEB.
+\end{framed}
+
+Vamos ver agora um exemplo em que o laço se repete de forma automática. A condição de parada 
+é uma função do \php~ e não um número determinado pelo programador. A função \comandostrlen~
+recebe uma variável do tipo \tipostring~ e retorna a quantidade de caracteres incluindo 
+também os espaços em branco. Ele poderia ser aplicado diretamente na função \funcaoecho, 
+mas no exemplo, ele determina a quantidade de iterações. 
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-while-3.php}
+
+\begin{framed}
+\textbf{{\Large Desafio rápido!}}
+
+Faça um pequeno programa que imprima no navegador os valores de 3 em 3, formando
+a sequência 0, 3, 6, 9, 12... Utilize o comando \comandowhile. 
+
+\end{framed}
+
+
+
 \section{Exercícios}
 \label{cap5-exercicios}
 
