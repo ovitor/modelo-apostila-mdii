@@ -7,9 +7,239 @@
 
 Ao final deste capítulo, o aluno terá as seguintes competências:
 \begin{enumerate}
-    \item Trabalhar com estruturas de controle; e 
-    \item Trabalhar com estruturas de repetição.
+    \item Entender a estrutura do tipo \tipoarray;  
+    \item Trabalhar com variáveis do tipo \tipoarray; e
+    \item Trabalhar com \tipoarrays multidimensionais.
 \end{enumerate}
+
+O \tipoarray~ é um tipo de variável que pode guardar diversos valores (chamados de: elementos 
+de um \tipoarray), no \php, podemos definir como um conjunto de valores (elementos) ordenados. 
+É possível relacionar cada valor com uma chave, no caso mais simples, a chave indica a 
+posição (índice) em que um elemento do \tipoarray~ se encontra.
+
+\section{Criando um \comandoarray}
+\label{criando-um-array}
+
+Para criar um \tipoarray~ pode-se utilizar a função \comandoarray. Veja a sintaxe e um exemplo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-1.php}
+
+No exemplo acima, foi apresentado a forma mais simples de inicializar uma variável do 
+tipo \tipoarray. A variável \texttt{\$alunos} pode ser percorrida utilizando o comando
+\comandofor~ por exemplo. Veremos mais a frente.
+
+\section{\textit{Arrays} associativos}
+\label{arrays-associativos}
+
+Nos \tipoarrays~ associativos determina-se um valor ou nome aos valores do \tipoarray.
+Observe a sintaxe:
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-2.php}
+
+No exemplo acima, utilizamos números para representar os índices do \tipoarray. 
+Na seção ... aprenderemos como acessar elementos do \tipoarray.
+
+A seguir, veremos outro exemplo. A figura abaixo representa um \tipoarray~ que tem 
+como elementos representação de cores. O \tipoarray~ possui dez posições, 
+cada posição representa uma cor, seu índice (chave) vai de 0 até 9. Veja:
+
+FIGURA!!!
+
+Em código temos:
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-3.php}
+
+No exemplo abaixo, o \tipoarray~ associativo usa strings como índice, onde cada 
+\tipostring representa uma chave. Se quisermos representar as informações de uma
+pessoa, podemos usar a variável do tipo \tipoarray.
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-4.php}
+
+Observe que quando usamos \tipoarrays~ associativos, a compreensão é mais fácil, 
+dando mais legibilidade ao código, ou seja, é mais fácil entender o que cada valor
+representa. Veja na representação gráfica abaixo:
+
+FIGURA!!!
+
+\subsection{Inicializando \tipoarrays}
+\label{inicializando-arrays}
+
+Outra forma de inicializar \tipoarrays~ é adicionar valores de acordo com o seu 
+uso. Veja no exemplo abaixo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-5.php}
+
+\subsection{Acessando um \tipoarray}
+\label{acessando-um-array}
+
+Para acessarmos o valor do \tipoarray~ que tem chaves, usamos \texttt{\$informacoes['nome']}. 
+Veja abaixo um exemplo de acesso ao valores armazenados em um \tipoarray~ dessa natureza.
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-6.php}
+
+Dessa forma podemos acessar um \tipoarray. Basta determinar o nome da variável
+(\texttt{\$informacoes}) e a chave (pro nosso exemplo, os possíveis valores são:
+\texttt{nome}, \texttt{endereco}, \texttt{bairro} e \texttt{cidade}), onde cada chave tem 
+um valor já determinado. Caso a chave não exista, nada será impresso.
+
+Para acessarmos o valor do \tipoarray~ que (aparentemente) não tem chaves, usamos
+os índices que se iniciam do 0 e vai até a quantidade de elementos do \tipoarray menos 1.
+Veja um exemplo abaixo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-10.php}
+
+Por mais que não tenha os valores expressamente indicados na variável \texttt{\$alunos},
+o \php~ se encarrega de colocar os índices, permitindo ao programador, acessar os valores
+de maneira fácil.
+
+\section{Percorrendo um \tipoarray}
+\label{percorrendo-um-array}
+
+O processo de percorrer um \tipoarray~ pode ser realizado por uma estrutura de 
+repetição (\comandofor, \comandowhile, \comandodowhile~ ou \comandoforeach). O exemplo a 
+seguir apresenta uma abordagem utilizando o laço \comandoforeach.
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-7.php}
+
+\begin{framed}
+\textbf{{\Large Importante!}}
+Sempre que se depararem com \tipoarrays, onde haja a necessidade de percorrer 
+seus valores independentemente da chave, procure sempre utilizar mecanismos de 
+programação mais simplificados como o comando \comandoforeach.
+\end{framed}
+
+\section{Acessando um \tipoarray}
+\label{acessando-um-array}
+
+Quando criamos um \tipoarray temos que ter em mente que estamos criando uma variável 
+que possui vários valores e que os mesmo podem ser acessados a qualquer momento. 
+Cada valor está guardado em uma posição que pode ser acessada através de uma chave.
+A sintaxe para acesso simplificado de um \tipoarray é a seguinte:
+\lstinputlisting[language=php,style=codigos]{codigos/array-8.php}
+
+Temos que ter cuidado ao passar uma chave para o \tipoarray, pois ela deve conter o 
+mesmo nome de qualquer umas das chaves existentes no \tipoarray. Caso a chave não exista, 
+o valor não poderá ser resgatado. A sintaxe acima retorna um valor contido na variável 
+\texttt{\$variavel\_tipo\_array}. Verifique o exemplo abaixo: 
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-8.php}
+
+No exemplo acima, apenas o valor ``Joaquim Silva'' será apresentado na tela, uma vez que
+a chave \texttt{bairro} não está inserida no \tipoarray~ \texttt{\$informacoes}.
+
+\section{Alterando um \tipoarray}
+\label{alterando-um-array}
+
+Podemos alterar qualquer valor de um \tipoarray. É muito semelhante ao método de acesso. 
+A diferença está na chamada do \tipoarray. É nesse momento que atribuímos um novo valor.
+Veja o exemplo abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-9.php}
+
+Primeiro os valores iniciais da variável \texttt{\$informacoes} são apresentados na tela.
+Em seguida, esses valores são modificados, por fim, os novos valores são impressos.
+Veja outro exemplo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-11.php}
+
+No exemplo acima, modificamos um \tipoarray~ simples. Para acessá-los é necessário utilizar
+os índices (que cada elemento tem em \tipoarrays~ simples). Nesse caso, estamos alterando
+o preço do produto na instrução \texttt{\$produto[1] += 3}. Poderíamos ter utilizado a forma
+\texttt{\$produto[1] = \$produto[1] + 3} para obtermos o mesmo resultado.
+
+\section{\textit{Arrays} com duas dimensões}
+\label{arrays-com-duas-dimensoes}
+
+Os \tipoarrays~ com duas dimensões são estruturas de dados que armazenam os valores em 
+mais de uma dimensão. Os \tipoarrays~ que vimos até agora armazenam valores em uma dimensão, 
+por isso para acessar às posições utilizamos somente um índice ou chave. Os \tipoarrays~ de 
+2 dimensões salvam seus valores na forma de filas e colunas e por isso, é 
+necessário dois índices para acessar cada uma de seus valores.
+
+Outra ideia que temos é que \tipoarrays~ de duas dimensões são matrizes nos quais 
+algumas de suas posições podem conter outros \tipoarrays. Na figura abaixo temos a 
+representação de um \tipoarray com duas dimensões.
+
+FIGURA!!!
+
+Um \tipoarray~ de duas dimensões pode ser criado pela função \comandoarray~. Veja um exemplo
+não funcional.
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-12.php}
+
+Observe agora um exemplo real:
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-13.php}
+
+\subsection{Acessando um \tipoarray~ de duas dimensões}
+\label{acessando-um-array-de-duas-dimensoes}
+
+Para acessarmos o valor de um \tipoarray~ de duas dimensões, basta colocar as 
+duas chaves da posição que queremos acessar. É semelhante ao \tipoarray~ de uma única dimensão.
+Continuando com o exemplo acima, podemos acrescentar ao final do código as seguintes linhas.
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-14.php}
+
+O código acima apresenta no navegador a primeira linha da matriz. Já o código abaixo
+apresenta no navegador a última coluna da matriz.
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-15.php}
+
+Perceba que quando queremos imprimir uma linha toda, o primeiro índice não muda, ou seja,
+no nosso exemplo ele fica zero. Já quando queremos imprimir a coluna, deixamos o segundo
+índice imutável (sem ser modificado). Desenhar a matriz que você quer representar no papel 
+ajuda no entendimento da lógica de acesso aos elementos da matriz.
+
+\subsection{Percorrendo um \tipoarray~ de duas dimensões}
+\label{percorrendo-um-array-de-duas-dimensoes}
+
+Da mesma maneira que percorremos um \tipoarray~ de uma dimensão, podemos percorrer um 
+\tipoarray~ de duas dimensões. Será necessário utilizar dois laços de repetição, seja
+um comando \comandofor, \comandowhile~ ou \comandoforeach. O \textbf{primeiro laço de repetição
+é usado para percorrer as linhas}, o segundo laço utilizado para percorrer os elementos
+das colunas. Acompanhe no código abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-16.php}
+
+\section{Visualizando \tipoarrays}
+\label{visualizando-arrays}
+
+Existe um conjunto de funcionalidades internas do \php prontas para serem utilizadas nas variáveis
+do tipo \tipoarray. Trata-se de funções pré-definidas, você pode encontrá-las facilmente no 
+site \url{http://php.net}.
+
+Abordaremos agora funções utilizadas exclusivamente para manipulação de \tipoarray, 
+funções de acesso e visualização. Obviamente que não serão abordadas todas as funções, 
+pois existem várias, mas mostraremos as mais utilizadas, e outras que são definidas como principais.
+
+\subsection{Função \funcaovardump}
+\label{funcao-vardump}
+
+Essa função é muito usada por programadores que pretendem realizar \textit{debug}
+(análise mais detalhada para encontrar supostos erros). Observe um exemplo prático:
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-17.php}
+
+\figurasimples{array-vardump}{Saída da função \funcaovardump.}
+
+A função \funcaovardump~ é importante pois mostra no resultado o \tipoarray~ completo
+incluindo os tipos de variáveis que compõem o \tipoarray. No nosso exemplo, o \tipoarray~
+tem 3 elementos. Mostra o tipo de cada um desses elementos e seus respectivos valores. 
+Os elementos \texttt{id} e \texttt{nome} são do tipo \tipostring. Já o elemento 
+\texttt{preco} é do tipo \tipofloat~ (número real).
+
+\subsection{Função \funcaoprintr}
+\label{funcao-printr}
+
+Imprime o conteúdo de uma variável assim como a função \funcaovardump, porém apresenta 
+menos detalhes, alguns programadores a preferem por ser mais legível. Exemplo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-18.php}
+
+\figurasimples{array-printr}{Saída da função \funcaoprintr.}
+
+\subsection{Funções \funcaosort e \funcaorsort}
+
 
 \section{Exercícios}
 \label{cap6-exercicios}
