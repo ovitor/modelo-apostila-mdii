@@ -201,7 +201,104 @@ a sequência 0, 3, 6, 9, 12... Utilize o comando \comandowhile.
 
 \end{framed}
 
+\section{Estrutura \comandodowhile}
+\label{estrutura-do-while}
 
+O laço \comandodowhile~ funciona de maneira bastante semelhante ao comando \comandowhile.
+A diferença é que a expressão verificada está no final do bloco de comandos. Essa mudança
+representa a execução do bloco \textbf{pelo menos uma vez}. Diferente do comando \comandowhile
+onde é possível que o bloco não seja executado nenhuma vez. Veja a sintaxe e um exemplo
+abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-do-while-1.php}
+
+Qual seria o resultado desse código se a variável \texttt{\$num} fosse inicializada com o valor
+11, ou seja, \texttt{\$num = 11;} na linha 10?
+
+{\Large Desafio rápido!}
+
+Faça um pequeno programa que imprima na tela somente números pares, iniciando com o 2
+e terminando com o valor 20. Utilize o comando \comandodowhile. 
+
+\section{Estrutura \comandofor}
+
+A estrutura de repetição \comandofor~ tem a finalidade de criar um laço de repetição.
+Sua inicialização é composta por três partes que estabelecem as regras
+de funcionamento do \comandofor. Veja a sintaxe.
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-for-1.php}
+
+A primeira parte das regras chamada no código acima de ``inicialização'' é responsável
+por inicializar a variável que será usada na ``condição'' e no ``atualização''. A 
+segunda parte, de nome ``condição'' é responsável por fazer o teste, se o teste sobre
+a condição for verdadeira, o laço do \comandofor~ é executado, caso contrário
+o laço termina. Por fim, a parte ``atualização'' é responsável por atualizar a variável
+inicializada anteriormente, geralmente a atualização é um incremento (soma) ou 
+decremento (subtração).
+
+Verifique no exemplo abaixo a utilização do comando \comandofor.
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-for-2.php}
+
+{\Large Desafio rápido!}
+
+Faça um pequeno programa que receba duas variáveis \texttt{\$a} e \texttt{\$b}. Você deve
+apresentar na tela do navegador os números correspondentes entre \texttt{\$a} e 
+\texttt{\$b}. Por exemplo: \texttt{\$a = 5} e \texttt{\$b = 11} deve ser impresso na tela
+a sequência: \texttt{5, 6, 7, 8, 9, 10, 11}. Utilize o comando \comandofor.
+
+\section{Estrutura \comandoforeach}
+\label{estrutura-foreach}
+
+O comando \comandoforeach~ é um laço de repetição para interação em 
+\tipoarray~ (esse conteúdo será abordado no capítulo \ref{manipulacao-de-arrays}).
+Trata-se do comando \comandofor~ mais simplificado. Sua sintaxe é exemplificada no código abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-foreach-1.php}
+
+Veremos adiante que um \tipoarray~ é uma variável composta por vários elementos. No caso do 
+exemplo anterior, esses elementos são nomes de pessoas. A finalidade do \comandoforeach 
+é justamente a cada laço, pegar um desses valores e atribuir a uma variável, nesse caso, 
+\texttt{\$nome}, até que tenha percorrido todo o \tipoarray~ (nesse caso, \texttt{\$alunos}).
+
+Também podemos saber em qual posição o elemento se encontra no \tipoarray, para isso basta 
+adicionar uma nova variável logo após o termo \texttt{as} seguido dos caracteres \texttt{=>}.
+Veja a sintaxe completa do comando \comandoforeach~ e um exemplo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-foreach-2.php}
+
+O comando \comandoforeach~ percorrerá o \tipoarray~ \texttt{\$alunos} e irá apresentar
+na tela o conteúdo das variáveis \texttt{\$indice} e \texttt{\$nome}. Lembrando que o
+conteúdo \tipoarray~ será abordado mais profundamente no próximo capítulo.
+
+\section{Comando \comandobreak}
+\label{comando-break}
+
+O comando \comandobreak já utilizado na instrução \comandoswitch pode ser usado nas 
+estruturas de repetição. Ele terá a mesma função, ou seja, o comando interrompe a 
+execução do laço. Desse modo, o programa sai da estrutura de repetição e continua 
+após o bloco. Veja o exemplo abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-break-1.php}
+
+No exemplo acima, utilizamos o comando \comandobreak~ dentro de um laço de repetição com
+o comando \comandofor. Utilizamos uma estrutura de decisão (comando \comandoif) para
+realizar um teste (\texttt{\$k == 5}). Caso o teste seja verdadeiro, o programa
+irá executar a linha que tem a instrução \comandobreak. Dessa maneira, o laço de 
+repetição será interrompido e o restante dos números não serão impressos.
+
+\section{Comando \comandocontinue}
+\label{comando-continue}
+
+A instrução \comandocontinue, quando executada em uma estrutura de repetição (\comandofor, 
+\comandowhile~ etc), ignora as instruções restantes do bloco, voltando ao início. Dessa 
+forma, o programa segue para a próxima verificação da condição de entrada do laço de repetição, 
+funciona de maneira semelhante ao \comandobreak, com a diferença que o fluxo ao invés 
+de ser interrompido é, na realidade, voltado ao início. Veja um exemplo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/estruturas-break-2.php}
+
+Perceba que o número 5 (do nosso teste) não foi apresentado na tela do navegador.
 
 \section{Exercícios}
 \label{cap5-exercicios}
