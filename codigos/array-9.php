@@ -1,5 +1,5 @@
 <?php 
-  $informacoes = array("nome" => "Joaquim Silva", "cidade" => "Fortaleza")
+  $informacoes = array("nome" => "Joaquim Silva", "cidade" => "Fortaleza");
   echo $informacoes["nome"] . "<br />";
   echo $informacoes["cidade"] . "<br />";
   // modificando valores do array

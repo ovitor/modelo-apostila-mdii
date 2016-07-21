@@ -9,7 +9,7 @@ Ao final deste capítulo, o aluno terá as seguintes competências:
 \begin{enumerate}
     \item Entender a estrutura do tipo \tipoarray;  
     \item Trabalhar com variáveis do tipo \tipoarray; e
-    \item Trabalhar com \tipoarrays multidimensionais.
+    \item Trabalhar com \tipoarrays~ de duas dimensões.
 \end{enumerate}
 
 O \tipoarray~ é um tipo de variável que pode guardar diversos valores (chamados de: elementos 
@@ -37,7 +37,7 @@ Observe a sintaxe:
 \lstinputlisting[language=php,style=codigos]{codigos/array-2.php}
 
 No exemplo acima, utilizamos números para representar os índices do \tipoarray. 
-Na seção ... aprenderemos como acessar elementos do \tipoarray.
+Na seção \ref{acessando-um-array} aprenderemos como acessar elementos do \tipoarray.
 
 A seguir, veremos outro exemplo. A figura abaixo representa um \tipoarray~ que tem 
 como elementos representação de cores. O \tipoarray~ possui dez posições, 
@@ -72,7 +72,7 @@ uso. Veja no exemplo abaixo:
 \subsection{Acessando um \tipoarray}
 \label{acessando-um-array}
 
-Para acessarmos o valor do \tipoarray~ que tem chaves, usamos \texttt{\$informacoes['nome']}. 
+Para acessarmos o valor do \tipoarray~ que tem chaves, usamos \texttt{\$variavel['chave']}. 
 Veja abaixo um exemplo de acesso ao valores armazenados em um \tipoarray~ dessa natureza.
 
 \lstinputlisting[language=php,style=codigos]{codigos/array-6.php}
@@ -104,7 +104,7 @@ seguir apresenta uma abordagem utilizando o laço \comandoforeach.
 \begin{framed}
 \textbf{{\Large Importante!}}
 Sempre que se depararem com \tipoarrays, onde haja a necessidade de percorrer 
-seus valores independentemente da chave, procure sempre utilizar mecanismos de 
+seus valores independentemente da chave, procure utilizar mecanismos de 
 programação mais simplificados como o comando \comandoforeach.
 \end{framed}
 
@@ -114,7 +114,7 @@ programação mais simplificados como o comando \comandoforeach.
 Quando criamos um \tipoarray temos que ter em mente que estamos criando uma variável 
 que possui vários valores e que os mesmo podem ser acessados a qualquer momento. 
 Cada valor está guardado em uma posição que pode ser acessada através de uma chave.
-A sintaxe para acesso simplificado de um \tipoarray é a seguinte:
+A sintaxe para acesso simplificado de um \tipoarray~ é a seguinte:
 \lstinputlisting[language=php,style=codigos]{codigos/array-8.php}
 
 Temos que ter cuidado ao passar uma chave para o \tipoarray, pois ela deve conter o 
@@ -204,7 +204,7 @@ das colunas. Acompanhe no código abaixo.
 \section{Visualizando \tipoarrays}
 \label{visualizando-arrays}
 
-Existe um conjunto de funcionalidades internas do \php prontas para serem utilizadas nas variáveis
+Existe um conjunto de funcionalidades internas do \php~ prontas para serem utilizadas nas variáveis
 do tipo \tipoarray. Trata-se de funções pré-definidas, você pode encontrá-las facilmente no 
 site \url{http://php.net}.
 
@@ -238,7 +238,15 @@ menos detalhes, alguns programadores a preferem por ser mais legível. Exemplo:
 
 \figurasimples{array-printr}{Saída da função \funcaoprintr.}
 
-\subsection{Funções \funcaosort e \funcaorsort}
+\subsection{Funções \funcaosort~ e \funcaorsort}
+\label{funcoes-sort-e-rsort}
+
+Muitas vezes é necessário organizar o \tipoarray~ de acordo com uma ordem. Por exemplo:
+se temos um conjunto de alunos, podemos deixar seus nomes por ordem alfabética de A a Z.
+Ou ainda a ordem pode ser de Z a A. Para isso, podemos usar as funções \funcaosort~ e
+\funcaorsort~ respectivamente. Veja o exemplo abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/array-19.php}
 
 
 \section{Exercícios}
@@ -246,12 +254,3 @@ menos detalhes, alguns programadores a preferem por ser mais legível. Exemplo:
 
 \section{Desafio!}
 \label{cap6-desafio}
-O seguinte código é uma página inicial de um sistema de notas simplificado.
-O programador deve inserir no próprio código as 3 notas do aluno. Se a média aritmética 
-das notas for maior que 6, o aluno está aprovado, caso contrário o aluno se encontra de 
-recuperação.
-
-Esse código tem vários problemas e não está executando corretamente, identifique os erros, 
-corrija e apresente ao professor.
-
-\lstinputlisting[language=php,style=codigos]{codigos/cap4-desafio.php}

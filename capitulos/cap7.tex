@@ -1,0 +1,127 @@
+% ---
+% Interações PHP com HTML 
+% ---
+\chapter{Interações PHP com HTML}
+\label{interacoes-php-com-html}
+% ---
+
+Ao final deste capítulo, o aluno terá as seguintes competências:
+\begin{enumerate}
+    \item Entender a estrutura dos métodos \metodoGET~ e \metodoPOST; e
+    \item Enviar dados para o servidor através do navegador.
+\end{enumerate}
+
+Neste capítulo abordaremos algumas formas de interações utilizando a linguagem de 
+programação \php~ e a linguagem de marcação \html. Além disso, mostraremos alguns dos
+componentes mais utilizados para a construção de um sistema ou uma página web, e de 
+que forma o \php~ pode receber, processar, e enviar essa informação.
+
+Utilizamos linguagens para exibir os dados da aplicação, seja ela para simples 
+conferência, em relatório ou ainda possibilitando a adição e exclusão de registros. 
+Criaremos a princípio formulários e listagem.
+
+\section{Formulários}
+\label{formularios}
+
+Formulário pode ser definido como um conjunto de campos disponíveis de forma agrupada 
+para serem preenchidos com informações. Na internet, um formulário é composto por vários 
+componentes, além de possuir botões de ação, no qual se define o programa que processará 
+os dados.
+
+\subsection{Criando um formulário}
+\label{criando-um-formulario}
+
+Para criarmos um formulário, utilizamos a \tag~ \tagform. Dentro dessa \tag~ podemos colocar 
+diversos elementos, onde, cada um deles representa uma propriedade em particular. 
+A seguir explicaremos os principais componentes de um formulário.
+
+Todo formulário deve conter no mínimo as seguintes características: ter um nome, um método
+e uma ação. O nome deve ser único e só pode haver um formulário com esse nome na página
+\php. Veremos posteriormente nesse capítulo que podemos usar os métodos \metodoGET~ ou
+\metodoPOST. Já a ação é o caminho do arquivo que vai tratar os dados do formulário.
+Veja a sintaxe.
+
+\lstinputlisting[language=html,style=codigos]{codigos/cap7/sintaxe.html}
+
+Lembrando que em cada aula iremos criar o diretório da respectiva aula no caminho
+\directory{/var/www/}. Salve o arquivo abaixo com o nome \texttt{index.html} no
+diretório da aula.
+
+\lstinputlisting[language=html,style=codigos]{codigos/cap7/index.html}
+
+Ao abrir o código acima no navegador, encontramos apenas uma página em branco com o 
+título ``Formulário''. Vamos colocar um campo de texto, permitindo que o usuário digite 
+um texto simples. Para isso, é necessário utilizar a \tag~ \taginput~ do \html. Conforme 
+exemplo abaixo. Para simplificar, vamos omitir algumas linhas do código.
+
+\lstinputlisting[language=html,style=codigos]{codigos/cap7/index-2.html}
+
+A \tag~ \taginput~ pode ser composta por vários atributos. A partir deles, vamos definir o 
+comportamento da \tag. No nosso exemplo, definimos os atributos nome e tipo. O atributo
+\texttt{name} é utilizado para identificação do elemento na página (ele deve ser único). 
+Já o atributo \texttt{type} (tipo em inglês) indica qual campo de formulário a \tag \taginput 
+irá representar no navegador. Veja na imagem abaixo.
+
+FIGURA
+
+\section{Métodos \metodoGET~ e \metodoPOST}
+Agora que relembramos a estrutura de um formulário \html, vamos aprender sobre os métodos
+\metodoGET~ e \metodoPOST. A função básica desses métodos é a de enviar os dados para 
+o servidor (lembre-se da arquitetura cliente-servidor) para que ele tenha acesso aos 
+dados digitados no formulário. O protocolo HTTP disponibiliza vários métodos para 
+trabalhar com requisições. Os dois métodos básicos de envio de dados ao servidor serão 
+vistos nessa apostila.
+
+Portanto, imagine a seguinte situação: Joaquim, aluno do e-jovem quer pesquisar no Google 
+sobre \php. Ao digitar o termo de pesquisa na caixa de busca do Google, o navegador realiza 
+uma requisição HTTP de método \metodoGET. O Google então apresenta uma lista de possíveis 
+sites que o Joaquim pode entrar, ao escolher clicar no primeiro link, uma nova requisição 
+HTTP com o método \metodoGET~ foi realizada.
+
+Uma outra situação possível é o Joaquim acessar sua página do Facebook, ele precisa digitar 
+o nome de usuário e a senha, ao acionar o botão “Entrar”, o navegador realiza uma requisição 
+HTTP dessa vez com o método o \metodoPOST.
+
+A figura abaixo ilustra a comunicação que ocorre entre o formulário (cliente) e o arquivo 
+\php~ (servidor), seja utilizando o método \metodoGET~ ou método \metodoPOST. A diferença básica 
+entre esses métodos será visto nas próximas seções. 
+
+\subsection{Método \metodoGET}
+
+O método \metodoGET~ utiliza a própria URI (normalmente chamada de URL) para enviar dados ao 
+servidor. Quando enviamos um formulário pelo método \metodoGET, o navegador pega as informações 
+do formulário e coloca junto com a URI de onde o formulário vai ser enviado e envia, 
+separando o endereço da URI dos dados do formulário por um \texttt{``?''} (ponto de interrogação) 
+e \texttt{``\&''}.
+
+Quando o usuário faz uma busca algo no Google, ele faz uma requisição utilizando o método \metodoGET, 
+você pode verificar na barra de endereço do seu navegador que o endereço ficou com um ponto de 
+interrogação no meio, e depois do ponto de interrogação você pode ler, dentre outros caracteres, 
+o que você pesquisou no Google.
+
+Abaixo temos um exemplo de uma URL do Joaquim pesquisando sobre \php~ no Google. Observe:
+
+PRINTSCREEN DO NAVEGADOR COM BUSCA
+
+Podemos notar a passagem de um parâmetro, chamado de \texttt{?gws_rd=ssl#q=}. Os últimos termos
+são os digitados pelo usuário. No nosso exemplo, \texttt{php} e \texttt{documentacao}.
+?hl = pt-br, logo após &shva=1, ou seja, temos então a criação da “variável” hl que recebe o valor pt-br, e também a “variável” shva que recebe como valor 1. Veja exemplos de códigos com links enviando valores por métodos GET.
+
+
+\subsection{Nosso primeiro formulário}
+\label{nosso-primeiro-formulario}
+
+Para nosso primeiro formulário, vamos simular o envio de um \textit{email}. Imagine que você
+está cadastrando seu \textit{email} para participar de uma \textit{newsletter} (um boletim informativo).
+Para isso, o formulário deve ter o campo \textit{email} e um botão de enviar. Como na figura abaixo.
+
+FIGURA DO INDEX-3.HTML NO NAVEGADOR
+
+
+
+
+\section{Exercícios}
+\label{cap7-exercicios}
+
+\section{Desafio!}
+\label{cap7-desafio}
