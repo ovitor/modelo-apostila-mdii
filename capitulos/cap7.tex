@@ -59,10 +59,8 @@ exemplo abaixo. Para simplificar, vamos omitir algumas linhas do código.
 A \tag~ \taginput~ pode ser composta por vários atributos. A partir deles, vamos definir o 
 comportamento da \tag. No nosso exemplo, definimos os atributos nome e tipo. O atributo
 \texttt{name} é utilizado para identificação do elemento na página (ele deve ser único). 
-Já o atributo \texttt{type} (tipo em inglês) indica qual campo de formulário a \tag \taginput 
-irá representar no navegador. Veja na imagem abaixo.
-
-FIGURA
+Já o atributo \texttt{type} (tipo em inglês) indica qual campo de formulário a \tag~ \taginput 
+irá representar no navegador. Escreva o código acima e visualize no seu navegador.
 
 \section{Métodos \metodoGET~ e \metodoPOST}
 Agora que relembramos a estrutura de um formulário \html, vamos aprender sobre os métodos
@@ -86,6 +84,8 @@ A figura abaixo ilustra a comunicação que ocorre entre o formulário (cliente)
 \php~ (servidor), seja utilizando o método \metodoGET~ ou método \metodoPOST. A diferença básica 
 entre esses métodos será visto nas próximas seções. 
 
+ILUSTRAÇÃO DA MILENA
+
 \subsection{Método \metodoGET}
 
 O método \metodoGET~ utiliza a própria URI (normalmente chamada de URL) para enviar dados ao 
@@ -94,31 +94,76 @@ do formulário e coloca junto com a URI de onde o formulário vai ser enviado e 
 separando o endereço da URI dos dados do formulário por um \texttt{``?''} (ponto de interrogação) 
 e \texttt{``\&''}.
 
-Quando o usuário faz uma busca algo no Google, ele faz uma requisição utilizando o método \metodoGET, 
+Esse processo gera uma variável do tipo \tipoarray~ chamada de \variavelget. O conteúdo dela é
+formado pelos dados do formulário enviado.
+
+Quando o usuário faz uma busca no Google, ele faz uma requisição utilizando o método \metodoGET, 
 você pode verificar na barra de endereço do seu navegador que o endereço ficou com um ponto de 
 interrogação no meio, e depois do ponto de interrogação você pode ler, dentre outros caracteres, 
 o que você pesquisou no Google.
 
 Abaixo temos um exemplo de uma URL do Joaquim pesquisando sobre \php~ no Google. Observe:
 
-PRINTSCREEN DO NAVEGADOR COM BUSCA
+\figurasimples{metodo-get-ok}{Exemplo de URL utilizando o método GET.}
 
-Podemos notar a passagem de um parâmetro, chamado de \texttt{?gws_rd=ssl#q=}. Os últimos termos
+Podemos notar a passagem de um parâmetro, chamado de \texttt{?gws\_rd=ssl\#q=}. Os últimos termos
 são os digitados pelo usuário. No nosso exemplo, \texttt{php} e \texttt{documentacao}.
-?hl = pt-br, logo após &shva=1, ou seja, temos então a criação da “variável” hl que recebe o valor pt-br, e também a “variável” shva que recebe como valor 1. Veja exemplos de códigos com links enviando valores por métodos GET.
 
-
-\subsection{Nosso primeiro formulário}
-\label{nosso-primeiro-formulario}
+\subsection{Nosso primeiro formulário com método \metodoGET}
+\label{nosso-primeiro-formulario-com-metodo-get}
 
 Para nosso primeiro formulário, vamos simular o envio de um \textit{email}. Imagine que você
 está cadastrando seu \textit{email} para participar de uma \textit{newsletter} (um boletim informativo).
-Para isso, o formulário deve ter o campo \textit{email} e um botão de enviar. Como na figura abaixo.
+Para isso, o formulário deve ter o campo \textit{email} e um botão de enviar.
+Utilize seus conhecimentos de \html~ para representar a tela abaixo.
 
-FIGURA DO INDEX-3.HTML NO NAVEGADOR
+\figurasimples{metodo-get-exemplo-1}{Exemplo de um formulário simples.}
 
+Ao clicarmos em avançar, será possível, visualizar no navegador as informações inseridas no campo
+de texto. No nosso exemplo, joaquim@ejovem.com.br. Parte do código que foi utilizado para
+construir essa página é apresentado abaixo.
 
+\lstinputlisting[language=html,style=codigos]{codigos/cap7/index-4.html}
 
+Perceba os atributos \texttt{name}, \texttt{method} e \texttt{action}. A partir desses
+atributos será possível trabalhar com os dados inseridos no formulário.
+
+\subsection{Recebendo dados via método \metodoGET}
+\label{recebendo-dados-via-metodo-get}
+
+Quando o botão ``Avançar'' for pressionado, uma requisição será feita ao site 
+\url{http://localhost} (nosso servidor) enviando todos os dados preenchidos no
+formulário. O arquivo \phpextensao~ responsável por tratar esses dados é o arquivo
+mencionado no atributo \texttt{action}. No nosso primeiro exemplo, o arquivo de nome
+\texttt{cadastro-newsletter.php}.
+
+Caso você ainda não o tenha criado. Crie um novo arquivo dentro de \directory{/var/www/aula07/}
+chamado \texttt{cadastro-newsletter.php}. Inicialmente, coloque o seguinte conteúdo dentro do arquivo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap7/cadastro-newsletter.php}
+
+O código acima exibe no navegador a variável \variavelget~ que é um \tipoarray. Perceba que a
+única chave do \tipoarray~ é igual ao nome do campo de texto no formulário na página \html.
+Ou seja, \textbf{o \tipoarray~ \variavelget~ é um \tipoarray~ associativo}, onde as chaves são
+os atributos \texttt{name} dos campos do formulário e os elementos são os valores inseridos
+no formulário.
+
+\figurasimples{metodo-get-exemplo-2}{Conteúdo enviado através do método \metodoGET.}
+
+Caso seja necessário pegar apenas a informação de email, devemos lembrar como acessamos 
+elementos em um \tipoarray associativo. Para isso, precisaremos da chave do elemento. Veja
+no código abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap7/cadastro-newsletter-2.php}
+
+\begin{framed}
+{\Large Desafio rápido!}
+
+Altere o programa acima para receber, além do email do usuário, um nome e
+data de nascimento. Apresente no arquivo \texttt{cadastro-newsletter.php} 
+o \tipoarray~ \variavelget~ através da função \funcaoprintr~ e as variáveis
+separadamente.
+\end{framed}
 
 \section{Exercícios}
 \label{cap7-exercicios}

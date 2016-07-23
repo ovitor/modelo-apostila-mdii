@@ -12,11 +12,12 @@
 <body>
   <div class="container">
     <h1>Informações</h1>
+    <hr>
     <p>Para participar de nosso boletim informativo, informe seu email!</p>
-    <form name="cadastro" method="GET">
+    <form name="cadastro" method="GET" action="cadastro-newsletter.php">
       <div class="form-group">
         <label for="campo-email">Digite seu email: </label>
-        <input name="email" type="text"></input>
+        <input id="campo-email" name="email" type="text"></input>
       </div>
 
       <button type="submit" class="btn btn-default">Avançar</button>
