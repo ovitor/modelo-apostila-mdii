@@ -87,6 +87,7 @@ entre esses métodos será visto nas próximas seções.
 ILUSTRAÇÃO DA MILENA
 
 \subsection{Método \metodoGET}
+\label{metodo-get}
 
 O método \metodoGET~ utiliza a própria URI (normalmente chamada de URL) para enviar dados ao 
 servidor. Quando enviamos um formulário pelo método \metodoGET, o navegador pega as informações 
@@ -112,10 +113,11 @@ são os digitados pelo usuário. No nosso exemplo, \texttt{php} e \texttt{docume
 \subsection{Nosso primeiro formulário com método \metodoGET}
 \label{nosso-primeiro-formulario-com-metodo-get}
 
-Para nosso primeiro formulário, vamos simular o envio de um \textit{email}. Imagine que você
-está cadastrando seu \textit{email} para participar de uma \textit{newsletter} (um boletim informativo).
-Para isso, o formulário deve ter o campo \textit{email} e um botão de enviar.
-Utilize seus conhecimentos de \html~ para representar a tela abaixo.
+Para nosso primeiro formulário com método \metodoGET, vamos simular o envio de um 
+\textit{email}. Imagine que você está cadastrando seu \textit{email} para participar 
+de uma \textit{newsletter} (um boletim informativo). Para isso, o formulário deve 
+ter o campo \textit{email} e um botão de enviar. Utilize seus conhecimentos de \html~ 
+para representar a tela abaixo.
 
 \figurasimples{metodo-get-exemplo-1}{Exemplo de um formulário simples.}
 
@@ -159,11 +161,70 @@ no código abaixo.
 \begin{framed}
 {\Large Desafio rápido!}
 
-Altere o programa acima para receber, além do email do usuário, um nome e
-data de nascimento. Apresente no arquivo \texttt{cadastro-newsletter.php} 
+Altere o arquivo \texttt{cadastro-newsletter.php} para receber, além do email do 
+usuário, um nome e data de nascimento. Apresente no navegador  
 o \tipoarray~ \variavelget~ através da função \funcaoprintr~ e as variáveis
-separadamente.
+separadamente (lembre-se do procedimento de acessar uma variável do tipo \tipoarray
+associativo).
 \end{framed}
+
+\section{Método \metodoPOST}
+\label{metodo-post}
+
+O método \metodoPOST~ é bastante semelhante ao método \metodoGET. Ele também é utilizado
+para transferir os dados do formulário na página \html~ para o servidor \php. A principal
+diferença está em enviar os dados encapsulados no corpo da mensagem HTTP, ou seja,
+ao invés das informações inseridas no formulário trafegarem junto à URL. Elas vão
+``escondidas''. 
+
+Sua utilização é mais frequente quando trabalhamos com informações sigilosas, como é o caso
+de autenticação por meio de usuário e senha, por exemplo: Joaquim deve primeiro se autenticar,
+inserindo seu \textit{email} e senha, para só depois, ter acesso à caixa de entrada do \textit{email}.
+
+O código do formulário é modificado apenas no atributo \texttt{method}. O valor se torna
+\metodoPOST. Veja no exemplo abaixo.
+
+\lstinputlisting[language=html,style=codigos]{codigos/cap7/index-6.html}
+
+\subsection{Nosso primeiro formulário com método \metodoPOST}
+\label{nosso-primeiro-formulario-com-metodo-post}
+
+Para nosso primeiro formulário com método \metodoPOST, vamos simular a autenticação em um 
+sistema \web. Imagine que você está cadastrado nesse sistema e deseja se autenticar. 
+Para isso, o formulário deve ser preenchido com um usuário e a senha do mesmo.
+Utilize seus conhecimentos de \html~ para representar a tela abaixo.
+
+\figurasimples{metodo-post-exemplo-1}{Exemplo de um formulário de autenticação simples.}
+
+O formulário acima deve ter as seguintes características na \tag~ \tagform:
+
+\lstinputlisting[language=html,style=codigos]{codigos/cap7/index-7.html}
+
+\subsection{Recebendo dados via método \metodoPOST}
+\label{recebendo-dados-via-metodo-post}
+
+Ao clicarmos em avançar, os dados inseridos no formulário serão tratados no arquivo
+\texttt{acesso.php}. Portanto, vamos criar o arquivo no diretório \directory{/var/www/aula07}
+com o seguinte conteúdo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap7/acesso-2.php}
+
+O código acima exibe a variável do tipo \tipoarray~ com a função \funcaoprintr.
+Perceba que não estamos mais trabalhando com a variável \variavelget~ e sim com a
+variável \variavelpost, pois o método utilizado no formulário mudou.
+
+Outro detalhe importante a ser percebido é que as informações inseridas no
+formulário não estão mais visíveis na URL. Para visualizarmos as informações
+inseridas, devemos programar o arquivo \texttt{acesso.php}.
+
+\begin{framed}
+{\Large Desafio rápido!}
+
+Altere o arquivo \texttt{acesso.php} para exibir no navegador o \textit{email} do usuário
+e sua senha. Utilize o \tipoarray~ \variavelpost. Lembre-se do procedimento de acessar uma 
+variável do tipo \tipoarray~ associativo.
+\end{framed}
+
 
 \section{Exercícios}
 \label{cap7-exercicios}
