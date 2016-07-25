@@ -1,0 +1,119 @@
+% ---
+% Manipulação de funções 
+% ---
+\chapter{Manipulação de funções}
+\label{manipulacao-de-funcoes}
+% ---
+
+Ao final deste capítulo, o aluno terá as seguintes competências:
+\begin{enumerate}
+    \item Entender o propósito da criação de funções; e
+    \item Criar e manipular funções no \php.
+\end{enumerate}
+
+A maioria das linguagens de programação permitem que o programador crie 
+funções para serem utilizadas no código. As funções são um bloco de código 
+definidos e que tem um objetivo específico. Elas podem ainda receber 
+parâmetros (dados de entrada) e retornar um valor (dados de saída). 
+A maior qualidade das funções é sua propriedade de ser reutilizada, ou seja, 
+o programador declara uma vez e a utiliza em diversas partes do seu código. 
+
+\section{Declarando uma função}
+\label{declarando-uma-funcao}
+
+Declarar uma função no \php~ é simples. Essa seção irá lhe guiar pelo processo. 
+O código abaixo apresenta a sintaxe de uma declaração de função. Na linha \ref{line:function} 
+utilizamos a instrução \comandofunction~ e em seguida o nome da função, os termos 
+entre parenteses são os parâmetros daquela função. O bloco da função é definido 
+pelos caracteres \texttt{\{} e \texttt{\}}, ou seja, toda vez que executarmos a 
+função definida, o código entre as chaves é que será executado. Na linha \ref{line:return} 
+a instrução \comandoreturn~ é responsável por retornar 
+o valor calculado. Nem sempre uma função recebe algum parâmetro, por isso, 
+eles são opcionais, assim como a instrução \comandoreturn, que também é opcional.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap8/funcao-sintaxe.php}
+
+\section{Passagem de parâmetros}
+\label{passagem-de-parametros}
+
+Como vimos anteriormente na sintaxe da função, podemos passar ou não parâmetros pra uma função. 
+porém existem alguns tipos de passagem de parâmetros: Por valor (\textit{by value}), por 
+referência (\textit{by reference}) e por argumentos variáveis - esses últimos dois não 
+serão abordados nessa apostila.
+
+O tipo de passagem de parâmetro por valor tem a seguinte característica: se o conteúdo da 
+variável for alterado, essa alteração não afeta a variável original. Exemplo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap8/funcao-exemplo-2.php}
+
+No exemplo acima, a mensagem ``Seja bem vindo!'' não é alterada.
+
+\section{Valor de retorno}
+\label{valor-de-retorno}
+
+Toda função pode opcionalmente retornar um valor, ou simplesmente executar os comandos 
+e não retornar valor algum. No \php~ não é possível que uma função retorne mais de um valor, 
+mas é permitido fazer com que uma função retorne um valor composto, como o \tipoarray. 
+
+Observe o exemplo abaixo. Nele criamos uma função para calcular o índice de massa 
+corporal de uma pessoa (IMC). Essa função recebe como parâmetro dois argumentos (por valor). 
+A altura representada pela variável \texttt{\$altura} e o peso representado pela 
+variável \texttt{\$peso}. 
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap8/funcao-exemplo-1.php}
+
+A função utiliza as duas variáveis para fazer o cálculo \texttt{\$peso / (\$altura * \$altura)}
+No exemplo acima é apresentado a declaração da função e logo após a chamada
+da função criada. Passamos como parâmetros para essa função o peso = 62 e a 
+altura = 1.75. 
+
+\begin{framed}
+{\Large Desafio rápido!}
+
+Crie um arquivo no diretório \directory{/var/www/aula08/} com o nome \texttt{funcoes.php}
+e desenvolva 4 funções. Todas as funções devem receber como parâmetro, dois valores numéricos
+(inteiros ou reais). 
+
+A função de nome \texttt{somar} retorna a soma dos parâmetros. A função
+de nome \texttt{subtrair} retorna a diferença do primeiro parâmetro pelo segundo.
+Já a função \texttt{dividir} retorna o quociente da divisão do primeiro parâmetro pelo segundo.
+Por fim, a última função de nome \texttt{multiplicar}, multiplica os dois valores e retorna
+o resultado.
+\end{framed}
+
+\section{Escopo de variáveis em funções}
+\label{escopo-de-variaveis-em-funcoes}
+
+Um conceito importante em programação são os tipos de declarações de variáveis.
+A visibilidade das variáveis dependerá de onde ela é declarada. Os acessos a essas 
+variáveis podem ser definidos da seguinte forma:
+
+\textbf{Variáveis locais} (código: \ref{lst:variaveis-locais}): São aquelas 
+  declaradas dentro de uma função e não tem visibilidade fora dela;
+
+\lstinputlisting[language=php,style=codigos,caption={Exemplo: Variáveis Locais},label={lst:variaveis-locais}]
+{codigos/cap8/funcao-exemplo-3.php}
+
+Nada foi impresso pois a variável \texttt{\$a} só existe dentro da função \texttt{teste()}.
+
+\textbf{Variáveis globais} (código: \ref{lst:variaveis-globais}): São variáveis 
+  declaradas fora do escopo de uma função, porém tem visibilidade (pode ser acessada) 
+  de dentro de uma função sem ser passada como parâmetro. Para isso declaramos a 
+  variável e fazemos a sua chamada logo após com o uso do termo \comandoglobal; e
+
+\lstinputlisting[language=php,style=codigos,caption={Exemplo: Variáveis globais},label={lst:variaveis-globais}]
+{codigos/cap8/funcao-exemplo-4.php}
+
+\textbf{Variáveis estáticas} (código: \ref{lst:variaveis-estaticas}): Podemos 
+  armazenar variáveis de forma estática dentro de uma função. Significa que ao 
+  fazermos isso, temos o valor preservado independente da última execução. 
+  Usamos o operador \comandostatic~ para declaramos a variável. 
+
+\lstinputlisting[language=php,style=codigos,caption={Exemplo: Variáveis estáticas},label={lst:variaveis-estaticas}]
+{codigos/cap8/funcao-exemplo-5.php}
+
+\section{Exercícios}
+\label{cap8-exercicios}
+
+\section{Desafio!}
+\label{cap8-desafio}
