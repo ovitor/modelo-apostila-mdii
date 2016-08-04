@@ -1,0 +1,159 @@
+% ---
+% Manipulação de arquivos 
+% ---
+\chapter{Manipulação de arquivos}
+\label{manipulacao-de-arquivos}
+% ---
+
+Ao final deste capítulo, o aluno terá as seguintes competências:
+\begin{enumerate}
+    \item Abrir e fechar arquivos; e
+    \item Editar conteúdo de um arquivo texto;
+\end{enumerate}
+
+Assim como em outras linguagens de programação é muito importante trabalharmos 
+com manipulações de arquivos e diretórios em \php. Através dessa funcionalidade 
+podemos manipular um arquivo ou diretório dentro do servidor \web, criando assim
+arquivos responsáveis por guardar informações referentes à página ou referente
+aos usuários do sistema. 
+
+Trabalhar com arquivos, significa que devemos realizar no mínimo duas operações: 
+abrir e fechar um arquivo.
+
+\section{Criando e abrindo um arquivo}
+\label{criando-e-abrindo-um-arquivo}
+
+No \php~ vamos utilizar a função \funcaofopen. Sua sintaxe é simples. Precisamos
+passar o caminho (\textit{path}) e o nome do arquivo a ser criado além do modo de
+abertura do arquivo. Veja a sintaxe:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap9/sintaxe-fopen.php}
+
+Os modos de abertura de um arquivo que o desenvolvedor pode utilizar são listados
+abaixo. É importante que o programador entenda sobre cada um dos modos, para a 
+correta utilização dos arquivos. Será apresentado apenas 3 modos (os mais utilizados).
+
+\begin{itemize}
+  \item \textbf{r} (\textit{read}): este modo abre o arquivo somente para leitura,
+  ou seja, o programador não vai conseguir escrever nenhum dado no arquivo enquanto
+  ele estiver aberto nesse modo;
+  \item \textbf{w} (\textit{write}): abre o arquivo somente para escrita, caso o 
+  arquivo não exista, tenta criá-lo (é necessário que o diretório tenha permissão
+  de escrita); e
+  \item \textbf{a+} (\textit{append}): abre o arquivo para leitura e escrita, 
+  caso o arquivo não exista, o \php~ tentará criá-lo.  
+\end{itemize}
+
+\begin{framed}
+{\Large Importante!}
+
+Para trabalharmos com arquivos eh sempre importante verificarmos se a pasta ou o arquivo 
+tem permissões dentro do sistema operacional, caso isso não aconteça, o arquivo não 
+será criado, lido ou até mesmo gravado. Portanto, vamos mudar as permissões da pasta
+\texttt{aula08}. Execute os comandos a seguir a partir do terminal do Linux:
+
+\lstinputlisting[language=bash,style=codigos]{codigos/cap9/permissao.sh}
+
+\end{framed}
+
+Vamos iniciar criando um arquivo de texto na pasta da nossa aula, no caso, 
+\directory{/var/www/aula08}. Em seguida escreva no arquivo \texttt{index.php} o 
+seguinte conteúdo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap9/index.php}
+
+Esse código irá criar o arquivo \texttt{disciplinas.txt} caso ele não exista e
+vai retornar o identificador para a variável \texttt{\$fid} (que significa 
+\textit{file identifier} em inglês ou identificador de arquivo em português).
+Ao acessar o endereço \url{http://localhost/aula08/} o seu navegador
+vai apresentar apenas a mensagem ``Trabalhando com arquivos'', porém, se 
+verificarmos o diretório \directory{/var/www/aula08}, vamos visualizar o arquivo
+``disciplinas.txt''.
+
+\section{Gravando em um arquivo}
+\label{gravando-em-um-arquivo}
+
+Após o uso do comando \funcaofopen, temos o identificador apontando para o 
+arquivo. Com ele podemos fazer alterações ou manipulações. Nessa seção vamos 
+gravar dados dentro do arquivo com o uso do comando \funcaofwrite. Veja a sintaxe
+abaixo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap9/sintaxe-fwrite.php}
+
+Os parâmetros da função \funcaofwrite~ são descritos abaixo:
+
+\begin{itemize}
+  \item \textbf{identificador} (\textit{handle}): variável identificadora do
+  arquivo. Essa variável é retornada pela função \funcaofopen; e
+  \item \textbf{texto} (\tipostring): texto a ser gravado no arquivo.
+\end{itemize}
+
+Vamos modificar o arquivo \texttt{index.php} para conter o seguinte conteúdo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap9/index-2.php}
+
+O segundo parâmetro - o texto a ser gravado - recebeu ao final da \tipostring~ 
+os caracteres \texttt{\textbackslash r\textbackslash n}. Esses caracteres fazem com 
+que o \php~ ``aperte um \enter'' ao salvar o arquivo.
+
+\section{Fechando um arquivo}
+\label{fechando-um-arquivo}
+
+Todo arquivo aberto deve ser fechado após sua utilização. Caso contrário, ele não 
+poderá ser reutilizado em algum outro local do código.
+
+\section{Lendo de um arquivo}
+\label{lendo-de-um-arquivo}
+
+Após abrirmos um arquivo, outra operação que podemos efetuar é a leitura do conteúdo 
+existente no arquivo. Essa operação é feita linha por linha. Podemos ler os 
+valores existentes nos arquivos usando diversas funções. Nessa apostila 
+veremos essa funcionalidade com a função \funcaofile. 
+
+\subsection{Comando \funcaofile}
+\label{comando-file}
+
+O comando \funcaofile~ ler um arquivo e retorna um \tipoarray~ com todo o seu conteúdo.
+Cada posição do \tipoarray~ representa uma linha do arquivo começando pelo índice
+0. Veja a sintaxe a seguir:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap9/sintaxe-file.php}
+
+Seguindo o exemplo do arquivo \texttt{index.php}, adicione, usando o \sublime,
+outras disciplinas. O código responsável por realizar a leitura do arquivo é
+apresentado em seguida.
+
+\lstinputlisting[language=bash,style=codigos]{codigos/cap9/disciplinas.txt}
+\lstinputlisting[language=php,style=codigos]{codigos/cap9/exemplo-file.php}
+
+\section{Trabalhando com arquivos \csvextensao}
+\label{trabalhando-com-arquivos-csv}
+
+Os arquivos \csvextensao~ são arquivos de formato regulamentado, ou seja, eles tem
+uma estrutura certa a ser seguida. \texttt{CSV} significa \textit{Comma-Separated Values}
+que traduzindo para o português é: valores separados por vírgula. Um exemplo de arquivo 
+\csvextensao~ pode ser visualizado abaixo:
+
+\lstinputlisting[language=bash,style=codigos]{codigos/cap9/informacoes.csv}
+
+A primeira linha do arquivo diz respeito ao cabeçalho, é nessa linha que informamos
+quais campos serão gravados. No nosso exemplo, os campos que vamos guardar são:
+\texttt{id}, \texttt{nome}, \texttt{endereco} e \texttt{cidade}. Nas linhas seguintes
+nós vamos guardar os \textbf{registros}, ou seja, as informações. Veja o arquivo
+\texttt{informacoes.csv} com a adição de informações dos usuários.
+
+\lstinputlisting[language=bash,style=codigos]{codigos/cap9/informacoes-2.csv}
+
+Crie esse arquivo com o aplicativo \sublime~ e salve com o nome \texttt{informacoes.csv}
+no diretório \directory{/var/www/aula08}. Iremos trabalhar com ele nos próximos
+exemplos.
+
+O código a seguir abre o arquivo \texttt{informacoes.csv} no modo \texttt{r}. Isso 
+indica que o programa será capaz de trabalhar com o arquivo de duas maneiras: 
+lendo e escrevendo no arquivo.
+
+\section{Exercícios}
+\label{cap9-exercicios}
+
+\section{Desafio!}
+\label{cap9-desafio}
