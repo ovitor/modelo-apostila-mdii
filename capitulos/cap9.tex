@@ -1,8 +1,8 @@
 % ---
 % Manipulação de arquivos 
 % ---
-\chapter{Manipulação de arquivos}
-\label{manipulacao-de-arquivos}
+\chapter{Manipulação de arquivos e diretórios}
+\label{manipulacao-de-arquivos-e-diretorios}
 % ---
 
 Ao final deste capítulo, o aluno terá as seguintes competências:
@@ -100,7 +100,11 @@ que o \php~ ``aperte um \enter'' ao salvar o arquivo.
 \label{fechando-um-arquivo}
 
 Todo arquivo aberto deve ser fechado após sua utilização. Caso contrário, ele não 
-poderá ser reutilizado em algum outro local do código.
+poderá ser reutilizado em algum outro local do código. Para fechar um arquivo
+você deve passar o identificador para a função \funcaofclose.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap9/sintaxe-fclose.php}
+
 
 \section{Lendo de um arquivo}
 \label{lendo-de-um-arquivo}
@@ -149,8 +153,55 @@ no diretório \directory{/var/www/aula08}. Iremos trabalhar com ele nos próximo
 exemplos.
 
 O código a seguir abre o arquivo \texttt{informacoes.csv} no modo \texttt{r}. Isso 
-indica que o programa será capaz de trabalhar com o arquivo de duas maneiras: 
-lendo e escrevendo no arquivo.
+indica que o programa será capaz de trabalhar com o arquivo de uma maneira: 
+apenas lendo o arquivo.
+
+\subsection{Função \funcaogetcsv}
+\label{funcao-getcsv}
+
+O código abaixo realiza a leitura do arquivo \csvextensao~ e guarda na variável
+\texttt{\$dados} os valores de cada linha.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap9/exemplo-csv.php}
+
+\figurasimples{cap9-exemplo-csv}{Resultado do código acima.}
+
+\begin{framed}
+{\Large Desafio rápido!}
+
+Altere o código exemplificado na seção \ref{funcao-getcsv} para exibir os dados
+em uma tabela. O resultado final esperado é o apresentado na figura abaixo:
+
+\figurasimples{cap9-desafio-rapido-1}{Resultado esperado do desafio rápido.}
+
+\end{framed}
+
+\section{Manipulando diretórios}
+\label{manipulando-diretorios}
+
+Existem alguns comandos básicos para manipulação de diretórios. Mostraremos
+na apostila, apenas como obter o diretório atual, ou seja, o diretório em que o
+arquivo \phpextensao~ está sendo executado. Outras operações como criar e apagar
+um diretório são explicadas na documentação oficial do \php.
+
+\subsection{Comando \funcaogetcwd}
+\label{comando-getcwd}
+
+Essa função retorna o diretório atual do arquivo \php~ que está sendo executado.
+Por exemplo, se existe o arquivo \directory{/var/www/aula08/index.php} e nesse
+arquivo \texttt{index.php} estiver escrito \texttt{\$diretorio = getcwd()},
+então o valor da variável \texttt{\$diretorio} será \texttt{/var/www/aula08}.
+Reescreva o código abaixo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap9/exemplo-getcwd.php}
+
+\begin{framed}
+{\Large Desafio rápido!}
+
+Crie um diretório dentro de \texttt{/var/www/aula08} com seu nome. Por exemplo:
+\directory{/var/www/aula08/joaquim}. Salve o código acima com o nome \texttt{index.php}
+dentro desse novo diretório. Qual o resultado?
+\end{framed}
 
 \section{Exercícios}
 \label{cap9-exercicios}
