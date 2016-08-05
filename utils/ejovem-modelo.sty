@@ -23,6 +23,13 @@
 
 \ProvidesPackage{utils/ejovem-modelo}[2014/09/01 Criacao desta customizacao do abnTeX2]
 
+% alterando a fonte padrão do texto
+% \renewcommand\familydefault{\sfdefault}
+
+% alterando espaçamento entre caption e tabela
+\captionsetup[table]{skip=-10pt}
+\captionsetup[subfigure]{aboveskip=5pt}
+
 % alterando a capa
 \renewcommand{\imprimircapa}{%
   \includepdf{capa.pdf}
@@ -76,6 +83,7 @@
 			\end{subfigure}
 
 		\end{center}
+		\vspace{-1\baselineskip}
 		\caption{(a) #2; (b) #4.}
 	\end{figure}
 }
