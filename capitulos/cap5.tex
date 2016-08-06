@@ -21,7 +21,7 @@ vistas nesse capítulo (\comandoif, \comandofor, \comandowhile, \comandoswitch).
 Os blocos de comandos devem ser utilizados para permitir que um conjunto de instruções
 façam parte do mesmo contexto desejado.
 
-Blocos em \php~ são delimitados pelos caracteres \texttt{\{} e \texttt{\}}.
+Blocos em \php~são delimitados pelos caracteres \texttt{\{} e \texttt{\}}.
 
 \section{Comando \comandoif}
 \label{comando-if}
@@ -34,13 +34,13 @@ Veja a sintaxe e em seguida um exemplo real.
 
 \lstinputlisting[language=php,style=codigos]{codigos/estruturas-if-1.php}
 
-Se o teste realizado no \comandoif~ for falso, ou seja, a expressão \texttt{\$media >= 7} der um
-resultado \booleano~ falso, o bloco de comandos não será executado.
+Se o teste realizado no \comandoif~for falso, ou seja, a expressão \texttt{\$media >= 7} der um
+resultado \booleano~falso, o bloco de comandos não será executado.
 
 \subsection{Comando \comandoifelse}
 \label{comando-if-else}
 
-Um complemento do comando \comandoif~ é a adição da palavra chave \texttt{else}. Com esse termo
+Um complemento do comando \comandoif~é a adição da palavra chave \texttt{else}. Com esse termo
 é possível tratar também as opções em que o teste é falso. Veja como fica a sintaxe da instrução
 completa.
 
@@ -52,7 +52,7 @@ fazendo com que a mensagem exibida na tela do navegador seja ``Aluno em recupera
 
 O programador tem a possibilidade de adicionar quantos comandos \comandoifelse~
 forem nescessários. Esses códigos são chamados de ``\texttt{ifs} encadeados''. 
-Para facilitar, o \php~ criou a palavra chave \texttt{elseif} (tudo junto mesmo).
+Para facilitar, o \php~criou a palavra chave \texttt{elseif} (tudo junto mesmo).
 Veja a sintaxe de uso.
 
 \lstinputlisting[language=php,style=codigos]{codigos/estruturas-if-3.php}
@@ -95,10 +95,10 @@ utilizar a estrutura de condição ternária e em um outro exemplo, utilizar o c
 \section{Estrutura \comandoswitch}
 \label{estrutura-switch}
 
-Observe que quando temos muitos \comandoifelse~ encadeados estamos criando uma estrutura 
+Observe que quando temos muitos \comandoifelse~encadeados estamos criando uma estrutura 
 que não é de fácil entendimento, portanto, \textbf{não} é considerada uma boa prática de 
 programação. Para resolver esse problema temos uma estrutura semelhante ao \comandoifelse. 
-O comando \comandoswitch é uma estrutura que simula uma bateria de teste sobre uma variável. 
+O comando \comandoswitch~é uma estrutura que simula uma bateria de teste sobre uma variável. 
 Portanto, essa estrutura é utilizada quando é  necessário comparar a mesma variável 
 com valores diferentes e executar uma ação específica em cada um desses valores. Veja
 a sintaxe e um exemplo real.
@@ -106,25 +106,25 @@ a sintaxe e um exemplo real.
 \lstinputlisting[language=php,style=codigos]{codigos/estruturas-switch-1.php}
 
 Nesse exemplo, o resultado que aparecerá no navegador é: \texttt{opcao 3} em uma linha e \texttt{opcao 4}
-em outra linha. A variável \texttt{\$numero} tem o valor 3.  O comando \comandoswitch~ 
-compara com cada \comandocase~ o valor recebido. O bloco executado é o do terceiro \comandocase, 
+em outra linha. A variável \texttt{\$numero} tem o valor 3.  O comando \comandoswitch~
+compara com cada \comandocase~o valor recebido. O bloco executado é o do terceiro \comandocase, 
 porém, os demais também são executados. Para que tenhamos um resultado satisfatório e não seja
-apresentado no navegador o restante das opções, é interessante o uso do comando \comandobreak~ em 
-cada \comandocase. O comando \comandobreak tem a função de parar o bloco de execução e ``sair''
+apresentado no navegador o restante das opções, é interessante o uso do comando \comandobreak~em 
+cada \comandocase. O comando \comandobreak~tem a função de parar o bloco de execução e ``sair''
 do \comandoswitch.
 
-\subsection{Comando \comandoswitch~ com \comandobreak}
+\subsection{Comando \comandoswitch~com \comandobreak}
 \label{comando-switch-com-break}
 
-O comando \comandobreak~ é uma instrução (comando) utilizada quando queremos parar o fluxo da 
-execução de um programa dentro do \comandoswitch~ (e outras estruturas).
-Observe o mesmo exemplo com o uso do \comandobreak. Temos agora como resultado “opcao 3”. 
-O comando \comandobreak~ fez com que os demais \comandocase~ abaixo do \texttt{case 3} 
+O comando \comandobreak~é uma instrução (comando) utilizada quando queremos parar o fluxo da 
+execução de um programa dentro do \comandoswitch~(e outras estruturas).
+Observe o mesmo exemplo com o uso do \comandobreak. Temos agora como resultado ``opcao 3''. 
+O comando \comandobreak~fez com que os demais \comandocase~abaixo do \texttt{case 3} 
 não sejam executados.
 
 \lstinputlisting[language=php,style=codigos]{codigos/estruturas-switch-2.php}
 
-\subsection{Comando \comandoswitch~ completo}
+\subsection{Comando \comandoswitch~completo}
 \label{comando-switch-completo}
 
 Mas o que acontece se não tivermos um valor que seja satisfatório aos casos 
@@ -138,7 +138,7 @@ chamada \texttt{default} (padrão).
 A instrução passada não condiz com nenhum dos casos existentes. Por esse motivo o bloco 
 pertencente ao comando \texttt{default} será executado. O comando \texttt{default} pode ser 
 inserido em qualquer lugar dentro do \comandoswitch, porém caso isso aconteça, 
-o uso do comando \comandobreak~ deve ser adicionado para evitar que os \comandocase~ abaixo 
+o uso do comando \comandobreak~deve ser adicionado para evitar que os \comandocase~abaixo 
 sejam executados.
 
 {\Large Desafio rápido!}
@@ -155,9 +155,9 @@ Elas são muito utilizadas nas linguagens de programação.
 \section{Estrutura \comandowhile}
 \label{estrutura-while}
 
-O comando \comandowhile~ é uma estrutura de controle similar ao comando \comandoif. Ele possui 
+O comando \comandowhile~é uma estrutura de controle similar ao comando \comandoif. Ele possui 
 uma condição para executar um bloco de comandos. A diferença primordial é que o comando 
-\comandowhile~ estabelece um laço de repetição, ou seja, o bloco de comandos será executado 
+\comandowhile~estabelece um laço de repetição, ou seja, o bloco de comandos será executado 
 repetidamente enquanto a condição passada for verdadeira. Veja a sintaxe.
 
 \lstinputlisting[language=php,style=codigos]{codigos/estruturas-while-1.php}
@@ -173,21 +173,21 @@ Nesse exemplo criamos um laço de repetição que tem como \textbf{condição de
 teste \texttt{\$num < 10}, além disso, em cada laço executado um incremento 
 na variável \texttt{\$num} é realizado, fazendo com que o seu valor aumente 
 (se ficou com dúvidas veja seção \ref{operadores-aritmeticos}). O laço 
-\comandowhile~ continuará até que a condição não seja mais satisfatória, 
+\comandowhile~continuará até que a condição não seja mais satisfatória, 
 em outras palavras, até que a variável \texttt{\$num} não seja menor que 10.
 
 
 \begin{framed}
 \textbf{{\Large Importante!}}
 Tenha cuidado quando estiver trabalhando com estruturas de repetição, pois caso a expressão 
-passada esteja errada, pode ocasionar um \lacoloop~ infinito fazendo com que o bloco de 
+passada esteja errada, pode ocasionar um \lacoloop~infinito fazendo com que o bloco de 
 código se repita infinitamente. Isso pode ocasionar um travamento do navegador ou 
 até mesmo do próprio servidor WEB.
 \end{framed}
 
 Vamos ver agora um exemplo em que o laço se repete de forma automática. A condição de parada 
-é uma função do \php~ e não um número determinado pelo programador. A função \comandostrlen~
-recebe uma variável do tipo \tipostring~ e retorna a quantidade de caracteres incluindo 
+é uma função do \php~e não um número determinado pelo programador. A função \comandostrlen~
+recebe uma variável do tipo \tipostring~e retorna a quantidade de caracteres incluindo 
 também os espaços em branco. Ele poderia ser aplicado diretamente na função \funcaoecho, 
 mas no exemplo, ele determina a quantidade de iterações. 
 
@@ -204,7 +204,7 @@ a sequência 0, 3, 6, 9, 12... Utilize o comando \comandowhile.
 \section{Estrutura \comandodowhile}
 \label{estrutura-do-while}
 
-O laço \comandodowhile~ funciona de maneira bastante semelhante ao comando \comandowhile.
+O laço \comandodowhile~funciona de maneira bastante semelhante ao comando \comandowhile.
 A diferença é que a expressão verificada está no final do bloco de comandos. Essa mudança
 representa a execução do bloco \textbf{pelo menos uma vez}. Diferente do comando \comandowhile
 onde é possível que o bloco não seja executado nenhuma vez. Veja a sintaxe e um exemplo
@@ -222,7 +222,7 @@ e terminando com o valor 20. Utilize o comando \comandodowhile.
 
 \section{Estrutura \comandofor}
 
-A estrutura de repetição \comandofor~ tem a finalidade de criar um laço de repetição.
+A estrutura de repetição \comandofor~tem a finalidade de criar um laço de repetição.
 Sua inicialização é composta por três partes que estabelecem as regras
 de funcionamento do \comandofor. Veja a sintaxe.
 
@@ -231,7 +231,7 @@ de funcionamento do \comandofor. Veja a sintaxe.
 A primeira parte das regras chamada no código acima de ``inicialização'' é responsável
 por inicializar a variável que será usada na ``condição'' e no ``atualização''. A 
 segunda parte, de nome ``condição'' é responsável por fazer o teste, se o teste sobre
-a condição for verdadeira, o laço do \comandofor~ é executado, caso contrário
+a condição for verdadeira, o laço do \comandofor~é executado, caso contrário
 o laço termina. Por fim, a parte ``atualização'' é responsável por atualizar a variável
 inicializada anteriormente, geralmente a atualização é um incremento (soma) ou 
 decremento (subtração).
@@ -250,38 +250,38 @@ a sequência: \texttt{5, 6, 7, 8, 9, 10, 11}. Utilize o comando \comandofor.
 \section{Estrutura \comandoforeach}
 \label{estrutura-foreach}
 
-O comando \comandoforeach~ é um laço de repetição para interação em 
-\tipoarray~ (esse conteúdo será abordado no capítulo \ref{manipulacao-de-arrays}).
-Trata-se do comando \comandofor~ mais simplificado. Sua sintaxe é exemplificada no código abaixo.
+O comando \comandoforeach~é um laço de repetição para interação em 
+\tipoarray~(esse conteúdo será abordado no capítulo \ref{manipulacao-de-arrays}).
+Trata-se do comando \comandofor~mais simplificado. Sua sintaxe é exemplificada no código abaixo.
 
 \lstinputlisting[language=php,style=codigos]{codigos/estruturas-foreach-1.php}
 
-Veremos adiante que um \tipoarray~ é uma variável composta por vários elementos. No caso do 
-exemplo anterior, esses elementos são nomes de pessoas. A finalidade do \comandoforeach 
+Veremos adiante que um \tipoarray~é uma variável composta por vários elementos. No caso do 
+exemplo anterior, esses elementos são nomes de pessoas. A finalidade do \comandoforeach~
 é justamente a cada laço, pegar um desses valores e atribuir a uma variável, nesse caso, 
-\texttt{\$nome}, até que tenha percorrido todo o \tipoarray~ (nesse caso, \texttt{\$alunos}).
+\texttt{\$nome}, até que tenha percorrido todo o \tipoarray~(nesse caso, \texttt{\$alunos}).
 
 Também podemos saber em qual posição o elemento se encontra no \tipoarray, para isso basta 
 adicionar uma nova variável logo após o termo \texttt{as} seguido dos caracteres \texttt{=>}.
-Veja a sintaxe completa do comando \comandoforeach~ e um exemplo.
+Veja a sintaxe completa do comando \comandoforeach~e um exemplo.
 
 \lstinputlisting[language=php,style=codigos]{codigos/estruturas-foreach-2.php}
 
-O comando \comandoforeach~ percorrerá o \tipoarray~ \texttt{\$alunos} e irá apresentar
+O comando \comandoforeach~percorrerá o \tipoarray~\texttt{\$alunos} e irá apresentar
 na tela o conteúdo das variáveis \texttt{\$indice} e \texttt{\$nome}. Lembrando que o
-conteúdo \tipoarray~ será abordado mais profundamente no próximo capítulo.
+conteúdo \tipoarray~será abordado mais profundamente no próximo capítulo.
 
 \section{Comando \comandobreak}
 \label{comando-break}
 
-O comando \comandobreak já utilizado na instrução \comandoswitch pode ser usado nas 
+O comando \comandobreak~já utilizado na instrução \comandoswitch~pode ser usado nas 
 estruturas de repetição. Ele terá a mesma função, ou seja, o comando interrompe a 
 execução do laço. Desse modo, o programa sai da estrutura de repetição e continua 
 após o bloco. Veja o exemplo abaixo.
 
 \lstinputlisting[language=php,style=codigos]{codigos/estruturas-break-1.php}
 
-No exemplo acima, utilizamos o comando \comandobreak~ dentro de um laço de repetição com
+No exemplo acima, utilizamos o comando \comandobreak~dentro de um laço de repetição com
 o comando \comandofor. Utilizamos uma estrutura de decisão (comando \comandoif) para
 realizar um teste (\texttt{\$k == 5}). Caso o teste seja verdadeiro, o programa
 irá executar a linha que tem a instrução \comandobreak. Dessa maneira, o laço de 
@@ -291,7 +291,7 @@ repetição será interrompido e o restante dos números não serão impressos.
 \label{comando-continue}
 
 A instrução \comandocontinue, quando executada em uma estrutura de repetição (\comandofor, 
-\comandowhile~ etc), ignora as instruções restantes do bloco, voltando ao início. Dessa 
+\comandowhile~etc), ignora as instruções restantes do bloco, voltando ao início. Dessa 
 forma, o programa segue para a próxima verificação da condição de entrada do laço de repetição, 
 funciona de maneira semelhante ao \comandobreak, com a diferença que o fluxo ao invés 
 de ser interrompido é, na realidade, voltado ao início. Veja um exemplo:
