@@ -6,7 +6,7 @@
 
 Ao final deste capítulo, o aluno terá as seguintes competências:
 \begin{enumerate}
-    \item Entender o que são variáveis e como o \php~ trabalha com elas; e
+    \item Entender o que são variáveis e como o \php~trabalha com elas; e
     \item Trabalhar com os diversos tipos de variáveis.
 \end{enumerate}
 
@@ -14,12 +14,12 @@ Ao final deste capítulo, o aluno terá as seguintes competências:
 \label{variaveis}
 
 Variáveis são identificadores criados para guardar valores por determinado tempo. 
-No \php~ elas são declaradas, inicializadas e armazenadas na memória RAM do servidor \web. 
+No \php~elas são declaradas, inicializadas e armazenadas na memória RAM do servidor \web. 
 Esse é um dos motivos pelo qual os servidores precisam de grandes quantidades de memória.
 
-Quando desenvolvemos um \site e o disponibilizamos na \internet. É nosso desejo que ele seja
+Quando desenvolvemos um \site~e o disponibilizamos na \internet. É nosso desejo que ele seja
 acessado pela maior quantidade de pessoas possível. Portanto, imagine um servidor com mais 
-de 20 mil acessos simultâneos (mais de 20 mil pessoas visualizando o \site no mesmo momento).
+de 20 mil acessos simultâneos (mais de 20 mil pessoas visualizando o \site~no mesmo momento).
 Nesse processo são criadas variáveis diferentes para cada usuário, logo, isso faz com que o 
 processamento que o servidor faz se intensifique. Por conta disso, o servidor deve ser um 
 computador com bastante memória RAM.
@@ -45,7 +45,7 @@ percorra o caminho \menu[,]{Exibir, Codificação, Unicode}.
 
 Nomes de variáveis devem ser significativas e transmitir a ideia de seu conteúdo 
 dentro do contexto no qual está inserido.
-Utilize preferencialmente palavras em minúsculo (separadas pelo caracter \texttt{\_}) ou 
+Utilize preferencialmente palavras em minúsculo (separadas pelo caractere \texttt{\_}) ou 
 somente as primeiras letras em maiúsculo quando você tiver duas ou mais palavras. 
 Veja o exemplo abaixo. 
 
@@ -58,7 +58,7 @@ Dicas! \newline
     \item Nunca utilize caracteres especiais (\texttt{! @ \# \& * | [ ] \{ \} $\backslash$ \^ } 
     entre outros) na nomenclatura das variáveis.
     \item Evite criar variáveis com nomes grandes demais em virtude da clareza do código-fonte.
-    \item Com exceção de nomes de classes e funções, o \php~ é \textit{case sensitive}, ou seja, 
+    \item Com exceção de nomes de classes e funções, o \php~é \textit{case sensitive}, ou seja, 
     é sensível a letras maiúsculas e minúsculas. Tome cuidado ao declarar variáveis. Por exemplo: 
     a variável \texttt{\$codigo} é diferente da variável \texttt{\$Codigo}.
 \end{itemize}
@@ -67,17 +67,17 @@ Dicas! \newline
 \section{Tipos de Variáveis}
 \label{tipos-de-variaveis}
 
-O \php~ tem uma grande flexibilidade na hroa de operar com viaráveis. Quando definimos
-uma variável juntamente com seu valor, o \php~ atribui um \textbf{tipo} à essa variável.
+O \php~tem uma grande flexibilidade na hora de operar com variáveis. Quando definimos
+uma variável juntamente com seu valor, o \php~atribui um \textbf{tipo} à essa variável.
 Isso permite que o programador não se preocupe muito na definição de tipos de 
 variáveis (pois é feito de forma automática). Porém, devemos ter cuidado com atribuições
 de valores, evitando erros nos cálculos.
 
 \subsection{Tipo Inteiro}
 \label{tipo-inteiro}
-São os números que pertencem ao conjunto dos números inteiros, abragendo valores negativos
-e positivos. No \php~ os valores máximos e mínimos do tipo inteiro depende da plataforma,
-ou seja, do sistema operacional que o \php~ está sendo executado. No geral, esse número
+São os números que pertencem ao conjunto dos números inteiros, abrangendo valores negativos
+e positivos. No \php~os valores máximos e mínimos do tipo inteiro depende da plataforma,
+ou seja, do sistema operacional que o \php~está sendo executado. No geral, esse número
 pode ter um valor mínimo e máximo por volta de 2 bilhões (positivo e negativo).
 
 Veja exemplos de códigos de atribuição de variáveis do tipo inteiro.
@@ -96,10 +96,10 @@ abaixo.
 \subsection{Tipo \textit{Booleano}}
 \label{tipo-booleano}
 
-Um \booleano~ expressa um valor lógico que pode ser \textbf{verdadeiro} ou 
-\textbf{falso}. Para especificar um valor \booleano~ utilize a palavra chave
+Um \booleano~expressa um valor lógico que pode ser \textbf{verdadeiro} ou 
+\textbf{falso}. Para especificar um valor \booleano~utilize a palavra chave
 \texttt{\textbf{true}} para verdadeiro e \texttt{\textbf{false}} para falso. No exemplo 
-a seguir, declaramos uma variável do tipo \booleano~ \texttt{\$exibir\_nome}, cujo conteúdo
+a seguir, declaramos uma variável do tipo \booleano~\texttt{\$exibir\_nome}, cujo conteúdo
 é \textbf{\true}.
 
 Esse tipo de variável é bastante útil quando estamos trabalhando com estruturas de decisão
@@ -115,13 +115,13 @@ Também podemos atribuir outros valores \textit{booleanos}~ para representação
 \subsection{Tipo \textit{String}}
 \label{tipo-string}
 
-Uma \tipostring~ é uma cadeira de caracteres alfanuméricos, ou seja, podemos tanto usar números
+Uma \tipostring~é uma cadeira de caracteres alfanuméricos, ou seja, podemos tanto usar números
 quanto letras. Porém, é necessário declará-las utilizando aspas simples 
 (\texttt{\textquotesingle \textquotesingle}) ou aspas duplas (\texttt{``''}). Veja o exemplo abaixo.
 
 \lstinputlisting[language=php,style=codigos]{codigos/variaveis-string.php}
 
-Caso seja necessário escrever na \tipostring~ os caracteres \texttt{\$}, 
+Caso seja necessário escrever na \tipostring~os caracteres \texttt{\$}, 
 \texttt{$\backslash$}, \texttt{\textquotesingle} ou \texttt{{``''}}, devemos utilizar a tabela abaixo. 
 
 % \input{tabelas/tabela-cap3-tipo-string.tex}
@@ -130,7 +130,7 @@ Caso seja necessário escrever na \tipostring~ os caracteres \texttt{\$},
 \label{tipo-array}
 
 \textit{Array} é uma lista de valores armazenados na memória. Os elementos de um \tipoarray~
-podem ser de tipos diferentes (inteiro, decimal, \tipostring etc). Um \tipoarray~ pode crescer
+podem ser de tipos diferentes (inteiro, decimal, \tipostring~etc). Um \tipoarray~pode crescer
 dinamicamente com a adição de novos itens. O capítulo \ref{cap2} explica como
 manipular esse tipo de estrutura.
 
@@ -148,8 +148,8 @@ que a variável não possui valor número ou alfanumérico e que seu valor é nu
 \subsection{Constantes pré-definidas}
 \label{constantes-pre-definidas}
 
-O \php~ possui algumas constantes pré-definidas, como por exemplo, constantes que indicam a versão
-do \php, o sistema operacional em que o \php~ está sendo executado, o arquivo em execução
+O \php~possui algumas constantes pré-definidas, como por exemplo, constantes que indicam a versão
+do \php, o sistema operacional em que o \php~está sendo executado, o arquivo em execução
 e diversas outras informações. Para ter conhecimento de todas as constantes pré-definidas,
 podemos utilizar a função \funcaophpinfo. Ela exibe uma tabela contendo todas as constantes
 pré-definidas.
@@ -160,16 +160,16 @@ pré-definidas.
 O programador também pode definir constantes para serem utilizadas no projeto. Para isso,
 utilizamos a função \funcaodefine. Uma vez que o valor tenha sido definido, não poderá
 ser alterado. A constante só pode conter valores inteiro, ponto flutuantes ou \tipostring.
-Não podemos iniciar uma constante com uma variável do tipo \tipoarray~ por exemplo.
+Não podemos iniciar uma constante com uma variável do tipo \tipoarray~por exemplo.
 
-Um exemplo de utilização da função \funcaodefine~ pode ser visto a seguir.
+Um exemplo de utilização da função \funcaodefine~pode ser visto a seguir.
 
 \lstinputlisting[language=php,style=codigos]{codigos/constantes-define-1.php}
 \lstinputlisting[language=php,style=codigos]{codigos/constantes-define-2.php}
 
 O nome de uma constante tem as mesmas regras de nomenclatura de qualquer variável.
 Ele é válido quando começa com uma letra ou \textit{underline} (\texttt{\_}) seguido
-por qualquer número de ltras, números ou sublinhados.
+por qualquer número de letras, números ou sublinhados.
 
 A seguir listamos algumas diferenças entre constantes e variáveis.
 
@@ -178,16 +178,16 @@ A seguir listamos algumas diferenças entre constantes e variáveis.
   indiferentes ao escopo;
   \item Constantes só podem conter valores numéricos ou alfanuméricos;
   \item Constantes não podem ter um sinal de cifrão (\texttt{\$}) no início;
-  \item Constantes só podem ser definidas utilizando a função \funcaodefine~ e não por atribuição; e
+  \item Constantes só podem ser definidas utilizando a função \funcaodefine~e não por atribuição; e
   \item Constantes não podem ser redefinidas ou eliminadas após sua criação.
 \end{enumerate}
 
 \section{Conversão de variáveis}
 \label{conversao-de-variaveis}
 
-O \php~ permite que o programador converta um tipo de variável em outro tipo de varíavel.
+O \php~permite que o programador converta um tipo de variável em outro tipo de variável.
 As conversões mais comuns são as do tipo inteiro para decimal e do tipo decimal para inteiro.
-Outra conversão bastante utilizada é de \tipostring para decimal ou inteiro.
+Outra conversão bastante utilizada é de \tipostring~para decimal ou inteiro.
 
 A instrução utilizada para as conversões é denominada de \funcaotypeset. A ação é denominada
 de \textit{typecasting}, ou seja, o ato de transformar uma variável de um tipo em outro tipo. A
@@ -201,7 +201,7 @@ Veja alguns exemplos de códigos de conversões de tipos de variáveis.
 
 No primeiro e último exemplo de código não notamos diferença ao imprimirmos no navegador 
 o valor das variáveis \texttt{\$temperatura} e \texttt{\$preco\_total} respectivamente. 
-Mas se utilizarmos a função \funcaogettype~ teremos o tipo de variável correspodente. Veja
+Mas se utilizarmos a função \funcaogettype~teremos o tipo de variável correspondente. Veja
 o código abaixo.
 
 \lstinputlisting[language=php,style=codigos]{codigos/conversao-2.php}
@@ -212,6 +212,6 @@ o código abaixo.
 
 \section{Desafio!}
 \label{cap3-desafio}
-O desafio deste capítulo é criar um arquivo \phpextensao~ declarando variáveis de todos os tipos
-estudados (inteiro, ponto flutuante e \tipostring). Imprimí-los no navegador e por fim, converter
+O desafio deste capítulo é criar um arquivo \phpextensao~declarando variáveis de todos os tipos
+estudados (inteiro, ponto flutuante e \tipostring). Apresentá-los no navegador e por fim, converter
 os valores das variáveis do tipo inteiro e ponto flutuante para \tipostring.

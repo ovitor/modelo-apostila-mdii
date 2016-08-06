@@ -13,25 +13,25 @@ Ao final deste capítulo, o aluno terá as seguintes competências:
 
 \section{\phpcompleto}
 
-O \phpcompleto, foi criado por \phpcriador~ em 1995 e originalmente chamado de 
+O \phpcompleto, foi criado por \phpcriador~em 1995 e originalmente chamado de 
 “\textit{Personal Home Page Tools}” (Ferramentas para Página Pessoal). Com a 
 aceitação do projeto, muitos programadores passaram a utilizar e propor mudanças,
-surgindo assim, o \php~ que iremos conhecer hoje. O \php~ está atualmente na
+surgindo assim, o \php~que iremos conhecer hoje. O \php~está atualmente na
 versão 7.0, chamado de \php7 ou, simplesmente de \php. A nível de estudo, 
-utilizaremos o \php~ \phpversao, pois é uma versão mais estável e muito 
+utilizaremos o \php~\phpversao, pois é uma versão mais estável e muito 
 utilizada no mercado.
 
-O \php~ é uma linguagem de programação que funciona no lado do servidor, 
-ele permite criarmos \sites dinâmicos, ou seja, o \site se comporta de acordo 
+O \php~é uma linguagem de programação que funciona no lado do servidor, 
+ele permite criarmos \sites~dinâmicos, ou seja, o \site~se comporta de acordo 
 com a entrada de dados do usuário. Outros exemplos de linguagem semelhantes são 
 ASP, JSP (Java) e Python.
 
-A linguagem \php~ trabalha lado a lado com o \htmlcompleto, por conta disso vamos
-precisar saber o básico de \html, principalmente as \tags~ de formulário. Devemos
-lembrar que o \php~ tem pouca relação com o \layout~ ou eventos que compõem a 
+A linguagem \php~trabalha lado a lado com o \htmlcompleto, por conta disso vamos
+precisar saber o básico de \html, principalmente as \tags~de formulário. Devemos
+lembrar que o \php~tem pouca relação com o \layout~ou eventos que compõem a 
 aparência de uma página \web. Portanto, podemos dizer que a maior parte do que o
-\php~ realiza é invisível para o usuário final. O internauta, ao visualizar a 
-página desenvolvida em \php~ não será capaz de identificar que a página foi 
+\php~realiza é invisível para o usuário final. O internauta, ao visualizar a 
+página desenvolvida em \php~não será capaz de identificar que a página foi 
 escrita utilizando a tecnologia disponibilizada pelo \php. 
 
 Você arriscaria dizer que o Facebook foi desenvolvido com a linguagem \php?
@@ -39,7 +39,7 @@ Você arriscaria dizer que o Facebook foi desenvolvido com a linguagem \php?
 \section{Arquitetura cliente-servidor}
 \label{arquitetura-cliente-servidor}
 
-Como visto na seção anterior, o \php~ funciona do lado do servidor. Para entendermos
+Como visto na seção anterior, o \php~funciona do lado do servidor. Para entendermos
 melhor isso, é necessário entender a estrutura cliente/servidor. Muito utilizada
 na \internet. A figura abaixo exemplifica de maneira simples a comunicação entre
 cliente e servidor.
@@ -54,9 +54,9 @@ Dessa figura, podemos tirar algumas palavras chaves. Que são:
 \end{description}
 
 Portanto, quando o \textbf{cliente}, ou seja, o internauta, faz uma \textbf{requisição} 
-- digitando na barra de endereços do navegador o \site~ 
+- digitando na barra de endereços do navegador o \site~
 \url{http://http://projetoejovem.seduc.ce.gov.br} e pressionando \keys{ENTER} - o navegador 
-se encarrega de fazer um pedido ao \textbf{servidor} que guarda o \site~ do projeto e-Jovem.
+se encarrega de fazer um pedido ao \textbf{servidor} que guarda o \site~do projeto e-Jovem.
 
 \section{Instalação do \php}
 \label{instalacao-do-php}
@@ -71,7 +71,7 @@ de trabalho. Vamos instalar esses pacotes através do \terminal. Podemos abrir o
 	\item acione a combinação de teclas \altfdois e digite \xfceterminal.
 \end{enumerate}
 
-Em seguida escreva o comando abaixo no \terminal~ que acabamos de abrir. Por segurança
+Em seguida escreva o comando abaixo no \terminal~que acabamos de abrir. Por segurança
 a senha de usuário será requisitada, e \textbf{ela não aparece ao ser digitada}.
 Não se preocupe, digite a senha e ao final aperte enter. 
 
@@ -83,16 +83,16 @@ Não se preocupe, digite a senha e ao final aperte enter.
 Se você estiver usando o Linux do Projeto e-Jovem, então esses pacotes já devem
 ter sido instalados e você visualizou a seguinte tela.
 
-\figurasimples{php-instalacao-ok}{Instalação do \php~ bem sucedida.}
+\figurasimples{php-instalacao-ok}{Instalação do \php~bem sucedida.}
 
 \section{Instalação do \apache}
 \label{instalacao-do-apache}
 
-O servidor \apache~ é um dos principais aplicativos que fazem a \web~ funcionar.
-Ele é responsável por interpretar os arquivos \phpextensao~ e retornar para o
+O servidor \apache~é um dos principais aplicativos que fazem a \web~funcionar.
+Ele é responsável por interpretar os arquivos \phpextensao~e retornar para o
 cliente, apenas o que ele requisitou. A versão que vamos trabalhar é a \apacheversao.
 O processo de instalação é parecido com o que foi utilizado no \php. Abra o
-\terminal~ utilizando um dos passos da seção \ref{instalacao-do-php} e digite a 
+\terminal~utilizando um dos passos da seção \ref{instalacao-do-php} e digite a 
 seguinte instrução.
 
 \lstinputlisting[language=bash,style=codigos]{codigos/instalacao-apache.sh}
@@ -101,17 +101,17 @@ seguinte instrução.
 % \end{lstlisting}
 
 Se o sistema utilizado for o Linux do Projeto e-Jovem, então já temos o \apache
-\apacheversao~ instalado (figura \ref{fig:apache-instalacao-ok}). Digite no navegador 
+\apacheversao~instalado (figura \ref{fig:apache-instalacao-ok}). Digite no navegador 
 Firefox o endereço de internet \url{http://localhost} (sem os sinais de maior e menor que). 
 A tela será parecida com a mostrada na figura \ref{fig:apache-verificacao-ok}.
 
-\figuradupla{apache-instalacao-ok}{Instalação do \apache \apacheversao~ bem sucedida}
-			{apache-verificacao-ok}{Verificação do \apache~ em execução. Digite \url{http://localhost} no navegador Firefox}
+\figuradupla{apache-instalacao-ok}{Instalação do \apache \apacheversao~bem sucedida}
+			{apache-verificacao-ok}{Verificação do \apache~em execução. Digite \url{http://localhost} no navegador Firefox}
 
-A figura \ref{fig:apache-verificacao-ok} indica que o \apache~ está funcionando corretamente.
+A figura \ref{fig:apache-verificacao-ok} indica que o \apache~está funcionando corretamente.
 O arquivo apresentado acima pode ser encontrado no diretório \dirpadrao. Será 
 essa a localização dos arquivos que vamos desenvolver. Ou seja, sempre que criarmos
-um arquivo \phpextensao~ ele deverá ser salvo no \dirpadrao. 
+um arquivo \phpextensao~ele deverá ser salvo no \dirpadrao. 
 
 Para que seja possível o usuário do sistema (no caso você) salve no \dirpadrao,
 precisamos mudar a permissão de escrita do diretório. Vamos abrir o \terminal~
@@ -124,12 +124,12 @@ aberto, digite o seguinte comando.
 
 O comando acima permite que o usuário comum do sistema grave arquivos no \dirpadrao.
 
-O aplicativo \apache~ pode ser configurado para funcionar de diversas maneiras. 
+O aplicativo \apache~pode ser configurado para funcionar de diversas maneiras. 
 Essa disciplina necessita apenas da configuração básica. Caso queira modificá-la, 
-o aluno poderá ler mais sobre o \apache~ através do site: \url{http://httpd.apache.org/docs/2.2}.
+o aluno poderá ler mais sobre o \apache~através do site: \url{http://httpd.apache.org/docs/2.2}.
 
 Caso você use o sistema operacional Windows na sua casa, veja no apêndice 
-\ref{ap:instalacao-env-windows}, lá é explicado como instalar o \php~ e o \apache~ no Windows.
+\ref{ap:instalacao-env-windows}, lá é explicado como instalar o \php~e o \apache~no Windows.
 
 
 \section{Testando o ambiente}
@@ -139,11 +139,11 @@ Caso você use o sistema operacional Windows na sua casa, veja no apêndice
 \label{subsection:funcao-phpinfo}
 
 Após a instalação, devemos testar o nosso ambiente de desenvolvimento (composto
-inicialmente por \php~ e \apache). Abra novamente o \terminal~, navegue até o
+inicialmente por \php~e \apache). Abra novamente o \terminal~, navegue até o
 diretório \dirpadrao.
 
 Neste diretório, iremos criar \textbf{uma pasta para cada aula} do curso, portanto, hoje
-criaremos o diretório \diraula{01}~ no caminho \dirpadrao. Abra novamente o \terminal~
+criaremos o diretório \diraula{01}~no caminho \dirpadrao. Abra novamente o \terminal~
 e digite os seguintes comandos:
 
 \begin{lstlisting}[language=bash,style=codigos]
@@ -159,8 +159,8 @@ arquivo \phpextensao. Usaremos o programa editor de textos \gedit, acione as tec
 e digite na janela o nome do programa: \gedit. 
 
 A figura \ref{fig:gedit-ok} representa um código simples escrito no editor de textos \gedit. 
-Perceba que o arquivo \phpextensao~ começa com os caracteres \phpinicio~ e \phpfim. 
-Todo arquivo \phpextensao~ tem essa estrutura no início e no fim. O conteúdo desse arquivo é 
+Perceba que o arquivo \phpextensao~começa com os caracteres \phpinicio~e \phpfim. 
+Todo arquivo \phpextensao~tem essa estrutura no início e no fim. O conteúdo desse arquivo é 
 a função \funcaophpinfo. Ela apresenta para nós, todas as opções que estão configuradas no 
 nosso \php. A figura \ref{fig:gedit-ok} mostra o resultado ao acessarmos a URL \url{http://localhost} 
 no nosso navegador Firefox.
@@ -172,7 +172,7 @@ Salve o arquivo no diretório \diretorio{/var/www/aula01}. Esse arquivo deve ter
 \subsection{Instrução echo}
 \label{subsection:funcao-echo}
 Outro teste que vamos fazer é a utilização da instrução \funcaoecho. Edite o arquivo 
-\arquivo{index.php} com o programa \gedit e adicione na primeira linha o código
+\arquivo{index.php} com o programa \gedit~e adicione na primeira linha o código
 \texttt{<?php echo "Aula 01"; ?>}
 
 \lstinputlisting[language=php,style=codigos]{codigos/echo.php}
@@ -200,5 +200,5 @@ Veja o nosso arquivo \arquivo{index.php} após a adição dos comentários expli
 \section{Desafio!}
 \label{desafio}
 O desafio deste capítulo é você encontrar na tela do navegador a versão do \php~
-que vamos trabalhar, a versão do \apache~ além de nos mostrar qual o diretório
-padrão em que os arquivos \phpextensao~ devem ser salvos.
+que vamos trabalhar, a versão do \apache~além de nos mostrar qual o diretório
+padrão em que os arquivos \phpextensao~devem ser salvos.
