@@ -41,7 +41,7 @@ correta utilização dos arquivos. Será apresentado apenas 3 modos (os mais uti
   arquivo não exista, tenta criá-lo (é necessário que o diretório tenha permissão
   de escrita); e
   \item \textbf{a+} (\textit{append}): abre o arquivo para leitura e escrita, 
-  caso o arquivo não exista, o \php~ tentará criá-lo.  
+  caso o arquivo não exista, o \php~tentará criá-lo.  
 \end{itemize}
 
 \begin{framed}
@@ -80,7 +80,7 @@ abaixo:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap9/sintaxe-fwrite.php}
 
-Os parâmetros da função \funcaofwrite~ são descritos abaixo:
+Os parâmetros da função \funcaofwrite~são descritos abaixo:
 
 \begin{itemize}
   \item \textbf{identificador} (\textit{handle}): variável identificadora do
@@ -92,9 +92,9 @@ Vamos modificar o arquivo \texttt{index.php} para conter o seguinte conteúdo:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap9/index-2.php}
 
-O segundo parâmetro - o texto a ser gravado - recebeu ao final da \tipostring~ 
+O segundo parâmetro - o texto a ser gravado - recebeu ao final da \tipostring~
 os caracteres \texttt{\textbackslash r\textbackslash n}. Esses caracteres fazem com 
-que o \php~ ``aperte um \enter'' ao salvar o arquivo.
+que o \php~``aperte um \enter'' ao salvar o arquivo.
 
 \section{Fechando um arquivo}
 \label{fechando-um-arquivo}
@@ -117,8 +117,8 @@ veremos essa funcionalidade com a função \funcaofile.
 \subsection{Comando \funcaofile}
 \label{comando-file}
 
-O comando \funcaofile~ ler um arquivo e retorna um \tipoarray~ com todo o seu conteúdo.
-Cada posição do \tipoarray~ representa uma linha do arquivo começando pelo índice
+O comando \funcaofile~ler um arquivo e retorna um \tipoarray~com todo o seu conteúdo.
+Cada posição do \tipoarray~representa uma linha do arquivo começando pelo índice
 0. Veja a sintaxe a seguir:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap9/sintaxe-file.php}
@@ -133,10 +133,10 @@ apresentado em seguida.
 \section{Trabalhando com arquivos \csvextensao}
 \label{trabalhando-com-arquivos-csv}
 
-Os arquivos \csvextensao~ são arquivos de formato regulamentado, ou seja, eles tem
+Os arquivos \csvextensao~são arquivos de formato regulamentado, ou seja, eles tem
 uma estrutura certa a ser seguida. \texttt{CSV} significa \textit{Comma-Separated Values}
 que traduzindo para o português é: valores separados por vírgula. Um exemplo de arquivo 
-\csvextensao~ pode ser visualizado abaixo:
+\csvextensao~pode ser visualizado abaixo:
 
 \lstinputlisting[language=bash,style=codigos]{codigos/cap9/informacoes.csv}
 
@@ -148,7 +148,7 @@ nós vamos guardar os \textbf{registros}, ou seja, as informações. Veja o arqu
 
 \lstinputlisting[language=bash,style=codigos]{codigos/cap9/informacoes-2.csv}
 
-Crie esse arquivo com o aplicativo \sublime~ e salve com o nome \texttt{informacoes.csv}
+Crie esse arquivo com o aplicativo \sublime~e salve com o nome \texttt{informacoes.csv}
 no diretório \directory{/var/www/aula08}. Iremos trabalhar com ele nos próximos
 exemplos.
 
@@ -159,7 +159,7 @@ apenas lendo o arquivo.
 \subsection{Função \funcaogetcsv}
 \label{funcao-getcsv}
 
-O código abaixo realiza a leitura do arquivo \csvextensao~ e guarda na variável
+O código abaixo realiza a leitura do arquivo \csvextensao~e guarda na variável
 \texttt{\$dados} os valores de cada linha.
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap9/exemplo-csv.php}
@@ -181,13 +181,13 @@ em uma tabela. O resultado final esperado é o apresentado na figura abaixo:
 
 Existem alguns comandos básicos para manipulação de diretórios. Mostraremos
 na apostila, apenas como obter o diretório atual, ou seja, o diretório em que o
-arquivo \phpextensao~ está sendo executado. Outras operações como criar e apagar
+arquivo \phpextensao~está sendo executado. Outras operações como criar e apagar
 um diretório são explicadas na documentação oficial do \php.
 
 \subsection{Comando \funcaogetcwd}
 \label{comando-getcwd}
 
-Essa função retorna o diretório atual do arquivo \php~ que está sendo executado.
+Essa função retorna o diretório atual do arquivo \php~que está sendo executado.
 Por exemplo, se existe o arquivo \directory{/var/www/aula08/index.php} e nesse
 arquivo \texttt{index.php} estiver escrito \texttt{\$diretorio = getcwd()},
 então o valor da variável \texttt{\$diretorio} será \texttt{/var/www/aula08}.

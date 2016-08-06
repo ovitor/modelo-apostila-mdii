@@ -7,14 +7,14 @@
 
 Ao final deste capítulo, o aluno terá as seguintes competências:
 \begin{enumerate}
-    \item Entender a estrutura dos métodos \metodoGET~ e \metodoPOST; e
+    \item Entender a estrutura dos métodos \metodoGET~e \metodoPOST; e
     \item Enviar dados para o servidor através do navegador.
 \end{enumerate}
 
 Neste capítulo abordaremos algumas formas de interações utilizando a linguagem de 
-programação \php~ e a linguagem de marcação \html. Além disso, mostraremos alguns dos
+programação \php~e a linguagem de marcação \html. Além disso, mostraremos alguns dos
 componentes mais utilizados para a construção de um sistema ou uma página web, e de 
-que forma o \php~ pode receber, processar, e enviar essa informação.
+que forma o \php~pode receber, processar, e enviar essa informação.
 
 Utilizamos linguagens para exibir os dados da aplicação, seja ela para simples 
 conferência, em relatório ou ainda possibilitando a adição e exclusão de registros. 
@@ -31,13 +31,13 @@ os dados.
 \subsection{Criando um formulário}
 \label{criando-um-formulario}
 
-Para criarmos um formulário, utilizamos a \tag~ \tagform. Dentro dessa \tag~ podemos colocar 
+Para criarmos um formulário, utilizamos a \tag~\tagform. Dentro dessa \tag~podemos colocar 
 diversos elementos, onde, cada um deles representa uma propriedade em particular. 
 A seguir explicaremos os principais componentes de um formulário.
 
 Todo formulário deve conter no mínimo as seguintes características: ter um nome, um método
 e uma ação. O nome deve ser único e só pode haver um formulário com esse nome na página
-\php. Veremos posteriormente nesse capítulo que podemos usar os métodos \metodoGET~ ou
+\php. Veremos posteriormente nesse capítulo que podemos usar os métodos \metodoGET~ou
 \metodoPOST. Já a ação é o caminho do arquivo que vai tratar os dados do formulário.
 Veja a sintaxe.
 
@@ -51,20 +51,20 @@ diretório da aula.
 
 Ao abrir o código acima no navegador, encontramos apenas uma página em branco com o 
 título ``Formulário''. Vamos colocar um campo de texto, permitindo que o usuário digite 
-um texto simples. Para isso, é necessário utilizar a \tag~ \taginput~ do \html. Conforme 
+um texto simples. Para isso, é necessário utilizar a \tag~\taginput~do \html. Conforme 
 exemplo abaixo. Para simplificar, vamos omitir algumas linhas do código.
 
 \lstinputlisting[language=html,style=codigos]{codigos/cap7/index-2.html}
 
-A \tag~ \taginput~ pode ser composta por vários atributos. A partir deles, vamos definir o 
+A \tag~\taginput~pode ser composta por vários atributos. A partir deles, vamos definir o 
 comportamento da \tag. No nosso exemplo, definimos os atributos nome e tipo. O atributo
 \texttt{name} é utilizado para identificação do elemento na página (ele deve ser único). 
-Já o atributo \texttt{type} (tipo em inglês) indica qual campo de formulário a \tag~ \taginput 
+Já o atributo \texttt{type} (tipo em inglês) indica qual campo de formulário a \tag~\taginput~
 irá representar no navegador. Escreva o código acima e visualize no seu navegador.
 
-\section{Métodos \metodoGET~ e \metodoPOST}
+\section{Métodos \metodoGET~e \metodoPOST}
 Agora que relembramos a estrutura de um formulário \html, vamos aprender sobre os métodos
-\metodoGET~ e \metodoPOST. A função básica desses métodos é a de enviar os dados para 
+\metodoGET~e \metodoPOST. A função básica desses métodos é a de enviar os dados para 
 o servidor (lembre-se da arquitetura cliente-servidor) para que ele tenha acesso aos 
 dados digitados no formulário. O protocolo HTTP disponibiliza vários métodos para 
 trabalhar com requisições. Os dois métodos básicos de envio de dados ao servidor serão 
@@ -74,14 +74,14 @@ Portanto, imagine a seguinte situação: Joaquim, aluno do e-jovem quer pesquisa
 sobre \php. Ao digitar o termo de pesquisa na caixa de busca do Google, o navegador realiza 
 uma requisição HTTP de método \metodoGET. O Google então apresenta uma lista de possíveis 
 sites que o Joaquim pode entrar, ao escolher clicar no primeiro link, uma nova requisição 
-HTTP com o método \metodoGET~ foi realizada.
+HTTP com o método \metodoGET~foi realizada.
 
 Uma outra situação possível é o Joaquim acessar sua página do Facebook, ele precisa digitar 
 o nome de usuário e a senha, ao acionar o botão “Entrar”, o navegador realiza uma requisição 
 HTTP dessa vez com o método o \metodoPOST.
 
 A figura abaixo ilustra a comunicação que ocorre entre o formulário (cliente) e o arquivo 
-\php~ (servidor), seja utilizando o método \metodoGET~ ou método \metodoPOST. A diferença básica 
+\php~(servidor), seja utilizando o método \metodoGET~ou método \metodoPOST. A diferença básica 
 entre esses métodos será visto nas próximas seções. 
 
 ILUSTRAÇÃO DA MILENA
@@ -89,13 +89,13 @@ ILUSTRAÇÃO DA MILENA
 \subsection{Método \metodoGET}
 \label{metodo-get}
 
-O método \metodoGET~ utiliza a própria URI (normalmente chamada de URL) para enviar dados ao 
+O método \metodoGET~utiliza a própria URI (normalmente chamada de URL) para enviar dados ao 
 servidor. Quando enviamos um formulário pelo método \metodoGET, o navegador pega as informações 
 do formulário e coloca junto com a URI de onde o formulário vai ser enviado e envia, 
 separando o endereço da URI dos dados do formulário por um \texttt{``?''} (ponto de interrogação) 
 e \texttt{``\&''}.
 
-Esse processo gera uma variável do tipo \tipoarray~ chamada de \variavelget. O conteúdo dela é
+Esse processo gera uma variável do tipo \tipoarray~chamada de \variavelget. O conteúdo dela é
 formado pelos dados do formulário enviado.
 
 Quando o usuário faz uma busca no Google, ele faz uma requisição utilizando o método \metodoGET, 
@@ -103,7 +103,7 @@ você pode verificar na barra de endereço do seu navegador que o endereço fico
 interrogação no meio, e depois do ponto de interrogação você pode ler, dentre outros caracteres, 
 o que você pesquisou no Google.
 
-Abaixo temos um exemplo de uma URL do Joaquim pesquisando sobre \php~ no Google. Observe:
+Abaixo temos um exemplo de uma URL do Joaquim pesquisando sobre \php~no Google. Observe:
 
 \figurasimples{metodo-get-ok}{Exemplo de URL utilizando o método GET.}
 
@@ -116,7 +116,7 @@ são os digitados pelo usuário. No nosso exemplo, \texttt{php} e \texttt{docume
 Para nosso primeiro formulário com método \metodoGET, vamos simular o envio de um 
 \textit{email}. Imagine que você está cadastrando seu \textit{email} para participar 
 de uma \textit{newsletter} (um boletim informativo). Para isso, o formulário deve 
-ter o campo \textit{email} e um botão de enviar. Utilize seus conhecimentos de \html~ 
+ter o campo \textit{email} e um botão de enviar. Utilize seus conhecimentos de \html~
 para representar a tela abaixo.
 
 \figurasimples{metodo-get-exemplo-1}{Exemplo de um formulário simples.}
@@ -135,7 +135,7 @@ atributos será possível trabalhar com os dados inseridos no formulário.
 
 Quando o botão ``Avançar'' for pressionado, uma requisição será feita ao site 
 \url{http://localhost} (nosso servidor) enviando todos os dados preenchidos no
-formulário. O arquivo \phpextensao~ responsável por tratar esses dados é o arquivo
+formulário. O arquivo \phpextensao~responsável por tratar esses dados é o arquivo
 mencionado no atributo \texttt{action}. No nosso primeiro exemplo, o arquivo de nome
 \texttt{cadastro-newsletter.php}.
 
@@ -144,16 +144,16 @@ chamado \texttt{cadastro-newsletter.php}. Inicialmente, coloque o seguinte conte
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap7/cadastro-newsletter.php}
 
-O código acima exibe no navegador a variável \variavelget~ que é um \tipoarray. Perceba que a
-única chave do \tipoarray~ é igual ao nome do campo de texto no formulário na página \html.
-Ou seja, \textbf{o \tipoarray~ \variavelget~ é um \tipoarray~ associativo}, onde as chaves são
+O código acima exibe no navegador a variável \variavelget~que é um \tipoarray. Perceba que a
+única chave do \tipoarray~é igual ao nome do campo de texto no formulário na página \html.
+Ou seja, \textbf{o \tipoarray~\variavelget~é um \tipoarray~associativo}, onde as chaves são
 os atributos \texttt{name} dos campos do formulário e os elementos são os valores inseridos
 no formulário.
 
 \figurasimples{metodo-get-exemplo-2}{Conteúdo enviado através do método \metodoGET.}
 
 Caso seja necessário pegar apenas a informação de email, devemos lembrar como acessamos 
-elementos em um \tipoarray~ associativo. Para isso, precisaremos da chave do elemento. Veja
+elementos em um \tipoarray~associativo. Para isso, precisaremos da chave do elemento. Veja
 no código abaixo.
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap7/cadastro-newsletter-2.php}
@@ -163,7 +163,7 @@ no código abaixo.
 
 Altere o arquivo \texttt{cadastro-newsletter.php} para receber, além do email do 
 usuário, um nome e data de nascimento. Apresente no navegador  
-o \tipoarray~ \variavelget~ através da função \funcaoprintr~ e as variáveis
+o \tipoarray~\variavelget~através da função \funcaoprintr~e as variáveis
 separadamente (lembre-se do procedimento de acessar uma variável do tipo \tipoarray~
 associativo).
 \end{framed}
@@ -171,8 +171,8 @@ associativo).
 \section{Método \metodoPOST}
 \label{metodo-post}
 
-O método \metodoPOST~ é bastante semelhante ao método \metodoGET. Ele também é utilizado
-para transferir os dados do formulário na página \html~ para o servidor \php. A principal
+O método \metodoPOST~é bastante semelhante ao método \metodoGET. Ele também é utilizado
+para transferir os dados do formulário na página \html~para o servidor \php. A principal
 diferença está em enviar os dados encapsulados no corpo da mensagem HTTP, ou seja,
 ao invés das informações inseridas no formulário trafegarem junto à URL. Elas vão
 ``escondidas''. 
@@ -192,11 +192,11 @@ O código do formulário é modificado apenas no atributo \texttt{method}. O val
 Para nosso primeiro formulário com método \metodoPOST, vamos simular a autenticação em um 
 sistema \web. Imagine que você está cadastrado nesse sistema e deseja se autenticar. 
 Para isso, o formulário deve ser preenchido com um usuário e a senha do mesmo.
-Utilize seus conhecimentos de \html~ para representar a tela abaixo.
+Utilize seus conhecimentos de \html~para representar a tela abaixo.
 
 \figurasimples{metodo-post-exemplo-1}{Exemplo de um formulário de autenticação simples.}
 
-O formulário acima deve ter as seguintes características na \tag~ \tagform:
+O formulário acima deve ter as seguintes características na \tag~\tagform:
 
 \lstinputlisting[language=html,style=codigos]{codigos/cap7/index-7.html}
 
@@ -209,8 +209,8 @@ com o seguinte conteúdo:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap7/acesso-2.php}
 
-O código acima exibe a variável do tipo \tipoarray~ com a função \funcaoprintr.
-Perceba que não estamos mais trabalhando com a variável \variavelget~ e sim com a
+O código acima exibe a variável do tipo \tipoarray~com a função \funcaoprintr.
+Perceba que não estamos mais trabalhando com a variável \variavelget~e sim com a
 variável \variavelpost, pois o método utilizado no formulário mudou.
 
 Outro detalhe importante a ser percebido é que as informações inseridas no
@@ -221,8 +221,8 @@ inseridas, devemos programar o arquivo \texttt{acesso.php}.
 {\Large Desafio rápido!}
 
 Altere o arquivo \texttt{acesso.php} para exibir no navegador o \textit{email} do usuário
-e sua senha. Utilize o \tipoarray~ \variavelpost. Lembre-se do procedimento de acessar uma 
-variável do tipo \tipoarray~ associativo.
+e sua senha. Utilize o \tipoarray~\variavelpost. Lembre-se do procedimento de acessar uma 
+variável do tipo \tipoarray~associativo.
 \end{framed}
 
 
