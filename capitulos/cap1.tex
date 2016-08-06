@@ -44,10 +44,10 @@ melhor isso, é necessário entender a estrutura cliente/servidor. Muito utiliza
 na \internet. A figura abaixo exemplifica de maneira simples a comunicação entre
 cliente e servidor.
 
-FIGURA
+\figurasimples{arquitetura-cliente-servidor}{Ilustração de uma requisição web.}
 
 Dessa figura, podemos tirar algumas palavras chaves. Que são:
-\begin{description}
+\begin{description}[noitemsep]
   \item [Recurso] Item disponível na Internet (uma figura, uma página, um arquivo .css);
   \item [Cliente] Aquele que \textbf{requisita} algum recurso (navegador Firefox); e
   \item [Servidor] Aquele que \textbf{provê} algum recurso (servidor \apache).
@@ -55,8 +55,17 @@ Dessa figura, podemos tirar algumas palavras chaves. Que são:
 
 Portanto, quando o \textbf{cliente}, ou seja, o internauta, faz uma \textbf{requisição} 
 - digitando na barra de endereços do navegador o \site~
-\url{http://http://projetoejovem.seduc.ce.gov.br} e pressionando \keys{ENTER} - o navegador 
+\url{http://projetoejovem.seduc.ce.gov.br} e pressionando \keys{ENTER} - o navegador 
 se encarrega de fazer um pedido ao \textbf{servidor} que guarda o \site~do projeto e-Jovem.
+
+\begin{description}
+  \item [Passo 1] Usuário requisita página de internet acessando o navegador e digitando
+  o \site;
+  \item [Passo 2] O servidor \web~se comunica com a linguagem \php;
+  \item [Passos 3 e 4] O \php~e o \html~se juntam em um só arquivo.
+  \item [Passo 5] O servidor tem agora a página pronta para ser enviada ao usuário.
+  \item [Passo 5] O usuário recebe a página completa em seu navegador.
+\end{description}
 
 \section{Instalação do \php}
 \label{instalacao-do-php}
@@ -66,7 +75,7 @@ de trabalho. Vamos instalar esses pacotes através do \terminal. Podemos abrir o
 \terminal de várias maneiras. Veja duas delas listadas abaixo:
 
 \begin{enumerate}
-	\item clique com o botão direito na área de trabalho, escolha a opção
+	\item clique com o botão direito na área de trabalho, escolha a opção \\
 	\opcao{Abra o Emulador de Terminal aqui}; e
 	\item acione a combinação de teclas \altfdois e digite \xfceterminal.
 \end{enumerate}
@@ -96,9 +105,6 @@ O processo de instalação é parecido com o que foi utilizado no \php. Abra o
 seguinte instrução.
 
 \lstinputlisting[language=bash,style=codigos]{codigos/instalacao-apache.sh}
-% \begin{lstlisting}[language=bash,style=codigos]
-  % $ sudo apt-get install apache2
-% \end{lstlisting}
 
 Se o sistema utilizado for o Linux do Projeto e-Jovem, então já temos o \apache
 \apacheversao~instalado (figura \ref{fig:apache-instalacao-ok}). Digite no navegador 
@@ -196,6 +202,22 @@ e os comentários de múltiplas linhas são representados pelos caracteres
 Veja o nosso arquivo \arquivo{index.php} após a adição dos comentários explicativos.
 
 \lstinputlisting[language=php,style=codigos]{codigos/echo-com-comentarios.php}
+
+\section{Exercícios}
+\label{cap1-exercicios}
+
+Para realizar as questões abaixo, crie um documento no diretório \directory{/var/www/aula01} 
+de nome \texttt{ejovem.php}.
+
+\begin{description}[labelindent=19pt]
+  \item [Q. 1] Como o arquivo \phpextensao~deve ser inicializado? Ou seja, o que deve vir no
+  começo e no final do arquivo?
+  \item [Q. 2] Exiba a mensagem ``projeto e-jovem'' utilizando o comando \funcaoecho'.
+  \item [Q. 3] Adicione um comentário de uma linha com os dizeres: ``Primeira aula de PHP''.
+  \item [Q. 4] Adicione um comentário de múltiplas linhas com cada palavra da frase 
+  ``comentário de múltiplas linhas'' em uma linha.
+  \item [Q. 5] Exiba a mensagem ``Olá Aluno!'' utilizando a \tag~\taghum~e o comando \funcaoecho.
+\end{description}
 
 \section{Desafio!}
 \label{desafio}
