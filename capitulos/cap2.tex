@@ -7,7 +7,7 @@
 
 Ao final deste capítulo, o aluno terá as seguintes competências:
 \begin{enumerate}
-	\item Instalar o \sublime~ \sublimeversao~no sistema operacional;
+	\item Instalar o \sublime~\sublimeversao~no sistema operacional;
 	\item Instalar \plugins~do \sublime; e
 	\item Criar uma estrutura de aplicação \web~com \php. 
 \end{enumerate}
@@ -71,7 +71,7 @@ Agora que a gente sabe onde o arquivo se encontra, podemos instalar com o comand
 
 Se a instalação do \sublime~ocorreu com sucesso. Obtemos a seguinte tela na 
 imagem \ref{fig:sublime-instalacao-ok}. Para abrir o programa, digite a combinação 
-de teclas \altfdois e digite o comando \sublimebin. A tela inicial do programa é 
+de teclas \altfdois~e digite o comando \sublimebin. A tela inicial do programa é 
 a exibida na figura \ref{fig:sublime-ok}.
 
 \figuradupla{sublime-instalacao-ok}{Instalação do aplicativo \sublime~realizada com sucesso}
@@ -90,7 +90,7 @@ apresentado abaixo.
 
 \lstinputlisting[language=php,style=codigos]{codigos/echo-sublime.php}
 
-Lembre-se! Você pode colocar \tags~ \html~dentro das instruções \php!
+Lembre-se! Você pode colocar \tags~\html~dentro das instruções \php!
 
 O resultado pode ser conferido abaixo.
 
@@ -103,14 +103,14 @@ O nosso editor de textos tem um painel de comandos. Nele é possível aplicar co
 relacionados ao \sublime. Os comandos que iremos utilizar são em inglês, portanto,
 a tabela TAL trás a tradução de alguns termos utilizados.
 
-Para acessar o painel digite a combinação de teclas \ctrlshiftp enquanto estiver
+Para acessar o painel digite a combinação de teclas \ctrlshiftp~enquanto estiver
 no \sublime. O painel deve aparecer na parte superior da janela. Digite o termo
 \sidebar. Esse termo ativará o comando de nome \textit{View: Toggle Side Bar}.
 Esse comando ativa ou desativa a barra lateral no \sublime~(pode ser utilizado
 a combinação de teclas \sublimesidebar). 
 
 Outro comando que podemos utilizar é o de ativar ou desativar o \textit{minimap}. 
-Pressione então as teclas \ctrlshiftp e digite o termo \textit{minimap}. 
+Pressione então as teclas \ctrlshiftp~e digite o termo \textit{minimap}. 
 O comando completo é \textit{View: Toggle Minimap}.
 
 \section{Adicionando diretórios}
@@ -123,12 +123,23 @@ vamos adicionar a pasta \directory{aula01} ao \sublime.
 
 Para isso, abra o programa gerenciador de arquivos do sistema. No caso da 
 distribuição do e-Jovem, o programa a ser aberto é o \thunar. Pressione a 
-combinação de teclas \altfdois em seguida digite \thunar. Navegue até o 
+combinação de teclas \altfdois~em seguida digite \thunar. Navegue até o 
 diretório \directory{/var/www/} clique em cima da pasta \directory{aula01} 
 segure e arraste até o editor de textos \sublime.
 
-Nesse momento a tela principal do \sublime encontra-se com a \sideb (barra lateral)
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=14cm]{adicionando-diretorios}
+    \caption{Adicione diretório ao \sublime~de maneira
+simples, clique em uma pasta e arraste para dentro do editor.}
+    \label{fig:adicionando-diretorios}
+  \end{center}
+\end{figure}
+
+Nesse momento a tela principal do \sublime~encontra-se com a \sideb~(barra lateral)
 ativada e apresentando o diretório que acabamos de adicionar.
+
+\figurasimples{sublime-projeto-ok}{Programa \sublime~com barra lateral visível.}
 
 Dica! Outro método que podemos utilizar para realizar a mesma tarefa é utilizar
 os menus do \sublime. O caminho a ser percorrido é: \menu[,]{File, Open Folder...}
@@ -155,19 +166,19 @@ diversas outras funcionalidades por meio de \plugins. Existem \plugins~que auxil
 no desenvolvimento de \html, \css~e em diversas outras linguagens.
 
 Para tirar o maior proveito dos \plugins, vamos adicionar um gerenciador de
-\plugins ao nosso \sublime.
+\plugins~ao nosso \sublime.
 
 Vamos acessar o site \url{http://packagecontrol.io/installation} através do navegador 
 Firefox. Copie toda o código representado na figura \ref{fig:sublime-packagecontrol-installation}.
 
-Agora devemos ir até o \sublime e seguir o caminho \menu[,]{View, Show console...}.
+Agora devemos ir até o \sublime~e seguir o caminho \menu[,]{View, Show console...}.
 Uma pequena seção irá aparecer na parte debaixo da tela principal do programa.
 Usando o botão direito do \mouse, clique no campo como mostrado na figura 
 \ref{fig:sublime-packagecontrol-paste-code} escolha a opção \textit{paste} (colar em inglês)
 e pressione \avancar. Após a finalização da instalação, percorra o menu \menu[,]{View, Hide console...} 
 para esconder o \terminal.
 
-\figuradupla{sublime-packagecontrol-installation}{Código que deve ser copiado, 
+\figuradupla{sublime-packagecontrol-installation-2}{Código que deve ser copiado, 
 em seguida, colado no \sublime.}{sublime-packagecontrol-paste-code}{Opção a ser
 escolhida para colar código copiado anteriormente}
 
@@ -179,7 +190,7 @@ pacote nada mais é do que um conjunto de códigos pré-prontos. Inicialmente n�
 nos terá muita serventia, mas com o passar das aulas será bem útil.
 
 Para instalar um \plugin~precisamos executar alguns comandos no painel de comandos.
-Com o \sublime~aberto, digite a combinação de teclas \ctrlshiftp e digite
+Com o \sublime~aberto, digite a combinação de teclas \ctrlshiftp~e digite
 \textit{package install}. Esse termo ativará o comando \textit{Package Control: Install Package}.
 Ao pressionar \avancar~o painel de comandos listará todos os pacotes disponíveis
 para instalação. Digite o termo \textit{php-snippets}, ativando assim, o pacote
