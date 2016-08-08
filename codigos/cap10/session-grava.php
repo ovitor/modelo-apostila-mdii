@@ -1,7 +1,5 @@
 <?php 
-
-	session_start();
-	$var = "Sessão Criada!";
-	$_SESSION['minha_sessao'] = $var;
-
+  session_start();
+  $var = "Sessao Criada!";
+  $_SESSION['minha_sessao'] = $var;
  ?>

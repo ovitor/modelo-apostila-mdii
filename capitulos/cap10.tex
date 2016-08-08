@@ -12,120 +12,168 @@ Ao final deste capítulo, o aluno terá as seguintes competências:
     \item Criar e acessar dados em sessões;
 \end{enumerate}
 
-\section{\textdollar_SERVER}
+\section{Variável \variavelserver}
 \label{variavel-server}
 
-A linguagem de programação \php também permite acessar informações do navegador (browser)automaticamente. Isso pode ser muito útil quando queremos coletar informações sobre o cliente, como por exemplo, o tipo de browser (navegador), ou qual o sistema operacional ou, dentre outras informações.
-O código a seguir mostra informações sobre o browser do usuário:
+A linguagem de programação \php~também permite acessar informações do navegador 
+(\browser) automaticamente. Isso pode ser muito útil quando queremos coletar 
+informações sobre o cliente, como por exemplo, o tipo de navegador, qual o 
+sistema operacional ou outras informações. O código a seguir mostra informações 
+sobre o navegador do usuário:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/metodo-server.php}
 
-\textdollar_SERVER é uma variável global do \php, do tipo array, que armazena uma série de informações sobre o servidor e o cliente, como endereço do servidor, IP do servidor, nome do arquivo que está em execução, etc. No caso, a chave HTTP_USER_AGENT exibe as informações sobre o navegador. Abaixo um exemplo desse retorno:
+\variavelserver~é uma variável global do \php, do tipo \tipoarray, que armazena uma série 
+de informações sobre o servidor e o cliente, como endereço do servidor, IP do servidor, 
+nome do arquivo que está em execução etc. No caso, a chave \chavehttp~exibe as informações 
+sobre o navegador. Abaixo um exemplo desse retorno:
 
-\section{Cookies}
+\section{\titulocookies}
 \label{cookies}
 
-Cookies são mecanismos para armazenar e consultar informações. Eles são armazenados na máquina do cliente, ou seja, o cookie está armazenado na máquina que acessou o site. Os cookies possuem várias atribuições que são definidas pelo programador.
+\cookies~são mecanismos para armazenar e consultar informações. Eles são armazenados na máquina 
+do cliente, ou seja, o \cookie~está armazenado na máquina que acessou o site. Os \cookies possuem várias 
+atribuições que são definidas pelo programador.
 
-Por exemplo, João, aluno do e-jovem, vai ajudar sua mãe a comprar alguns eletrodomésticos, por isso acessou uma loja virtual, escolheu uma geladeira e um fogão, ou seja, adicionou eles ao carrinho de compras virtual da loja. Por algum motivo, João teve que sair e desligou o computador. Mais tarde ao voltar pra casa, volta a entrar na loja virtual e percebe que os itens adicionados ainda estão no carrinho de compras.
+Por exemplo, Joaquim, aluno do e-jovem, vai ajudar sua mãe a comprar alguns eletrodomésticos, 
+por isso acessou uma loja virtual, escolheu uma geladeira e um fogão, ou seja, adicionou eles ao 
+carrinho de compras virtual da loja. Por algum motivo, Joaquim teve que sair e desligou o computador. 
+Mais tarde ao voltar pra casa, volta a entrar na loja virtual e percebe que os itens adicionados 
+ainda estão no carrinho de compras.
 
-Esse é um exemplo básico de uso de cookies no desenvolvimento de sites. O site guardou a informação que os itens geladeira e fogão tinham sidos adicionados ao carrinho. Quando João acessou o site pela segunda vez, essas informações foram enviadas ao servidor do site, processadas e por fim, apresentadas ao usuário.
+Esse é um exemplo básico de uso de \cookies~no desenvolvimento de sites. O site guardou a informação 
+que os itens geladeira e fogão tinham sidos adicionados ao carrinho. Quando Joaquim acessou o site 
+pela segunda vez, essas informações foram enviadas ao servidor do site, processadas e por fim, 
+apresentadas ao usuário.
 
-Os cookies são armazenados em uma pasta específica do navegador, por isso não é possível encontrá-lo na pasta “Meus Documentos” ou no diretório “/home/aluno” por exemplo. Mesmo assim, pessoas mal intencionadas podem acessá-los. Por conta disso, o uso de cookies NÃO é recomendado quando se trata de informações sigilosas. O usuário tem ainda a opção “habilitar cookies” que pode ser desativada a qualquer momento pelo visitante, impedindo assim, a criação de cookies no sistema. Mas em cada navegador essa opção pode mudar de nome. 
+Os \cookies~são armazenados em uma pasta específica do navegador, por isso não é possível encontrá-lo 
+na pasta ``Meus Documentos'' ou no diretório \directory{/home/aluno} por exemplo. Mesmo assim, 
+pessoas mal intencionadas podem acessá-los. Por conta disso, o uso de \cookies~\textbf{não} é 
+recomendado quando se trata de informações sigilosas. O usuário tem ainda a opção ``habilitar \cookies'' 
+que pode ser desativada a qualquer momento pelo visitante, impedindo assim, a criação de \cookies~no 
+sistema. Mas em cada navegador essa opção pode mudar de nome. 
 
-A linguagem PHP atribui cookies utilizando a função setcookie. Essa função deve ser incluída antes da tag <html> numa página.
+A linguagem \php~atribui \cookies~utilizando a função \funcaosetcookie. Essa função deve ser incluída antes 
+da \tag~\taghtml num arquivo \phpextensao.
 
-A sintaxe do comando setcookie possui muitos parâmetros, abaixo está representada todos os valores que podem ser atribuídos a ela. Vale ressaltar que não utilizaremos todos eles, somente os principais.
+A sintaxe do comando \funcaosetcookie possui muitos parâmetros. Abaixo está representada a função
+com alguns desses parâmetros. 
 
-Setcookie(“nome_do_cookie”,”seu_valor”,”tempo_de_vida”,”path”,”domínio”,”conexão_segura”);
+\lstinputlisting[language=php,style=codigos]{codigos/cap10/sintaxe-setcookie.php}
 
-A tabela abaixo relaciona cada um dos parâmetros com suas respectivas funções.ão a descrição de cada atributo:
+A tabela abaixo relaciona cada um dos parâmetros com suas respectivas funções.
 
-Observe no exemplo abaixo a criação de um cookie através da função setcookie. onde criamos um cookie:
+INCLUIR TABELA
+
+Observe no exemplo abaixo a criação de um \cookie através da função \funcaosetcookie:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/exemplo-setcookie.php}
 
-Criamos variável na linha 3, em seguida a função setcookie recebe como parâmetro somente o seu nome e o valor a ser gravado.
+Criamos uma variável na linha \ref{variable}, em seguida a função \funcaosetcookie recebe como 
+parâmetro somente o seu nome e o valor a ser gravado.
 
-Usaremos o navegador Mozilla Firefox para visualizar o cookie criado. Acesse o site http://localhost na barra de endereços do navegador. Em seguida, você pode pressionar as teclas CTRL + I, selecionar a aba “Segurança” em seguida selecionar o botão “Exibir cookies”. Lembre-se de criar o código acima primeiro e depois acessar a página pelo navegador de sua máaquina. A imagem abaixo deverá ser exibida no seu monitor.
+Usaremos o navegador Mozilla Firefox para visualizar o \cookie criado. Acesse o site 
+\url{http://localhost} na barra de endereços do navegador. Em seguida, você pode pressionar as 
+teclas \keys{CTRL + I}, selecionar a aba ``Segurança'' em seguida selecionar o botão 
+``Exibir cookies''. Lembre-se de criar o código acima primeiro e depois acessar a página pelo 
+navegador de sua máquina. A imagem abaixo deverá ser exibida no seu monitor.
 
-Veja que outras informações como caminho, enviar, e validade não foram especificados, porém aparecem na tela mesmo assim.
-No exemplo abaixo o programador atribui o tempo de vida do cookie. para isso será necessário capturar o o dia e a hora com a função time() e somar o tempo adicional de vida do cookie. Esse tempo deve ser informado em segundos. Isso faz com que o cookie exista na máquina do cliente de acordo com a quantidade de tempo determinado pelo programador.
+INCLUIR PRINTSCREEN!!
 
-Exemplo:
+Veja que outras informações como caminho, enviar, e validade não foram especificados, 
+porém aparecem na tela mesmo assim. No exemplo abaixo o programador atribui o tempo de vida do 
+\cookie. para isso será necessário capturar o dia e a hora com a função \funcaotime e somar o tempo 
+adicional de vida do \cookie. Esse tempo deve ser informado em segundos. Isso faz com que o \cookie~
+exista na máquina do cliente de acordo com a quantidade de tempo determinado pelo programador.
+Verifique o exemplo abaixo.
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/exemplo-setcookie-2.php}
 
-Esse cookie tem a validade de 3600 segundos, ou seja 1 hora,  sabendo disso e supondo que o usuário fez o acesso às 14:47:36, o cookie tem validade até às 15:47:36. Isso é muito importante para a programação dos cookies. Se quisermos que ele exista por um determinado tempo, temos que calcular tudo em segundos. Veja um outro exemplo a seguir.
+Esse \cookie~tem a validade de 3600 segundos, ou seja 1 hora, sabendo disso e supondo que 
+o usuário fez o acesso às 14:47:36, o \cookie~tem validade até às 15:47:36. Isso é muito 
+importante para a programação dos \cookies. Se quisermos que ele exista por um determinado 
+tempo, temos que calcular tudo em segundos. Veja um outro exemplo a seguir.
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/exemplo-setcookie-3.php}
 
-Esse cookie tem seu tempo de vida de 7 dias, pois 3600 segundos = 1 hora, 24 horas = 1 dia e 7 * horas_de_um_dia resulta em 7 dias.
+Esse \cookie tem seu tempo de vida de 7 dias, pois 3600 segundos = 1 hora, 24 horas = 1 
+dia e 7 * \texttt{horas\_de\_um\_dia} resulta em 7 dias.
 
-\subsection{Acessando Cookies}
+\subsection{Acessando \titulocookies}
 \label{acessando-cookies}
 
-É possível acessar os valores dos cookies criados anteriormente. Para isso, basta utilizar a variável \textdollar_COOKIE['nome_do_cookie'], veja um exemplo:
+É possível acessar os valores dos \cookies~criados anteriormente. Para isso, basta utilizar 
+a variável \variavelcookie\texttt{['nome\_do\_cookie']}, veja um exemplo:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/acessando-cookies.php}
 
-Observe agora um exemplo de um código utilizado para contar as visitas de um site usando cookie:
+Observe agora um exemplo de um código utilizado para contar as visitas de um site 
+usando \cookie:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/contador-cookies.php}
 
-O resultado na tela é de acordo com a quantidade de vezes que o cliente entrou no site ou atualizou o mesmo.
+O resultado na tela é de acordo com a quantidade de vezes que o cliente entrou no site 
+ou atualizou o mesmo.
 
 \section{Sessão}
 \label{sessao}
 
-Sessões são mecanismos muito parecidos com os tradicionais cookies. A principal diferença é que as sessões são armazenadas no próprio servidor.
+Sessões são mecanismos muito parecidos com os tradicionais \cookies. A principal diferença é 
+que as sessões são armazenadas no próprio servidor.
 
-As sessões são métodos de manter (ou preservar) determinados dados no servidor, ao invés do computador do usuário. A sessão fica ativa (mantendo os dados armazenados) enquanto o navegador estiver aberto, ou enquanto a sessão não expirar (por inatividade, ou por conta da lógica do programa).
-
-Para criarmos uma sessão utilizaremos a função abaixo:
+As sessões são métodos de manter (ou preservar) determinados dados no servidor, ao invés do computador 
+do usuário. A sessão fica ativa (mantendo os dados armazenados) enquanto o navegador estiver aberto, 
+ou enquanto a sessão não expirar (por inatividade, ou por conta da lógica do programa). Para criarmos 
+uma sessão utilizaremos a função abaixo:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/session-start.php}
 
-Dessa forma estamos iniciando um conjunto de regras. Essa função deve sempre está no início do código-fonte, com exceção de algumas regras.
-
-Agora trabalharemos com essa sessão, primeiro podemos determinar o tempo de vida da sessão com o seguinte comando:
+Dessa forma estamos iniciando um conjunto de regras. Essa função deve sempre está no início do 
+seu programa, com exceção de algumas regras. Agora trabalharemos com essa sessão, primeiro podemos 
+determinar o tempo de vida da sessão com o seguinte comando:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/session-cache.php}
 
-Neste caso, session_cache_expire vem antes de session start. Porque primeiro ele avisa que a sessão, quando iniciada, deve expirar em 5 minutos, e depois a inicia.
-
-Com o uso da variavel global \textdollar_SESSION podemos gravar valores na sessão, veja um exemplo:
+Neste caso, a função \funcaosessioncache~vem antes da função \funcaosessionstart. O código faz
+o seguinte: primeiro ele avisa que a sessão, quando iniciada, deve expirar em 5 minutos, e depois a inicia.
+Com o uso da variável global \variavelsession~podemos gravar valores na sessão, veja um exemplo:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/session-grava.php}
 
-Criamos na sessão uma chave com o nome "minha_sessao" (não é uma boa prática de programação usar acentos em nomes de variáveis ou qualquer outra nomeação) e atribuímos a ela o valor gravado na variável string var. Essas informações ficam gravadas no servidor, em seguida é possível resgatar o valor da seguinte forma:
+Criamos na sessão uma chave com o nome \texttt{minha\_sessao} e atribuímos a ela o valor gravado na 
+variável do tipo \tipostring~chamada \texttt{\$var}. Essas informações ficam gravadas no servidor, 
+em seguida é possível resgatar o valor da seguinte forma:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/session-mostra.php}
 
-Observe que \textdollar_SESSION tem seu tratamento igual a uma variável do tipo Array. Para resgatar o valor gravado na sessão, basta fazer a chamada a essa variável \textdollar_SESSION passando o nome especificado, no exemplo “minha_sessao”. O exemplo anterior foi adicionado em um outro arquivo, por esse motivo temos que chamar novamente o comando session_start(), para trazermos ao arquivo atual todas as regras usadas na sessão no PHP (que estão armazenadas no servidor enquanto a sessão estiver ativa).
+Observe que \variavelsession~tem seu tratamento igual a uma variável do tipo \tipoarray. Para resgatar 
+o valor gravado na sessão, basta fazer a chamada a essa variável \variavelsession~passando como chave, o nome 
+especificado, no exemplo: \texttt{minha\_sessao}.
 
-Abaixo temos um exemplo com o uso da função isset(), que verifica se uma variável existe ou não, retornando um valor booleano( true ou false ):
+Abaixo temos um exemplo com o uso da função \funcaoisset, que verifica se uma variável 
+existe ou não, retornando um valor \booleano~(\true~ou \false):
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/session-isset.php}
 
-Para desativarmos uma sessão podemos utilizar dois tipos de mecanismos: um deles é o uso da função session_destroy() que tem como finalidade destruir a sessão por completo, e todas as informações nela contidas. Outra forma é desalocarmos apenas uma informação (variável) gravada na sessão, com o uso da função unset().
-
-Uso de session_destroy():
+Para desativarmos uma sessão podemos utilizar dois tipos de mecanismos: um deles é o uso da função 
+\funcaosessiondestroy~que tem como finalidade destruir a sessão por completo, e todas as informações 
+nela contidas. Outra forma é apagarmos apenas uma informação (variável) gravada na sessão, 
+com o uso da função \funcaounset. Veja abaixo exemplos de uso das funções \funcaosessiondestroy~e
+\funcaounset.
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/session-destroy.php}
 
-Uso de unset():
-
-Usamos unset() quando queremos desativar determinada sessão, O exemplo abaixo destrói a sessão especificada:
+Usamos \funcaounset~quando queremos desativar determinada sessão, O exemplo abaixo destrói a 
+sessão especificada:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/session-unset.php}
 
-Dessa forma destruimos a informação (variável) “minha_sessao”, armazada na sessão ativa, mantendo as demais informações ativas.
-
+Dessa forma destruímos a informação (variável) \texttt{minha\_sessao}, armazenada na sessão 
+ativa, mantendo as demais informações intactas.
 
 
 \section{Exercícios}
-\label{cap9-exercicios}
+\label{cap10-exercicios}
 
 \section{Desafio!}
-\label{cap9-desafio}
+\label{cap10-desafio}

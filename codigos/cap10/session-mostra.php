@@ -1,6 +1,4 @@
 <?php 
-
-	session_start();
-	echo $_SESSION['minha_sessao'];
-
+  session_start();
+  echo $_SESSION['minha_sessao'];
  ?>
