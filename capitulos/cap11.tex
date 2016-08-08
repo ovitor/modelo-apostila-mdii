@@ -1,0 +1,60 @@
+% ---
+% Tratamentos de Erro
+% ---
+\chapter{Tratamentos de Erro}
+\label{tratamentos-de-erro}
+% ---
+
+Ao final deste capítulo, o aluno terá as seguintes competências:
+\begin{enumerate}
+    \item Entender os tipos de erro e suas possíveis causas;
+    \item Tratar os erros;
+\end{enumerate}
+
+\section{Tipos de Erro}
+\label{tipos-de-erro}
+
+Durante o processo de programação é comum surgirem erros que interrompem, causam um mal funcionamento ao programa ou apresentam um resultado inesperado. Normalmente esses erros são provocados pelo próprio programador, e podem ser:
+
+\begin{itemize}
+  \item \textbf{Erro de sintaxe}: quando o programador escreve uma instrução da forma errada, por exemplo, esquece de colocar um ";" (ponto-e-vírgula);
+  \item \textbf{Erro de semântica}: quando o programador escreveu um código correto mas não previu alguma outra situação ou dependência para que a instrução programada funcione. Exemplo: ao programar a abertura de um arquivo, não verificou antes se o arquivo realmente existe;
+  \item \textbf{Erros de lógica}: quando o programador não analisa corretamente o fluxo lógico do que se espera que o programa execute.
+\end{itemize}
+
+Existem também os erros provocados por fatores externos, alheios ao programador, em relação a própria linguagem, ao computador, servidores, sistemas operacionais, etc. 
+
+As linguagens de programação possuem mecanismos para interromper o programa em caso de erro, e o \php oferece um conjunto de tipos de erro para alertar ao programador e, assim, auxiliá-lo na identificação da causa.
+
+Geralmente o \php apresenta os seguintes tipos de mensagens de erro (mais comuns):
+
+\begin{itemize}
+  \item \textbf{NOTICE}: quando alguma regra da linguagem não é seguida corretamente, que pode ser um erro mas o programa segue sua execução normalmente, serve apenas como alerta ao programador;
+  \item \textbf{WARNING}: quando há realmente um erro, mas não-fatal, ou seja, o programa continua em execução;
+  \item \textbf{ERROR}: erro fatal, o programa é interrompido.
+\end{itemize}
+
+O programador \php deve estar sempre atento a essas mensagens de erro, ler, interpretar e solucionar o problema indicado na mensagem. Porém, quando o programa estiver "no ar", ou seja, em produção, com usuários de verdade fazendo uso do programa, é importante que essas mensagens de erro sejam suprimidas, até porque essas mensagens de erro só interessam ao programador.
+
+Para exibir a mensagem direta no navegador procure ativar a opção display_errors, as funções serão ativadas para On(ligada) ou Off (desligada). O arquivo php.ini no linux geralmente fica na pasta: “/etc/php5/apache2/php.ini”. Por padrão a exibição das mensagens está desligada, mas como foi dito, durante o desenvolvimento pode ser interessante permitir que o \php mostre as mensagens.
+
+Veja o Exemplo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap11/error-exemplo.php}
+
+Esta função strtolower recebe um texto e retorna o mesmo texto com letras minúsculas. Logo, se a função precisa receber um parâmetro e, no exemplo, esse parâmetro não foi fornecido, certamente vai gerar um erro:
+
+\textbf{Warning: strtolower() expects exactly 1 parameter, 0 given in /var/www/index.php on line 2.}
+
+Essa mensagem será exibida se a opção "display_errors" estiver setada para "On" no arquivo php.ini
+
+Caso não queira ou não possa modificar o arquivo php.ini, é possível, fazer com que o erro seja exibido com a função ini_set('display_errors', 1), para forçar o \php exibir o erro, seguida da função error_reporting(E_ALL), que indica que tipo de erro ele deve exibir. E_ALL, neste caso, é um parâmetro que indica que qualquer erro deve ser exibido. Por exemplo a função error_reporting(E_WARNING) vai exibir apenas os erros do tipo warning.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap11/error2-exemplo.php}
+
+
+\section{Exercícios}
+\label{cap9-exercicios}
+
+\section{Desafio!}
+\label{cap9-desafio}
