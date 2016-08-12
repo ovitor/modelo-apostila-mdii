@@ -30,7 +30,7 @@ pois uma mesma variável pode ser de um tipo e pode assumir no decorrer do códi
 valor de tipo diferente.
 
 Para criar uma variável em \php, precisamos atribuir-lhe um nome de identificação, 
-sempre precedido pelo caractere cifrão (\textit{\$}). Observe um exemplo:
+sempre precedido pelo caractere cifrão (\texttt{\$}). Observe um exemplo:
 
 \lstinputlisting[language=php,style=codigos]{codigos/variaveis-1.php}
 
@@ -131,7 +131,7 @@ Caso seja necessário escrever na \tipostring~os caracteres \texttt{\$},
 
 \textit{Array} é uma lista de valores armazenados na memória. Os elementos de um \tipoarray~
 podem ser de tipos diferentes (inteiro, decimal, \tipostring~etc). Um \tipoarray~pode crescer
-dinamicamente com a adição de novos itens. O capítulo \ref{cap2} explica como
+dinamicamente com a adição de novos itens. O capítulo \ref{manipulacao-de-arrays} explica como
 manipular esse tipo de estrutura.
 
 \subsection{Tipo \textit{NULL}}
@@ -208,6 +208,74 @@ o código abaixo.
 
 \section{Exercícios}
 \label{cap3-exercicios}
+
+\begin{description}[labelindent=30pt]
+  \item [Q. 01] Qual a principal finalidade de uma variável?
+  \item [Q. 02] Cite 3 normas ao se nomear uma variável.
+  \item [Q. 03] Das variáveis listadas abaixo, quais possuem nomenclaturas válidas?
+  \begin{multicols}{2}
+    \begin{enumerate}
+      \item \texttt{\$a\_\_\_b}
+      \item \texttt{\$a\_1\_}
+      \item \texttt{\$\_início}
+      \item \texttt{\$@nome}
+      \item \texttt{\$@val\_!}
+      \item \texttt{\$--nome}
+      \item \texttt{\$\#valor}
+      \item \texttt{\$palavra}
+      \item \texttt{\$tele\#}
+      \item \texttt{\$123}
+      \item \texttt{\$\_\_=\_\_}
+      \item \texttt{\$VALOR}
+      \item \texttt{\$all}
+    \end{enumerate}
+  \end{multicols}
+  \item [Q. 04] Crie dez variáveis atribuindo valores diversos (numéricos e \tipostring), em
+  seguida utilize o comando \funcaoecho~para imprimir na tela do navegador.
+  \lstinputlisting[language=php,style=codigos]{codigos/cap3/exemplo-q4.php}
+  \item [Q. 05] Quais os tipos de variáveis que o \php~trabalha?
+  \item [Q. 06] Como podemos diferenciar um tipo de variável de outro?
+  \item [Q. 07] Faça a ligação das variáveis com os respectivos tipos de variável.
+  \begin{multicols}{2}
+    \begin{enumerate}
+      \item[] \texttt{\$var = 10}
+      \item[] \texttt{\$var = "palavra"}
+      \item[] \texttt{\$var = 10.22}
+      \item[] \texttt{\$var = true}
+      \item[] \texttt{\$var = null}
+      \item[] \texttt{\$var = array()}
+      \item[] \texttt{( ) ponto flutuante}
+      \item[] \texttt{( ) tipo null}
+      \item[] \texttt{( ) tipo \tipostring}
+      \item[] \texttt{( ) tipo numérico}
+      \item[] \texttt{( ) tipo \booleano}
+      \item[] \texttt{( ) tipo \tipoarray}
+    \end{enumerate}
+  \end{multicols}
+
+
+
+\end{description}
+
+% EP03.6: Quais os tipos de variáveis que podemos citar em PHP.
+% EP03.7: Como podemos distinguir um tipo de variável de outro, uma vez que a tipagem é feita de forma automática em PHP.
+% EP03.8: Faça a ligação com os seguintes tipos:
+% 1 - $var = -10;                        (  )ponto flutuante.
+% 2 - $var = “palavra”;              (  )tipo null.
+% 3 - $var = 10.22;                    (  )tipo objeto.
+% 4 - $var = true;                      (  )String.
+% 5 - $var = null;                       (  )numérico.  
+% 6 - $var = new abc;                (  )booleano.
+
+% EP03.9: Qual a principal finalidade de um constante e como elas são definidas em PHP.
+% EP03.10: Em que momentos precisamos converter uma variável de um tipo em outro.
+% EP03.11: Quais os typecasting usados em PHP.
+% EP03.12: Crie uma constante com o comando define e imprima com o comando print();
+% EP03.13: Crie conversões e imprima na tela com o comando print() com as seguintes variável.
+% $var1 = “paralelepípedo”,  $var2 = 15.20, $var3 = 10.
+% a) Converta a variável $var1 em objeto.
+% b) Converta a variável $var3 em ponto flutuante.
+% c) Converta a variável $var2 em inteiro.
 
 
 \section{Desafio!}
