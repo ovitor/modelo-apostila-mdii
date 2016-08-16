@@ -1,0 +1,231 @@
+% ---
+% Introdução a POO com PHP
+% ---
+\chapter{Introdução a POO com PHP}
+\label{introducao-poo-php}
+% ---
+
+Ao final deste capítulo, o aluno terá as seguintes competências:
+\begin{enumerate}
+    \item Entender os conceitos da Programação Orientada a Objetos;
+    \item Criar classes com atributos e métodos;
+    \item Criar objetos;
+    \item Herdar classes;
+\end{enumerate}
+
+\section{O que é programação orientada a objetos?}
+\label{o-que-eh-poo}
+
+A programação Orientada a Objetos (POO) é um estilo de programação, ou uma forma de programar, 
+que ajuda a agrupar tarefas a respeito de um mesmo tema, organizar o código e entender como 
+estruturar melhor a solução de um problema de modo que fique mais fácil também, posteriormente, 
+fazer mudanças e dar manutenção ao programa. 
+
+Usar esse estilo de programação orientado a objeto requer entender alguns conceitos. Como o 
+proprio nome já diz, orientado a objetos indica que vamos usar ``objetos", e esse é o primeiro 
+conceito que vamos ver. Objeto é a representação de algo que podemos atribuir características 
+e ações. Por exemplo, um carro é um ``objeto", podemos dar a ele características (cor, modelo, 
+fabricante, etc.) e ações (buzinar, acelerar, estacionar, etc.). Uma pessoa também pode ser 
+representada num sistema como um objeto porque tem características (cor do cabelo, altura, 
+peso, etc.) e executa ações (falar, andar, correr, dormir, etc.). 
+
+Da mesma forma em um site, podemos dizer que o usuário do site é um objeto, um cliente, um 
+produto ou serviço, uma foto, um video, etc. Em um comércio eletrônico, cada produto a venda 
+é um ``objeto", assim como o cliente que está comprando o produto e o carrinho de compras 
+criado pelo cliente, são todos ``objetos". Em uma rede social, cada foto, amigo, postagem, 
+são objetos. 
+
+Objeto, portanto, é um conceito e também um modo de pensar a programação, organizando e 
+programando cada componente de uma forma separada (pensando em objetos), mas fazendo com 
+que suas ações possam interagir com outros objetos, formando um sistema. Por exemplo, um 
+objeto ``pessoa", através de uma ação de ``dirigir" pode interagir com um objeto ``carro".
+
+Um aspecto interessante da Programação Orientada a Objetos é o reuso. Reuso significa 
+reutilizar, aproveitar o que já foi programado em um objeto para ser usado por outro objeto. 
+Por exemplo, um carro e uma moto, apesar de serem objetos diferentes, compartilham de algumas 
+características e ações. O carro e a moto tem peso, tem um fabricante, tem pneus, precisam 
+ser abastecidos, sao conduzidos por uma pessoa, etc. Logo, se é programado a função de 
+``abastecer", essa única função serve para os dois (carro e moto), não é preciso repetir 
+o mesmo código para os dois tipos de objetos.
+
+
+\section{Classes e Objetos}
+\label{classes-e-objetos}
+
+Na Programação Orientada a Objeto o programador precisa desenvolver um modelo que vai ser 
+usado como base para a criação de um objeto, com todas as suas características e comportamento, 
+antes de usar esse objeto no sistema. Esse modelo do objeto chamamos de ``Classe", e contem 
+a definição de um determinado objeto, ou como esse objeto vai funcionar. 
+
+Uma ``classe" é, portanto, um modelo de um objeto, com a programação de suas características 
+(atributos) e ações (métodos).
+
+Em \php, para criar uma classe usamos o comando class. Exemplo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-1.php}
+
+No código anterior, usamos o comando class para criar uma nova classe chamada ``Carro". Essa 
+classe vai ser um modelo para todos os objetos do tipo ``carro". 
+
+Normalmente, como um meio de organizar melhor o sistema, colocamos cada classe em um arquivo \php 
+diferente, mas não é necessário fazer isso por enquanto nesta aula, veremos no próximo capítulo 
+como funciona essa organização dos arquivos.
+
+Após programarmos uma classe, podemos criar um ou mais objetos com base nessa classe. O processo 
+de criar um objeto com base nessa classe é chamada de ``instanciação". Então, criar um objeto 
+significa instanciar uma classe. Podemos fazer isso com o comando \textbf{new}, da seguinte 
+forma:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-2.php}
+
+Nesse código anterior criamos uma variável \texttt{\$meucarro}, e essa variável é um objeto 
+do tipo ``Carro", ou seja, um objeto criado com base na classe ``Carro". Ainda com base na mesma 
+classe podemos criar vários objetos, todos com as mesmas características e ações programadas 
+na classe:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-3.php}
+
+
+\section{Atributos}
+\label{atributos}
+
+No exemplo anterior criamos uma classe ``Carro" mas não programamos mais nada. Vamos agora 
+ver como podemos incluir e usar os atributos da classe. Atributo é o nome dado a uma 
+característica ou propriedade da classe, que vai estar disponível a todos os objetos 
+instanciados a partir dessa classe. Seguindo o mesmo exemplo, podemos ter uma classe Carro 
+com os atributos de cor e marca.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-4.php}
+
+Usamos o comando public seguido do nome de uma variável (\texttt{\$cor} e \texttt{\$marca}). 
+Essas variáveis, dentro da classe, se tornam atributos da classe. Neste exemplo não foi 
+inserido nenhum valor para essas variáveis, ou seja, são atributos sem valor padrão, os 
+valores vão ser colocados depois do objeto criado, onde cada objeto pode ter uma cor e uma 
+marca diferente.
+
+Vamos agora instanciar essa classe, criando um objeto e atribuindo os valores:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-5.php}
+
+Depois da classe Carro programada com dois atributos (cor e marca), podemos criar objetos 
+com base nessa classe e usar em cada um deles os atributos disponíveis. No exemplo, 
+\texttt{\$palio} e \texttt{\$fiesta} são dois objetos com as características de cor e marca, 
+conforme descrito na classe, e cada um deles é um objeto distinto. Quando definimos 
+``amarelo" ao atributo ``cor" do objeto \texttt{\$palio}, podemos por exemplo exibir com 
+o comando echo:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-6.php}
+
+Observe que para os atributos de um objeto usamos o sinal de (->), e o nome do atributo 
+não tem o sinal de \texttt{\$}, ficando apenas no nome do objeto. 
+
+Veja outro exemplo, dessa vez os atributos da classe Carro com alguns valores pré definidos:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-7.php}
+
+
+\section{Métodos}
+\label{metodos}
+
+Como foi dito anteriormente, uma classe tem atributos (suas características) e métodos 
+(suas funções). Já vimos como trabalhar com os atributos, agora vamos conhecer os métodos, 
+ou o que um objeto pode fazer.
+
+Continuando com o exemplo da classe Carro, vamos imaginar que além dos atributos cor e 
+marca, tem também uma função para dar a partida. Esse método da classe é construído da 
+mesma forma que uma função do \php:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-8.php}
+
+Agora sim, temos uma visão completa de uma classe, com seus atributos e métodos. Vamos 
+criar um objeto Carro:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-9.php}
+
+Observe que para executar um método do objeto usamos novamente o sinal de (->) seguido 
+do nome do método e depois os parênteses, já que como foi visto anteriormente no curso,
+se trata de uma função. Essa função \texttt{ligar()} do exemplo apenas exibe uma mensagem, 
+mas podemos programa-la para fazer outras coisas, como mudar os atributos do próprio objeto. 
+
+Outro exemplo, dessa vez criando um método que exibe os atributos do objeto:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-10.php}
+
+Vamos ver um exemplo onde ao invés de exibir uma mensagem, o método \texttt{ligar()} 
+muda um atributo.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-11.php}
+
+Agora temos o \texttt{\$this}, que é usado somente dentro de uma classe e faz referência 
+a algum método ou atributo da própria classe. No caso, o método ligar(), quando executado, 
+vai mudar o valor do atributo ``ligado" de ``não" para ``sim". Vamos ver nosso carro 
+funcionando:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-12.php}
+
+Claro que podemos melhorar essa classe, por exemplo, alterando o tipo de atributo 
+``ligado" para booleano (true ou false) e inserindo uma lógica para que o carro, depois 
+de ligado, não possa ser ligado novamente, o mesmo para o método de desligar.
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-13.php}
+
+
+\section{Herança}
+\label{heranca}
+
+Um outro conceito dentro da programação orientada a objetos é o de Herança. Herança 
+significa que é possivel criar uma classe que herda atributos e métodos de outra classe. 
+O sentido disso é organizar mais ainda, de forma que um código possa ser reutilizado, 
+facilitando o desenvolvimento. 
+
+Vamos imaginar, pegando o exemplo anterior do Carro, que existem vários tipos de carro 
+diferentes, e cada categoria tem suas próprias características. Por exemplo, carros de 
+corrida, ônibus, jipe, buggy, etc. Então, seria complicado uma única classe representando 
+todos os carros, porque existem categorias com características próprias, mas ao mesmo 
+tempo eles compartilham de características semelhantes. Então, vamos deixar essas 
+características semelhantes em um único lugar, e aproveitar essas informações para serem 
+usadas em outras classes.
+
+Vamos analisar essa seguinte classe:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-14.php}
+
+Esta classe é uma classe genérica de um Carro, podemos dizer que todo carro tem uma cor, 
+pode ser ligado e desligado. Podemos criar objetos a partir dessa classe para outros 
+carros. Porém, um carro de Fórmula 1, por exemplo, pode ter outros atributos e métodos 
+que um carro convencional não tem. Para aproveitarmos o que já é comum a todos os carros, 
+podemos criar uma nova classe para a categoria de Fórmula 1 usando (herdando) a classe 
+genérica de Carro e incluindo o que for específico da categoria. Vamos ver como isso 
+funciona:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-15.php}
+
+Observe a palavra \textbf{extends}, que é um comando para criar a herança. Este código 
+cria uma nova classe Formula1 como uma extensão da classe Carro. A classe Formula1 é como 
+se fosse a ``filha" de Carro. Vamos criar um objeto para Formula1:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-16.php}
+
+Mesmo sem programar nada na classe Formula1, por ela ser ``filha" de Carro ela herda 
+seus atributos e métodos, por isso podemos usar a função \texttt{ligar()} em um objeto do tipo 
+Formula1. Agora vamos incrementar essa classe Formula1:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-17.php}
+
+No exemplo anterior, incluimos 3 novos atributos a classe Formula1, piloto, equipe e velocidade, 
+sendo a velocidade iniciada com o valor 0. Agora a classe Formula1 tem seus próprios atributos, 
+além daqueles que vem herdados da classe Carro, ou seja, a cor. Vamos incluir um método para 
+aumentar a velocidade do Formula1:
+
+\lstinputlisting[language=php,style=codigos]{codigos/cap12/poo-18.php}
+
+Dessa forma, usando a Herança, se for necessário mudar alguma coisa no método de ligar o carro, 
+essa mudança vai automaticamente refletir em todas as classes que herdam de Carro esse método. 
+Esse processo torna a programação mais intuitiva e fácil de manter. 
+
+
+\section{Exercícios}
+\label{cap11-exercicios}
+
+\section{Desafio!}
+\label{cap11-desafio}
