@@ -1,12 +1,10 @@
 <?php 
-	class Carro
-	{
-		public $cor;
-		public $marca;
+  class Carro {
+    public $cor;
+    public $marca;
 
-		public function ligar()
-		{
-			echo "Carro ligado";
-		}
-	}
+    public function ligar() {
+      echo "Carro ligado";
+    }
+  }
 ?>

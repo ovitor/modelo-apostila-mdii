@@ -1,7 +1,7 @@
 <?php 
-	$palio = new Carro();
-	$palio->cor = "amarelo";
-	$palio->marca = "Fiat";
+  $palio = new Carro();
+  $palio->cor = "amarelo";
+  $palio->marca = "Fiat";
 
-	echo $palio->cor;			// exibe o resultado "amarelo"
+  echo $palio->cor; // exibe o resultado "amarelo"
 ?>

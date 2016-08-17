@@ -1,6 +1,5 @@
 <?php 
-	class Carro
-	{
-		// codigo da classe
-	}
+  class Carro {
+    // codigo da classe
+  }
 ?> 

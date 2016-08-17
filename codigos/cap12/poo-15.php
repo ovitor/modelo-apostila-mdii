@@ -1,6 +1,5 @@
 <?php 
-	class Formula1 extends Carro
-	{
-
-	}
+  class Formula1 extends Carro {
+    # codigo
+  }
 ?>

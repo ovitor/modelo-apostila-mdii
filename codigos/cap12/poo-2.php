@@ -1,3 +1,3 @@
 <?php 
-	$meucarro = new Carro();
+  $meucarro = new Carro();
 ?>

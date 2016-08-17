@@ -1,14 +1,11 @@
 <?php 
-	class Carro
-	{
+	class Carro {
 		public $cor;
 
-		public function ligar()
-		{
+		public function ligar() {
 			echo "Carro ligado";
 		}
-		public function desligar()
-		{
+		public function desligar() {
 			echo "Carro desligado";
 		}
 	}
