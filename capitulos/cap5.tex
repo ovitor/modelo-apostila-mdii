@@ -57,6 +57,7 @@ Veja a sintaxe de uso.
 
 \lstinputlisting[language=php,style=codigos]{codigos/estruturas-if-3.php}
 
+\begin{framed}
 {\Large Desafio rápido!}
 
 Faça um pequeno programa que utilize a idade de um nadador, a partir dela
@@ -64,7 +65,8 @@ o programa deve indicar em qual categoria o nadador irá concorrer no próximo
 campeonato. Crianças menores de 5 anos não podem competir. 
 Veja como deve ser a saída do seu programa. 
 
-\figurasimples{cap4-desafio-rapido-1}{Resultado do primeiro desafio rápido.}
+\figurasimples{cap5-desafio-rapido-1}{Resultado do primeiro desafio rápido.}
+\end{framed}
 
 \section{Atribuição condicional (ternário)}
 \label{atribuicao-condicional}
@@ -83,14 +85,14 @@ expressão. Observe o exemplo abaixo: a variável \texttt{\$texto} receberá o v
 É uma estrutura semelhante ao comando \comandoifelse. Cabe ao programador escolher onde
 cada uma das estruturas é melhor aplicada.
 
+\begin{framed}
 {\Large Desafio rápido!}
 
 Faça um pequeno programa que verifique se um número é par ou ímpar. A variável
 \texttt{\$num} deve ser inicializada pelo programador. O programador deve ainda
 utilizar a estrutura de condição ternária e em um outro exemplo, utilizar o comando
-\comandoifelse. Veja como deve ser a saída do seu programa. 
-
-\figurasimples{cap4-desafio-rapido-1}{Resultado do primeiro desafio rápido.}
+\comandoifelse.
+\end{framed}
 
 \section{Estrutura \comandoswitch}
 \label{estrutura-switch}
@@ -130,7 +132,7 @@ não sejam executados.
 Mas o que acontece se não tivermos um valor que seja satisfatório aos casos 
 existentes no \comandoswitch? A resposta é bem simples, nenhum dos blocos seriam executados.
 Porém é possível utilizarmos um comando que determina uma opção padrão caso nenhuma das outras 
-venha ter resultado que satisfaça a expressão passada para o comando \comandoswitch 
+venha ter resultado que satisfaça a expressão passada para o comando \comandoswitch~ 
 chamada \texttt{default} (padrão).
 
 \lstinputlisting[language=php,style=codigos]{codigos/estruturas-switch-3.php}
@@ -141,13 +143,12 @@ inserido em qualquer lugar dentro do \comandoswitch, porém caso isso aconteça,
 o uso do comando \comandobreak~deve ser adicionado para evitar que os \comandocase~abaixo 
 sejam executados.
 
+\begin{framed}
 {\Large Desafio rápido!}
 
 Faça um pequeno programa que recebe um símbolo matemático (como \tipostring) e a partir dele
-faça as operações matemáticas. Utilize o comando \comandoswitch. Veja como a tela do seu 
-navegador deve ficar.
-
-\figurasimples{cap4-desafio-rapido-1}{Resultado do primeiro desafio rápido.}
+faça as operações matemáticas. Utilize o comando \comandoswitch.  
+\end{framed}
 
 A partir de agora vamos aprender a trabalhar com estruturas de repetição. 
 Elas são muito utilizadas nas linguagens de programação.
@@ -215,10 +216,12 @@ abaixo.
 Qual seria o resultado desse código se a variável \texttt{\$num} fosse inicializada com o valor
 11, ou seja, \texttt{\$num = 11;} na linha 10?
 
+\begin{framed}
 {\Large Desafio rápido!}
 
 Faça um pequeno programa que imprima na tela somente números pares, iniciando com o 2
 e terminando com o valor 20. Utilize o comando \comandodowhile. 
+\end{framed}
 
 \section{Estrutura \comandofor}
 
@@ -303,14 +306,33 @@ Perceba que o número 5 (do nosso teste) não foi apresentado na tela do navegad
 \section{Exercícios}
 \label{cap5-exercicios}
 
+\begin{description}[labelindent=30pt]
+  \item [Q. 01] Qual a principal finalidade de uma estrutura de controle?
+  \item [Q. 02] Qual a principal finalidade de uma estrutura de repetição?
+  \item [Q. 03] Crie um código com uma condição ternária onde receba um valor booleano e 
+  de acordo com o valor passado na expressão, deve imprimir ``sim'' ou ``não''.
+  \item [Q. 04] Com o comando \comandoifelse~crie um código que determine se a expressão 
+  \texttt{((4 + 5) < 9 || (3 < 5)) \&\& true} é verdadeira ou falsa.
+  \item [Q. 05] Qual a finalidade da estrutura de controle \comandoswitch~e cite um exemplo onde comparamos 
+  uma opção com 4 casos diferente?
+  \item [Q. 06] Crie um contador de 1 até 20 usando a estrutura de repetição \comandowhile.
+  \item [Q. 07] Crie um contador de 1 até 100 usando \comandodowhile.
+  \item [Q. 08] Crie um contador de 100 até 1 usando \comandofor.
+  \item [Q. 09] Qual a finalidade do comando \comandoforeach?
+  \item [Q. 10] Crie um contador que some um infinitamente. O código deve ser parado automaticamente
+  quando o contador for igual a 103. Utilize o comando \comandobreak. 
+  \item [Q. 11] Como podemos determinar o uso do comando \comandocontinue e qual a sua aplicação prática
+  no \php? 
+  \item [Q. 12] Crie um código com as seguintes características: (i) Deve receber um valor inicial e outro
+  final; (ii) Deve conter um laço \comandofor~ que é limitado pelos valores inicial e final definido no tópico
+  (i); (iii) Deve conter um controle de decisão (\comandoifelse) responsável por comparar o valor incrementado
+  e definir se o número é par ou ímpar. Exemplo do que será calculado pelo código, tendo como valor inicial
+  8 e valor final 12:
+  \lstinputlisting[language=php,style=codigos]{codigos/cap5/exemplo-q12.php}
+
+\end{description}
+
+
+
 \section{Desafio!}
 \label{cap5-desafio}
-O seguinte código é uma página inicial de um sistema de notas simplificado.
-O programador deve inserir no próprio código as 3 notas do aluno. Se a média aritmética 
-das notas for maior que 6, o aluno está aprovado, caso contrário o aluno se encontra de 
-recuperação.
-
-Esse código tem vários problemas e não está executando corretamente, identifique os erros, 
-corrija e apresente ao professor.
-
-\lstinputlisting[language=php,style=codigos]{codigos/cap4-desafio.php}
