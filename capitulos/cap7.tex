@@ -139,7 +139,7 @@ formulário. O arquivo \phpextensao~responsável por tratar esses dados é o arq
 mencionado no atributo \texttt{action}. No nosso primeiro exemplo, o arquivo de nome
 \texttt{cadastro-newsletter.php}.
 
-Caso você ainda não o tenha criado. Crie um novo arquivo dentro de \directory{/var/www/aula07/}
+Caso você ainda não o tenha criado. Crie um novo arquivo dentro de \directory{/var/www/aula06/}
 chamado \texttt{cadastro-newsletter.php}. Inicialmente, coloque o seguinte conteúdo dentro do arquivo.
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap7/cadastro-newsletter.php}
@@ -204,7 +204,7 @@ O formulário acima deve ter as seguintes características na \tag~\tagform:
 \label{recebendo-dados-via-metodo-post}
 
 Ao clicarmos em avançar, os dados inseridos no formulário serão tratados no arquivo
-\texttt{acesso.php}. Portanto, vamos criar o arquivo no diretório \directory{/var/www/aula07}
+\texttt{acesso.php}. Portanto, vamos criar o arquivo no diretório \directory{/var/www/aula06}
 com o seguinte conteúdo:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap7/acesso-2.php}
@@ -225,9 +225,25 @@ e sua senha. Utilize o \tipoarray~\variavelpost. Lembre-se do procedimento de ac
 variável do tipo \tipoarray~associativo.
 \end{framed}
 
-
 \section{Exercícios}
 \label{cap7-exercicios}
+Lembre-se que todo arquivo desenvolvido para resolver as questões abaixo devem ser
+guardados no diretório \directory{/var/www/aula06}.
+
+\begin{description}[labelindent=30pt]
+  \item [Q. 01] O que é o método \metodoGET~e qual a sua principal finalidade?
+  \item [Q. 02] O que é o método \metodoPOST~e qual sua principal finalidade?
+  Para resolver as questões 03, 04 e 05, leve em consideração o seguinte código:
+  \lstinputlisting[language=php,style=codigos]{codigos/cap7/exemplo-q03.php}
+  \item [Q. 03] Qual método está sendo utilizado no formulário acima?
+  \item [Q. 04] Que variável podemos usar no arquivo \texttt{mala\_direta.php}
+  para obtermos o conteúdo do formulário?
+  \item [Q. 05] Desenvolva o código do arquivo \texttt{mala\_direta.php} e
+  apresente na tela o dado enviado pelo formulário.
+  \item [Q. 06] Escreva um arquivo \htmlextensao~contendo um formulário com os
+  campos \texttt{email} e \texttt{senha}. Os dados devem ser tratados no arquivo
+  \texttt{acesso.php}. Você deve utilizar o método \metodoPOST.
+\end{description}
 
 \section{Desafio!}
 \label{cap7-desafio}
