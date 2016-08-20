@@ -43,7 +43,7 @@ A seguir, veremos outro exemplo. A figura abaixo representa um \tipoarray~que te
 como elementos representação de cores. O \tipoarray~possui dez posições, 
 cada posição representa uma cor, seu índice (chave) vai de 0 até 9. Veja:
 
-FIGURA!!!
+\figurasimples{array-01}{\textit{Array} com 10 posições.}
 
 Em código temos:
 
@@ -59,7 +59,7 @@ Observe que quando usamos \tipoarrays~associativos, a compreensão é mais fáci
 dando mais legibilidade ao código, ou seja, é mais fácil entender o que cada valor
 representa. Veja na representação gráfica abaixo:
 
-FIGURA!!!
+\figurasimples{array-02}{\textit{Array} associativo com 4 posições.}
 
 \subsection{Inicializando \tipoarrays}
 \label{inicializando-arrays}
@@ -160,7 +160,7 @@ Outra ideia que temos é que \tipoarrays~de duas dimensões são matrizes nos qu
 algumas de suas posições podem conter outros \tipoarrays. Na figura abaixo temos a 
 representação de um \tipoarray~com duas dimensões.
 
-FIGURA!!!
+\figurasimples{array-03}{\textit{Array} com duas dimensões.}
 
 Um \tipoarray~de duas dimensões pode ser criado pela função \comandoarray~. Veja um exemplo
 não funcional.
@@ -248,9 +248,34 @@ Ou ainda a ordem pode ser de Z a A. Para isso, podemos usar as funções \funcao
 
 \lstinputlisting[language=php,style=codigos]{codigos/array-19.php}
 
-
 \section{Exercícios}
 \label{cap6-exercicios}
+
+\begin{description}[labelindent=30pt]
+  \item [Q. 01] O que é um \tipoarray, e qual a sua principal finalidade?
+  \item [Q. 02] O que é um \tipoarray~associativo?
+  \item [Q. 03] O que é um \tipoarray~multidimensional?
+  \item Para resolver as questões 4, 5, 6 e 7, utilize como base um \tipoarray~
+  de 8 posições. Os valores do \tipoarray~devem ser nomes de pessoas que você conhece. 
+  O nome da variável \tipoarray~deve ser \texttt{\$nomes}.
+  \item [Q. 04] Apresente na tela o valor do terceiro elemento do \tipoarray.
+  \item [Q. 05] O que aparece na tela se usarmos o código: \texttt{echo \$nomes[10]}
+  \item [Q. 06] Apresente na tela os nomes da quarta posição até a penúltima posição.
+  \item [Q. 07] Utilize o comando \comandoforeach~para apresentar na tela do navegador
+  todos os nomes cadastrados.
+  \item Para resolver as questões, 08, 09 e 10, utilize como base um \tipoarray~ associativo
+  com as chaves \texttt{nome}, \texttt{sobrenome}, \texttt{endereco}, \texttt{bairro},
+  \texttt{cidade} e \texttt{criado\_em}. O nome da variável \tipoarray~deve ser \texttt{\$informacoes}.
+  \item [Q. 08] Apresente na tela do navegador o valor dos índices \texttt{nome} e \texttt{bairro}.
+  \item [Q. 09] Troque o valor inicial do elemento de índice \texttt{criado\_em} para ``19/08/2016''.
+  \item [Q. 10] Apresente na tela do navegador todos os valores do \tipoarray~\texttt{\$informacoes}.
+  Utilize o comando \comandoforeach.
+  \item Crie um vetor de duas dimensões de acordo com o gráfico abaixo e responda as questões 11 e 12.
+  \lstinputlisting[language=bash,style=codigos]{codigos/cap6/exemplo-q11}
+  \item [Q. 11] Apresente na tela a frase ``oi tudo bem? voce esta em casa?'' 
+  \item [Q. 12] Imagine um diálogo possível e reproduza no navegador utilizando os índices dos
+  elementos do \tipoarray.
+\end{description}
 
 \section{Desafio!}
 \label{cap6-desafio}
