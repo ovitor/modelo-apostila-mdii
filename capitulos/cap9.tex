@@ -205,6 +205,42 @@ dentro desse novo diretório. Qual o resultado?
 
 \section{Exercícios}
 \label{cap9-exercicios}
+Lembre-se que todo arquivo desenvolvido para resolver as questões abaixo devem ser
+guardados no diretório \directory{/var/www/aula08}.
+
+\begin{description}[labelindent=30pt]
+  \item [Q. 01] O que é manipulação de arquivos no \php? Cite 3 funções utilizadas.
+  \item [Q. 02] Na função de abrir um arquivo (\funcaofopen) quais parâmetros são utilizados?
+  Para que serve cada um deles?
+  \item [Q. 03] Quais os modos de abertura de um arquivo? Diferencie esses métodos. 
+  \item Para resolver as questões 4, 5, e 6, utilize como base o código apresentado
+  abaixo. 
+  \lstinputlisting[language=php,style=codigos]{codigos/cap9/exemplo-q04.php}
+  \item [Q. 04] Que tipo de arquivo é gerado na linha 2 e onde o mesmo é criado?
+  \item [Q. 05] Qual a finalidade do comando \funcaofwrite?
+  \item [Q. 06] Qual o principal motivo de fecharmos o arquivo com o comando \funcaofclose?
+  \item Para resolver as questões 7, 8, 9 e 10 crie o arquivo \texttt{arquivos.php} e desenvolva
+  as seguintes funções que irão trabalhar com arquivos:
+  \item [Q. 07] Uma função que recebe como parâmetro o nome ou caminho do arquivo e retorne o conteúdo 
+  do arquivo. Exemplo:
+  \lstinputlisting[language=php,style=codigos]{codigos/cap9/exemplo-q07.php}
+  \item [Q. 08] Uma função que receba o nome ou caminho do arquivo e retorne a última linha do arquivo.
+  \lstinputlisting[language=php,style=codigos]{codigos/cap9/exemplo-q08.php}
+  \item [Q. 09] Uma função que receba o nome ou caminho do arquivo e uma linha a ser gravada no arquivo. 
+  A função deve retornar 0 se tiver sido executada com sucesso ou 1 se o arquivo informado não existe.
+  \lstinputlisting[language=php,style=codigos]{codigos/cap9/exemplo-q09.php}
+  \item [Q. 10] Uma função que receba o nome ou caminho do arquivo e delete todo o conteúdo desse arquivo.
+  \lstinputlisting[language=php,style=codigos]{codigos/cap9/exemplo-q10.php}
+  \item Para resolver as questões 11 e 12 crie o arquivo de nome \texttt{informacoes.csv} de acordo com
+  o código abaixo:
+  \lstinputlisting[language=bash,style=codigos]{codigos/cap9/exemplo-q11}
+  \item [Q. 11] Crie uma função que leia o arquivo acima e retorne o \tipoarray~com o conteúdo do
+  arquivo.
+  \item [Q. 12] Crie uma função que insira mais um registro no arquivo \texttt{informacoes.csv}. Exemplo
+  de linha a ser inserida: \texttt{3;Luis;Cavalcante;"Rua D, n. 32";Caucaia}
+
+
+\end{description}
 
 \section{Desafio!}
 \label{cap9-desafio}
