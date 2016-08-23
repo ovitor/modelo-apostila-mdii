@@ -1,4 +1,4 @@
 <?php 
-	$palio = new Carro();
-	$fiesta = new Carro();
+  $palio = new Carro();
+  $fiesta = new Carro();
 ?>
