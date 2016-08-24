@@ -5,11 +5,14 @@
     public $ligado = false;  // atributo com valor padrao = false
 
     public function ligar() {
-      if ($this->ligado) {  // verifica se o atributo e verdadeiro (carro ligado)
-        echo "O carro ja esta ligado";  // se o atributo for verdadeiro, exibe a mensagem 
+      if ($this->ligado) {  // verifica se o atributo e 
+        // verdadeiro (carro ligado)
+        echo "O carro ja esta ligado";  // se o atributo 
+        // for verdadeiro, exibe a mensagem 
       } 
       else {
-        $this->ligado = true;  // caso contrario, muda o atributo para true (liga o carro)
+        $this->ligado = true;  // caso contrario, muda o 
+        // atributo para true (liga o carro)
       }
     }
     public function desligar() {

@@ -31,7 +31,7 @@ sobre o navegador. Abaixo um exemplo desse retorno:
 \section{\titulocookies}
 \label{cookies}
 
-\cookies~são mecanismos para armazenar e consultar informações. Eles são armazenados na máquina 
+\textit{Cookies} são mecanismos para armazenar e consultar informações. Eles são armazenados na máquina 
 do cliente, ou seja, o \cookie~está armazenado na máquina que acessou o site. Os \cookies possuem várias 
 atribuições que são definidas pelo programador.
 
@@ -54,35 +54,43 @@ que pode ser desativada a qualquer momento pelo visitante, impedindo assim, a cr
 sistema. Mas em cada navegador essa opção pode mudar de nome. 
 
 A linguagem \php~atribui \cookies~utilizando a função \funcaosetcookie. Essa função deve ser incluída antes 
-da \tag~\taghtml num arquivo \phpextensao.
+da \tag~\taghtml~num arquivo \phpextensao.
 
-A sintaxe do comando \funcaosetcookie possui muitos parâmetros. Abaixo está representada a função
+A sintaxe do comando \funcaosetcookie~possui muitos parâmetros. Abaixo está representada a função
 com alguns desses parâmetros. 
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/sintaxe-setcookie.php}
 
-A tabela abaixo relaciona cada um dos parâmetros com suas respectivas funções.
+A lista abaixo relaciona cada um dos parâmetros com suas respectivas funções.
 
-INCLUIR TABELA
+\begin{description}
+  \item [\texttt{nome\_do\_cookie}] É o nome que, posteriormente, se tornará a variável e que 
+  servirá de referência para indicar o \cookie.
+  \item [\texttt{valor\_do\_cookie}] É o valor que a variável possuirá. Esse valor pode ser de todos 
+  os tipos.
+  \item [\texttt{tempo\_de\_vida}] Tempo, em segundos, que o \cookie~existirá no computador do visitante. 
+  Uma vez excedido esse prazo o \cookie~se apaga de modo irrecuperável. Se esse argumento ficar vazio, o 
+  \cookie~ se apagará quando o visitante fechar o navegador. 
+\end{description}
 
-Observe no exemplo abaixo a criação de um \cookie através da função \funcaosetcookie:
+Observe no exemplo abaixo a criação de um \cookie~através da função \funcaosetcookie:
 
 \lstinputlisting[language=php,style=codigos]{codigos/cap10/exemplo-setcookie.php}
 
-Criamos uma variável na linha \ref{variable}, em seguida a função \funcaosetcookie recebe como 
+Criamos uma variável na linha \ref{line:variable}, em seguida a função \funcaosetcookie recebe como 
 parâmetro somente o seu nome e o valor a ser gravado.
 
-Usaremos o navegador Mozilla Firefox para visualizar o \cookie criado. Acesse o site 
+Usaremos o navegador Mozilla Firefox para visualizar o \cookie~criado. Acesse o site 
 \url{http://localhost} na barra de endereços do navegador. Em seguida, você pode pressionar as 
 teclas \keys{CTRL + I}, selecionar a aba ``Segurança'' em seguida selecionar o botão 
 ``Exibir cookies''. Lembre-se de criar o código acima primeiro e depois acessar a página pelo 
 navegador de sua máquina. A imagem abaixo deverá ser exibida no seu monitor.
 
-INCLUIR PRINTSCREEN!!
+\figurasimples{setcookie-ok}{Visualização de \cookies~no navegador Firefox.}
 
 Veja que outras informações como caminho, enviar, e validade não foram especificados, 
 porém aparecem na tela mesmo assim. No exemplo abaixo o programador atribui o tempo de vida do 
-\cookie. para isso será necessário capturar o dia e a hora com a função \funcaotime e somar o tempo 
+\cookie. para isso será necessário capturar o dia e a hora com a função \funcaotime~e somar o tempo 
 adicional de vida do \cookie. Esse tempo deve ser informado em segundos. Isso faz com que o \cookie~
 exista na máquina do cliente de acordo com a quantidade de tempo determinado pelo programador.
 Verifique o exemplo abaixo.
@@ -176,14 +184,14 @@ ativa, mantendo as demais informações intactas.
 \label{cap10-exercicios}
 
 \begin{description}[labelindent=30pt]
-  \item [Q. 01] O que são os Cookies?
+  \item [Q. 01] O que são os \textit{Cookies}?
   \item [Q. 02] O que é uma Sessão? 
-  \item [Q. 03] Qual a diferença entre Cookies e Sessões?
-  \item [Q. 04] Em qual situação, por exemplo, você acha que é melhor usar cookies e em qual situação 
+  \item [Q. 03] Qual a diferença entre \textit{Cookies} e Sessões?
+  \item [Q. 04] Em qual situação, por exemplo, você acha que é melhor usar \cookies~e em qual situação 
   seria melhor usar as sessões?
-  \item [Q. 05] Crie um programa para pegar as informações sobre seu navegador e armazenar em um cookie.
-  \item [Q. 06] Crie um formulário para login e senha, e ao confirmar armazene essas informações em uma s
-  essão. Em seguida exiba o conteúdo dessa sessão. 
+  \item [Q. 05] Crie um programa para pegar as informações sobre seu navegador e armazenar em um \cookie.
+  \item [Q. 06] Crie um formulário para login e senha, e ao confirmar armazene essas informações em uma 
+  sessão. Em seguida exiba o conteúdo dessa sessão. 
 
 \end{description}
 
@@ -191,7 +199,7 @@ ativa, mantendo as demais informações intactas.
 \label{cap10-desafio}
 
 Faça uma página com um formulário para cadastrar pessoas (com o nome e a cidade onde mora) e armazenar 
-em um cookie. Nessa mesma página coloque dois links, um link que execute um código \php para exibir o 
-conteúdo do cookie e um segundo link para remover o conteúdo do cookie.
+em um \cookie. Nessa mesma página coloque dois links, um link que execute um código \php~para exibir o 
+conteúdo do \cookie~e um segundo link para remover o conteúdo do \cookie.
 
 
